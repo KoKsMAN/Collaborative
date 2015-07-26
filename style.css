@@ -1,0 +1,7 @@
+h1 {text-align: center}
+#tech-btn {width: 60px; height: 60px}
+#tech-btn:active {width: 45px; height: 45px}
+.Rows {border: 1px solid black; width:500px; height: 800px; float: left;}
+body {background-image: url(img/bg1.jpg); background-repeat: no-repeat;}
+html *{font-size: 23px; color: white; font-family: Arial;}
+h1 { color: white !important; font-family: Arial;}
