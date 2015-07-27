@@ -1,6 +1,6 @@
 //initialize player data
 var player = {
-  tech: 0,
+  tech: prettyNum(0),
   energy: 0,
 };
 //initialize tech building data
@@ -13,14 +13,14 @@ var engineer = {
 var android = {
   name: "Android",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 1
 };
 var robot = {
   name: "Robot",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 2
 };
 var resLab = {
   name: "Research Lab",
@@ -108,129 +108,18 @@ function prettyNum(input){
 //purchasing
 
 //Tech
-function addEngi(amount){
-  var toRemove = amount * engineer.cost;
-  if (toRemove <= player.tech){
-    engineer.owned += amount;
-    player.tech -= toRemove;
-    updateTotals();
+function testAdd(amount, building, id){
+  var cost = amount * building.cost;
+  if (cost <= player.tech){
+    building.owned += amount;
+    player.tech -= cost;
+    document.getElementById(id).innerHTML = building.owned;
+    console.log(cost);
 }
   else {
       console.log("Not enough resources");
   }
-  document.getElementById("Engineers").innerHTML = engineer.owned;
-}
-function addAndro(amount){
-  if (amount * android.cost <= player.tech){
-    android.owned += amount;
-    player.tech -= amount * android.cost;
-  }
-  else {
-      console.log("Not enough resources");
-  }
-  document.getElementById("Androids").innerHTML = android.owned;
-}
-function addRobot(amount){
-  if (amount * robot.cost <= player.tech){
-   robot.owned += amount;
-   player.tech -= amount * robot.cost;
-  }
-else {
-    console.log("Not enough resources");
- }
-  document.getElementById("Robot").innerHTML = robot.owned;
-}
-function addResLab(amount){
-  if (amount * resLab.cost <= player.tech){
-   resLab.owned += amount;
-   player.tech -= amount * resLab.cost;
-  }
-else {
-      console.log("Not enough resources");
- }
-  document.getElementById("resLab").innerHTML = resLab.owned;
-}
-function addresFac(amount){
-  if (amount * resFac.cost <= player.tech){
-   resFac.owned += amount;
-   player.tech -= amount * resFac.cost;
-  }
-else {
-      console.log("Not enough resources");
- }
-  document.getElementById("resFac").innerHTML = resFac.owned;
-}
-function addroboticsFact(amount){
-  if (amount * roboticsFact.cost <= player.tech){
-   roboticsFact.owned += amount;
-   player.tech -= amount * roboticsFact.cost;
-  }
-else {
-     console.log("Not enough resources");
- }
-  document.getElementById("roboticsFact").innerHTML = roboticsFact.owned;
-}
-function addcyberLab(amount){
-  if (amount * cyberLab.cost <= player.tech){
-   cyberLab.owned += amount;
-   player.tech -= amount * cyberLab.cost;
-  }
-else {
-    console.log("Not enough resources");
- }
-  document.getElementById("cyberLab").innerHTML = cyberLab.owned;
-}
 
-//Energy
-function addbattPack(amount){
-  if (amount * battPack.cost <= player.tech){
-   battPack.owned += amount;
-   player.tech -= amount * battPack.cost;
-  }
-else {
-   console.log("Not enough resources");
- }
-  document.getElementById("battPack").innerHTML = battPack.owned;
-}
-function addpwrGen(amount){
-  if (amount * pwrGen.cost <= player.tech){
-   pwrGen.owned += amount;
-   player.tech -= amount * pwrGen.cost;
-  }
-else {
-  console.log("Not enough resources");
- }
-  document.getElementById("pwrGen").innerHTML = pwrGen.owned;
-}
-function addgenRoom(amount){
-  if (amount * genRoom.cost <= player.tech){
-   genRoom.owned += amount;
-   player.tech -= amount * genRoom.cost;
-  }
-else {
-  console.log("Not enough resources");
- }
-  document.getElementById("genRoom").innerHTML = genRoom.owned;
-}
-function addsolPan(amount){
-  if (amount * solPan.cost <= player.tech){
-   solPan.owned += amount;
-   player.tech -= amount * solPan.cost;
-  }
-else {
-  console.log("Not enough resources");
- }
-  document.getElementById("solPan").innerHTML = solPan.owned;
-}
-function addsolPanFarm(amount){
-  if (amount * solPanFarm.cost <= player.tech){
-   solPanFarm.owned += amount;
-   player.tech -= amount * solPanFarm.cost;
-  }
-else {
-  console.log("Not enough resources");
- }
-  document.getElementById("solPanFarm").innerHTML = solPanFarm.owned;
 }
 
 function addMinion(obj, id){
@@ -262,6 +151,7 @@ function getResource(player, resource, amount, id) {
 
 window.setInterval(function() {
     console.log("I'm working");
+    console.log('"' + '"');
     updateTotals();
     gameSave();
     getResource(player, 'tech' , 1, "Tech");
