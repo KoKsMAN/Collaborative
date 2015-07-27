@@ -5,15 +5,13 @@ ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
 
-#### To Do List ####
+<span style="text-decoration:underline"> <b> <i> To Do List: </i> </b> </span>
 
 |    DONE       |
 | ------------- |
 | Basic functionality|
 | Basic game's topic|
 | Basic units, currency and buildings|
-
-
 
 |  TO BE DONE |
 | ------------- |
@@ -26,8 +24,8 @@ ___
 | Introduce upgrades|
 
 
+<span style="text-decoration:underline"> <b> <i> Change Log:</i> </b> </span>
 
-#### **_Change Log:_** ####
     *Version 0.1.0
      27 July 2015
       -Optimized the code
