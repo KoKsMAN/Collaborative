@@ -43,8 +43,7 @@ ___
 | Added initial code |
 | Created save / load functionality|
 
-
-
-<em> Current version 0.1.0 </em>
 ___
-*KoKsMAN*
+<em> Current version 0.1.0 </em>
+
+*created by KoKsMAN*
