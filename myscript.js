@@ -25,57 +25,57 @@ var robot = {
 var resLab = {
   name: "Research Lab",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 1
 };
 var resFac = {
   name: "Research Facility",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 1
 };
 var roboticsFact = {
   name: "Robotics Factory",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 1
 };
 var cyberLab = {
   name: "Cybernetics Lab",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 1
 };
 //initialize energy building data
 var battPack = {
   name: "Battery Pack",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 1
 };
 var pwrGen = {
   name: "Power Generator",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 1
 };
 var genRoom = {
   name: "Generator Room",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 1
 };
 var solPan = {
   name: "Solar Panels",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 1
 };
 var solPanFarm = {
   name: "Solar Panel Farm",
   owned: 0,
-  cost: 50,
-  generates: 0
+  cost: 5,
+  generates: 1
 };
 
 //game save
@@ -103,6 +103,9 @@ function deleteSave(){
 //make numbers prettier
 function prettyNum(input){
     var output = Math.round(input * 1000000)/1000000;
+    if(output >= 1000 && output <= 1000000){
+      output += "k";
+    }
 	return output;
 }
 //purchasing
@@ -128,7 +131,7 @@ function addMinion(obj, id){
 }
 
 function updateTotals(){
-  player.tech += (engineer.owned * engineer.generates);
+  player.tech += prettyNum((engineer.owned * engineer.generates));
   player.tech += (android.owned * android.generates);
   player.tech += (robot.owned * robot.generates);
   player.tech += (resLab.owned * resLab.generates);
