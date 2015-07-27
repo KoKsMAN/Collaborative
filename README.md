@@ -45,8 +45,7 @@ ___
 
 ___
 ___
-<em> Current version 0.1.0 </em>
-
+                                        *Current version 0.1.0*
 *created by KoKsMAN*
 ___
 ___
