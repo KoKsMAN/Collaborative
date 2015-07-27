@@ -44,3 +44,13 @@ ___
 
 *created by KoKsMAN*
 ___
+
+
+strong>em,
+em>strong,
+b>i,
+i>b {
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:underline;
+}
