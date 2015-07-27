@@ -1,7 +1,12 @@
 ![alt text](https://i.imgur.com/tMTnKoH.png)
 
-                                       *Current version 0.1.0*
+body {
+    background-image: url("https://i.imgur.com/tMTnKoH.png"), url("https://i.imgur.com/tMTnKoH.png");
+    background-color: #cccccc;
+
+                                        *Current version 0.1.0*
 ___
+
 
 <em> Space Colonists is a java script incremental game prototype. </em>
 
@@ -15,7 +20,7 @@ ___
 
 
 
-|    TO BE DONE |
+|   TO BE DONE |
 | ------------- |
 | Units and buildings cost increase formula|
 | Units and buildings resource income|
@@ -47,3 +52,4 @@ ___
 
 *created by KoKsMAN*
 ___
+}
