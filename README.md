@@ -7,9 +7,9 @@ ___
 
 |   To Do List:     |
 | ------------- |
-| ------------- |
+| |
 |   DONE        |
-| ------------- |
+| |
 | ✓Basic functionality|
 | ✓Basic game's topic|
 | ✓Basic units, currency and buildings|
