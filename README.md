@@ -12,15 +12,15 @@ ___
 | ✓Basic functionality|
 | ✓Basic game's topic|
 | ✓Basic units, currency and buildings|
-|  |
+| |
 | TO BE DONE |
 | |
 |✗Units and buildings cost increase formula|
 |✗Units and buildings resource income|
 |✗A way to display high numbers in shorter and more user-friendly way|
 |✗Create page layout|
-|✗ Create user interface elements|
-|✗ Bring the website online|
+|✗Create user interface elements|
+|✗Bring the website online|
 |✗Introduce upgrades|
 
 
