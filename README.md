@@ -28,22 +28,22 @@ ___
 
 
 #### **_Change Log:_** ####
-       *Version 0.1.0
-      27 July 2015
-      Optimized the code
+        *Version 0.1.0
+       27 July 2015
+      -Optimized the code
 ___
        *Version 0.0.5
       26 July 2015
-      Added temporary website background
-      Added "Buy 1, Buy 5, Buy All" buttons
-      Minor fixes to the code
+      -Added temporary website background
+      -Added "Buy 1, Buy 5, Buy All" buttons
+      -Minor fixes to the code
 ___
 
         *Version 0.0.1
        25 July 2015
-       Started the project
-       Added initial code
-       Created save / load functionality
+       -Started the project
+       -Added initial code
+       -Created save / load functionality
 
 *created by KoKsMAN*
 ___
