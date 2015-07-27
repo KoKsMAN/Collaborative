@@ -5,9 +5,7 @@ ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
 
-#### To Do List: ####
-
-|   bla      |
+|   To Do List:     |
 | ------------- |
 | ------------- |
 |   DONE        |
