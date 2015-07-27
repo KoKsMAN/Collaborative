@@ -1,4 +1,6 @@
-#**_Space Colonists_**
+![alt text](https://i.imgur.com/tMTnKoH.png)
+
+                                       *Current version 0.1.0*
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
@@ -45,7 +47,5 @@ ___
 
 ___
 ___
-                                        *Current version 0.1.0*
+
 *created by KoKsMAN*
-___
-___
