@@ -9,9 +9,9 @@ ___
 
 |    DONE       |
 | ------------- |
-| Basic functionality|
-| Basic game's topic|
-| Basic units, currency and buildings|
+| ✓Basic functionality|
+| ✓Basic game's topic|
+| ✓Basic units, currency and buildings|
 
 |  TO BE DONE |
 | ------------- |
