@@ -7,7 +7,10 @@ ___
 
 #### To Do List: ####
 
-|   DONE       |
+|   bla      |
+| ------------- |
+| ------------- |
+|   DONE        |
 | ------------- |
 | ✓Basic functionality|
 | ✓Basic game's topic|
@@ -22,6 +25,10 @@ ___
 |✗Create user interface elements|
 |✗Bring the website online|
 |✗Introduce upgrades|
+
+
+
+
 
 
 #### **_Change Log:_** ####
