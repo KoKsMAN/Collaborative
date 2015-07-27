@@ -3,7 +3,7 @@
                                        *Current version 0.1.0*
 ___
 
-<p style='color:red'><em> Space Colonists is a java script incremental game prototype. </em></p>
+<em> Space Colonists is a java script incremental game prototype. </em>
 
 #### To Do List ####
 
