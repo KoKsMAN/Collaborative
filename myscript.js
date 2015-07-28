@@ -144,7 +144,21 @@ function updateTotals(){
   player.energy += (genRoom.owned * genRoom.generates);
   player.energy += (solPan.owned * solPan.generates);
   player.energy += (solPanFarm.owned * solPanFarm.generates);
+
   document.getElementById('Engineers').innerHTML = engineer.owned;
+  document.getElementById('Androids').innerHTML = android.owned;
+  document.getElementById('Robots').innerHTML = robot.owned;
+  document.getElementById('Research Labs').innerHTML = resLab.owned;
+  document.getElementById('Research Facility').innerHTML = resFac.owned;
+  document.getElementById('Robotics Factory').innerHTML = roboticsFact.owned;
+  document.getElementById('Cybernetics Lab').innerHTML = cyberLab.owned;
+
+  document.getElementById('Battery Packs').innerHTML = battPack.owned;
+  document.getElementById('Power Generators').innerHTML = pwrGen.owned;
+  document.getElementById('Generator Rooms').innerHTML = genRoom.owned;
+  document.getElementById('Solar Panels').innerHTML = solPan.owned;
+  document.getElementById('Solar Panel Farm').innerHTML = solPanFarm.owned;
+
 }
 
 function getResource(player, resource, amount, id) {
