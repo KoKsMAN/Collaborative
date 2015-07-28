@@ -25,8 +25,6 @@ ___
 |✗Introduce upgrades|
 
 
-
-
 #### **_Change Log:_** ####
     *Version 0.1.0
      28 July 2015
