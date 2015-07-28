@@ -27,9 +27,13 @@ ___
 
 
 
-
-
 #### **_Change Log:_** ####
+    *Version 0.1.0
+     28 July 2015
+      -Created few GUI elements
+      -Created game's logo
+      -Added website background
+___
     *Version 0.0.6
      27 July 2015
       -Optimized the code
