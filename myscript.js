@@ -144,6 +144,7 @@ function updateTotals(){
   player.energy += (genRoom.owned * genRoom.generates);
   player.energy += (solPan.owned * solPan.generates);
   player.energy += (solPanFarm.owned * solPanFarm.generates);
+  document.getElementById('Engineers').innerHTML = engineer.owned;
 }
 
 function getResource(player, resource, amount, id) {

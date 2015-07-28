@@ -1,7 +1,14 @@
+body {border: 5px solid black; background-color: #121b23}
+#logo {display: block; margin-left: auto; margin-right: auto }
+#resources { display: block;   position:absolute;
+    left:50%;
+    margin-left:-50px;}
+
 h1 {text-align: center}
 #tech-btn {width: 60px; height: 60px}
 #tech-btn:active {width: 45px; height: 45px}
-.Rows {border: 1px solid black; width:500px; height: 800px; float: left;}
-body {background-image: url(img/bg3.jpg); background-repeat: no-repeat}
+.row {margin-top: 200px}
 html *{font-size: 23px; color: white; font-family: Arial;}
-h1 { color: white !important; font-family: Arial;}
+h1 { color: white !important; font-family: Arial}
+#buybutton{background: url(img/btnnormal.png); width:200px; height: 100px}
+#buybutton:hover {background: url(img/btnhover.png); width:200px; height: 100px}
