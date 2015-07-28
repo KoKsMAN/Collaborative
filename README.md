@@ -1,4 +1,4 @@
-![alt text](https://i.imgur.com/tMTnKoH.png)
+![alt text](http://i.imgur.com/4uIdcnB.png)
 
                                        *Current version 0.0.6*
 ___
