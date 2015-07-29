@@ -1,6 +1,6 @@
 ![alt text](http://i.imgur.com/4uIdcnB.png)
 
-                                       *Current version 0.1.0*
+                                       *Current version 0.1.5*
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
@@ -13,19 +13,24 @@ ___
 | ✓Basic functionality|
 | ✓Basic game's topic|
 | ✓Basic units, currency and buildings|
+| ✓Create page layout|
 | |
 | TO BE DONE |
 | |
 |✗Units and buildings cost increase formula|
 |✗Units and buildings resource income|
 |✗A way to display high numbers in shorter and more user-friendly way|
-|✗Create page layout|
 |✗Create user interface elements|
 |✗Bring the website online|
 |✗Introduce upgrades|
 
 
 #### **_Change Log:_** ####
+    *Version 0.1.5
+     29 July 2015
+      -Added more GUI elements
+      -Changed font
+___
     *Version 0.1.0
      28 July 2015
       -Created few GUI elements
