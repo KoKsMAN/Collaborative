@@ -81,23 +81,66 @@ var solPanFarm = {
 
 //game save
 function gameSave(){
-  localStorage.setItem("player",JSON.stringify(player));
-  localStorage.setItem("engineer",JSON.stringify(engineer));
+ localStorage.setItem("player",JSON.stringify(player));
+ localStorage.setItem("engineer",JSON.stringify(engineer));
+ localStorage.setItem("android",JSON.stringify(android));
+ localStorage.setItem("robot",JSON.stringify(robot));
+ localStorage.setItem("resLab",JSON.stringify(resLab));
+ localStorage.setItem("resFac",JSON.stringify(resFac));
+ localStorage.setItem("roboticsFact",JSON.stringify(roboticsFact));
+ localStorage.setItem("battPack",JSON.stringify(battPack));
+ localStorage.setItem("pwrGen",JSON.stringify(pwrGen));
+ localStorage.setItem("genRoom",JSON.stringify(genRoom));
+ localStorage.setItem("solPan",JSON.stringify(solPan));
+ localStorage.setItem("solPanFarm",JSON.stringify(solPanFarm));
 }
 
 //game load
 function gameLoad(){
+
   var savegame = JSON.parse(localStorage.getItem("player"));
   var savegame2 = JSON.parse(localStorage.getItem("engineer"));
+  var savegame3 = JSON.parse(localStorage.getItem("android"));
+  var savegame4 = JSON.parse(localStorage.getItem("robot"));
+  var savegame5 = JSON.parse(localStorage.getItem("resLab"));
+  var savegame6 = JSON.parse(localStorage.getItem("resFac"));
+  var savegame7 = JSON.parse(localStorage.getItem("roboticsFact"));
+  var savegame8 = JSON.parse(localStorage.getItem("battPack"));
+  var savegame9 = JSON.parse(localStorage.getItem("pwrGen"));
+  var savegame10 = JSON.parse(localStorage.getItem("genRoom"));
+  var savegame11 = JSON.parse(localStorage.getItem("solPan"));
+  var savegame12 = JSON.parse(localStorage.getItem("solPanFarm"));
+
   if (typeof savegame.tech !== "undefined") player.tech = savegame.tech;
   if (typeof savegame.energy !== "undefined") player.energy = savegame.energy;
   if (typeof savegame2.owned !== "undefined") engineer.owned = savegame2.owned;
+  if (typeof savegame3.owned !== "undefined") android.owned = savegame3.owned;
+  if (typeof savegame4.owned !== "undefined") robot.owned = savegame4.owned;
+  if (typeof savegame5.owned !== "undefined") resLab.owned = savegame5.owned;
+  if (typeof savegame6.owned !== "undefined") resFac.owned = savegame6.owned;
+  if (typeof savegame7.owned !== "undefined") roboticsFact.owned = savegame7.owned;
+  if (typeof savegame8.owned !== "undefined") battPack.owned = savegame8.owned;
+  if (typeof savegame9.owned !== "undefined") pwrGen.owned = savegame9.owned;
+  if (typeof savegame10.owned !== "undefined") genRoom.owned = savegame10.owned;
+  if (typeof savegame11.owned !== "undefined") solPan.owned = savegame11.owned;
+  if (typeof savegame12.owned !== "undefined") solPanFarm.owned = savegame12.owned;
 }
 
 //delete save
 function deleteSave(){
   localStorage.removeItem('player');
   localStorage.removeItem('engineer');
+  localStorage.removeItem('android');
+  localStorage.removeItem('robot');
+  localStorage.removeItem('resLab');
+  localStorage.removeItem('resFac');
+  localStorage.removeItem('roboticsFact');
+  localStorage.removeItem('battPack');
+  localStorage.removeItem('pwrGen');
+  localStorage.removeItem('genRoom');
+  localStorage.removeItem('solPan');
+  localStorage.removeItem('solPanFarm');
+
   location.reload();
 }
 
@@ -126,10 +169,6 @@ function testAdd(amount, building, id){
 
 }
 
-function addMinion(obj, id){
-  obj.owned++;
-  document.getElementById("id").innerHTML = obj.owned;
-}
 
 function updateTotals(){
   player.tech += prettyNum((engineer.owned * engineer.generates));
@@ -145,6 +184,7 @@ function updateTotals(){
   player.energy += (genRoom.owned * genRoom.generates);
   player.energy += (solPan.owned * solPan.generates);
   player.energy += (solPanFarm.owned * solPanFarm.generates);
+
   // Tech
   document.getElementById('Engineers').innerHTML = engineer.owned;
   document.getElementById('Androids').innerHTML = android.owned;
@@ -159,6 +199,7 @@ function updateTotals(){
   document.getElementById('genRoom').innerHTML = genRoom.owned;
   document.getElementById('solPan').innerHTML = solPan.owned;
   document.getElementById('solPanFarm').innerHTML = solPanFarm.owned;
+
 }
 
 function getResource(player, resource, amount, id) {
@@ -173,5 +214,6 @@ window.setInterval(function() {
     updateTotals();
     gameSave();
     getResource(player, 'tech' , 1, "Tech");
+    getResource(player, 'energy' , 1, "Energy");
     console.log(player.tech);
 }, 1000);

@@ -1,14 +1,27 @@
-body {border: 5px solid black; background-color: #121b23}
-#logo {display: block; margin-left: auto; margin-right: auto }
-#resources { display: block;   position:absolute;
-    left:50%;
-    margin-left:-50px;}
-
+ @font-face { font-family: Digital; src: url('fonts/digital.ttf') }
+  @font-face { font-family: Recharge; src: url('fonts/recharge.ttf') }
+ #Tech, #Energy {font-family: Digital}
+body {background-color: #121b23; margin:0; padding:0; height:100%}
+#logo {display: block; margin-left: auto; margin-right: auto}
+#resources { display: block; position:absolute; left:50%; margin-left:-50px}
 h1 {text-align: center}
-#tech-btn {width: 60px; height: 60px}
-#tech-btn:active {width: 45px; height: 45px}
-.row {margin-top: 200px}
-html *{font-size: 23px; color: white; font-family: Arial;}
-h1 { color: white !important; font-family: Arial}
-#buybutton{background: url(img/btnnormal.png); width:200px; height: 100px}
-#buybutton:hover {background: url(img/btnhover.png); width:200px; height: 100px}
+html *{font-size: 23px; color: white; font-family: Recharge}
+h1 {color: white; font-family: Arial}
+.btn:hover {background-color: #A1C436}
+.container {margin-top: 100px; padding-bottom: 35px}
+.tab-content{background-color: #E8E8F0; color: black}
+#tech, #tech span, #energy, #energy span {color: black}
+#upgrades h1, #settings p, #settings button {color: black}
+#wrapper {min-height:100%; position:relative}
+#techbtn:hover {background-color: #A1C436; color: black}
+#energybtn:hover {background-color: #e5e80c; color: black}
+#upgradesbtn:hover {background-color: #0c5fe8; color: black}
+#settingsbtn:hover {background-color: #E8930C; color: black}
+.glyphicon {color: #808080}
+ul:hover {color: black}
+
+
+
+/*#footer {height: 35px; background-color: #030405}
+#nick{float: left; text-align: left; margin-left: 10px}
+#changelog {text-align: right; margin-right: 10px}*/
