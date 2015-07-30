@@ -61,5 +61,5 @@ ___
        -Added initial code
        -Created save / load functionality
 
-*created by KoKsMAN*
+*created by KoKsMAN & Nak0o0*
 ___
