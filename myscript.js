@@ -155,12 +155,26 @@ function prettyNum(input){
 //purchasing
 
 //Tech
-function testAdd(amount, building, id){
+function techBuy(amount, building, id){
   var cost = amount * building.cost;
   if (cost <= player.tech){
     building.owned += amount;
     player.tech -= cost;
-    document.getElementById(id).innerHTML = building.owned;
+    document.getElementById("Tech").innerHTML = player.tech;
+    console.log(cost);
+}
+  else {
+      console.log("Not enough resources");
+  }
+
+}
+//Energy
+function energyBuy(amount, building, id){
+  var cost = amount * building.cost;
+  if (cost <= player.energy){
+    building.owned += amount;
+    player.energy -= cost;
+    document.getElementById("Energy").innerHTML = player.energy;
     console.log(cost);
 }
   else {
