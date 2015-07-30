@@ -53,13 +53,14 @@
                 <div id="tech" class="tab-pane fade in active">
                     Engineers: <span id="Engineers"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
+
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(1, engineer, 'Engineers')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(1, engineer, 'Engineers', 0)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(5, engineer, 'Engineers')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(5, engineer, 'Engineers', 0)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -67,13 +68,13 @@
                     </div>
                     Androids: <span id="Androids"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(1, android, 'Androids')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(1, android, 'Androids', 1)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(5, android, 'Androids')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(5, android, 'Androids', 1)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -81,13 +82,13 @@
                     </div>
                     Robots: <span id="Robot"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(1, robot, 'Robot')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(1, robot, 'Robot', 2)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(5, robot, 'Robot')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(5, robot, 'Robot', 2)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -95,13 +96,13 @@
                     </div>
                     Research Labs: <span id="resLab"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(1, resLab, 'resLab')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(1, resLab, 'resLab', 3)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(5, resLab, 'resLab')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(5, resLab, 'resLab', 3)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -109,13 +110,13 @@
                     </div>
                     Research Facility: <span id="resFac"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(1, resFac, 'resFac')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(1, resFac, 'resFac', 4)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(5, resFac, 'resFac')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(5, resFac, 'resFac', 4)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -123,13 +124,13 @@
                     </div>
                     Robotics Factory: <span id="roboticsFact"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(1, roboticsFact, 'roboticsFact')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(1, roboticsFact, 'roboticsFact', 5)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(5, roboticsFact, 'roboticsFact')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(5, roboticsFact, 'roboticsFact', 5)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -137,13 +138,13 @@
                     </div>
                     Cybernetics Lab: <span id="cyberLab"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(1, cyberLab, 'cyberLab')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(1, cyberLab, 'cyberLab', 6)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="techBuy(5, cyberLab, 'cyberLab')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="techBuy(5, cyberLab, 'cyberLab', 6)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -155,13 +156,13 @@
                 <div id="energy" class="tab-pane fade">
                     Battery Packs: <span id="battPack"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="energyBuy(1, battPack, 'battPack')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="energyBuy(1, battPack, 'battPack', 7)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="energyBuy(5, battPack, 'battPack')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="energyBuy(5, battPack, 'battPack', 7)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -169,13 +170,13 @@
                     </div>
                     Power Generators: <span id="pwrGen"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="energyBuy(1, pwrGen, 'pwrGen')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="energyBuy(1, pwrGen, 'pwrGen', 8)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="energyBuy(5, pwrGen, 'pwrGen')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="energyBuy(5, pwrGen, 'pwrGen', 8)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -183,13 +184,13 @@
                     </div>
                     Generator Rooms: <span id="genRoom"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="energyBuy(1, genRoom, 'genRoom')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="energyBuy(1, genRoom, 'genRoom', 9)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="energyBuy(5, genRoom, 'genRoom')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="energyBuy(5, genRoom, 'genRoom', 9)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -197,13 +198,13 @@
                     </div>
                     Solar Panels: <span id="solPan"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="energyBuy(1, solPan, 'solPan')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="energyBuy(1, solPan, 'solPan', 10)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="energyBuy(5, solPan, 'solPan')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="energyBuy(5, solPan, 'solPan', 10)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>
@@ -211,13 +212,13 @@
                     </div>
                     Solar Panel Farm: <span id="solPanFarm"></span>
                     <br /> Generating: <span class="Generating"></span>
-                    <br />
+                    <br /> Cost: <span class="Cost"></span>
                     <div class="btn-group btn-group-justified" role="group" aria-label="...">
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="energyBuy(1, solPanFarm, 'solPanFarm')">Buy 1</button>
+                            <button type="button" class="btn btn-default" onclick="energyBuy(1, solPanFarm, 'solPanFarm', 11)">Buy 1</button>
                         </div>
                         <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default" onclick="energyBuy(5, solPanFarm, 'solPanFarm')">Buy 5</button>
+                            <button type="button" class="btn btn-default" onclick="energyBuy(5, solPanFarm, 'solPanFarm', 11)">Buy 5</button>
                         </div>
                         <div class="btn-group" role="group">
                             <button type="button" class="btn btn-default">Buy All</button>

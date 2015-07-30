@@ -1,7 +1,7 @@
- @font-face { font-family: Digital; src: url('fonts/digital.ttf'); }
- @font-face { font-family: Recharge; src: url('fonts/recharge.ttf'); }
- #Tech, #Energy {font-family: Digital;}
- #tech {font-size: 18px;}
+@font-face { font-family: Digital; src: url('fonts/digital.ttf'); }
+@font-face { font-family: Recharge; src: url('fonts/recharge.ttf'); }
+#Tech, #Energy {font-family: Digital;}
+#tech {font-size: 18px;}
 body {background-color: #121b23; margin:0; padding:0; height:100%;}
 #logo {display: block; margin-left: auto; margin-right: auto;}
 #resources { display: block; position:absolute; left:50%; margin-left:-50px;}
@@ -21,7 +21,7 @@ h1 {color: white; font-family: Arial;}
 #achbtn:hover {background-color: #cc0ce8; color: black;}
 .glyphicon {color: #808080;}
 ul:hover {color: black;}
-.tab-content {}
+
 
 
 /*#footer {height: 35px; background-color: #030405;}
