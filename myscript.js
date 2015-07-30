@@ -1,50 +1,50 @@
 //initialize player data
 var player = {
-  tech: prettyNum(0),
+  tech: 0,
   energy: 0,
 };
 //initialize tech building data
 var engineer = {
   name: "Engineer",
   owned: 0,
-  cost: 5,
-  generates: 5
+  cost: 15,
+  generates: 1
 };
 var android = {
   name: "Android",
   owned: 0,
-  cost: 5,
-  generates: 1
+  cost: 100,
+  generates: 2
 };
 var robot = {
   name: "Robot",
   owned: 0,
-  cost: 5,
-  generates: 2
+  cost: 500,
+  generates: 4
 };
 var resLab = {
   name: "Research Lab",
   owned: 0,
-  cost: 5,
-  generates: 1
+  cost: 3000,
+  generates: 10
 };
 var resFac = {
   name: "Research Facility",
   owned: 0,
-  cost: 5,
-  generates: 1
+  cost: 10000,
+  generates: 40
 };
 var roboticsFact = {
   name: "Robotics Factory",
   owned: 0,
-  cost: 5,
-  generates: 1
+  cost: 40000,
+  generates: 100
 };
 var cyberLab = {
   name: "Cybernetics Lab",
   owned: 0,
-  cost: 5,
-  generates: 1
+  cost: 200000,
+  generates: 400
 };
 //initialize energy building data
 var battPack = {
@@ -77,7 +77,6 @@ var solPanFarm = {
   cost: 5,
   generates: 1
 };
-
 
 //game save
 function gameSave(){
@@ -144,48 +143,41 @@ function deleteSave(){
   location.reload();
 }
 
-//make numbers prettier
-function prettyNum(input){
-    var output = Math.round(input * 1000000)/1000000;
-    if(output >= 1000 && output <= 1000000){
-      output += "k";
-    }
-	return output;
-}
-//purchasing
 
-//Tech
-function techBuy(amount, building, id){
-  var cost = amount * building.cost;
-  if (cost <= player.tech){
+//Tech Buy
+function techBuy(amount, building, id, arrayPlace){
+  var unitCost = (amount * Math.floor(building.cost * Math.pow(1.15,building.owned)));
+  if (unitCost <= player.tech){
     building.owned += amount;
-    player.tech -= cost;
-    document.getElementById("Tech").innerHTML = player.tech;
-    console.log(cost);
+    player.tech -= unitCost;
+    document.getElementById('Tech').innerHTML = player.tech;
+
+    console.log(unitCost);
 }
   else {
       console.log("Not enough resources");
   }
-
+  document.getElementsByClassName('Cost')[arrayPlace].innerHTML = unitCost;
 }
-//Energy
-function energyBuy(amount, building, id){
-  var cost = amount * building.cost;
-  if (cost <= player.energy){
+//Energy Buy
+function energyBuy(amount, building, id, arrayPlace){
+  var unitCost = (amount * Math.floor(building.cost * Math.pow(1.15,building.owned)));
+  if (unitCost <= player.energy){
     building.owned += amount;
-    player.energy -= cost;
+    player.energy -= unitCost;
     document.getElementById("Energy").innerHTML = player.energy;
-    console.log(cost);
+
+    console.log(unitCost);
 }
   else {
       console.log("Not enough resources");
   }
-
+    document.getElementsByClassName('Cost')[arrayPlace].innerHTML = unitCost;
 }
 
 
 function updateTotals(){
-  player.tech += prettyNum((engineer.owned * engineer.generates));
+  player.tech += (engineer.owned * engineer.generates);
   player.tech += (android.owned * android.generates);
   player.tech += (robot.owned * robot.generates);
   player.tech += (resLab.owned * resLab.generates);
@@ -213,7 +205,12 @@ function updateTotals(){
   document.getElementById('genRoom').innerHTML = genRoom.owned;
   document.getElementById('solPan').innerHTML = solPan.owned;
   document.getElementById('solPanFarm').innerHTML = solPanFarm.owned;
-
+  //Cash
+  document.getElementById('Tech').innerHTML = player.tech;
+  //document.getElementsByClassName('Cost')[0].innerHTML = globalCost;
+  //document.getElementsByClassName('Cost')[1].innerHTML = globalCost;
+  //document.getElementsByClassName('Cost')[2].innerHTML = globalCost;
+  //document.getElementsByClassName('Cost')[3].innerHTML = globalCost;
 }
 
 function getResource(player, resource, amount, id) {
@@ -224,10 +221,10 @@ function getResource(player, resource, amount, id) {
 
 window.setInterval(function() {
     console.log("I'm working");
-    console.log('"' + '"');
     updateTotals();
     gameSave();
     getResource(player, 'tech' , 1, "Tech");
     getResource(player, 'energy' , 1, "Energy");
     console.log(player.tech);
+
 }, 1000);
