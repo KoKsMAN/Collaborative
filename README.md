@@ -16,16 +16,15 @@ ___
 | ✓Create page layout|
 | ✓Units and buildings cost increase formula|
 | ✓Partial achievements system|
-
+| ✓Units and buildings resource income|
 | |
 | TO BE DONE |
 | |
-|✗Support to older browsers|
+|✗Support for older browsers|
 |✗Cookies saves|
 |✗Gameplay statistics|
 |✗User settings|
 |✗Complete achievements system|
-|✗Units and buildings resource income|
 |✗A way to display high numbers in shorter and more user-friendly way|
 |✗Create user interface elements|
 |✗Bring the website online|
