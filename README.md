@@ -1,6 +1,6 @@
 ![alt text](http://i.imgur.com/4uIdcnB.png)
 
-                                      *Current version 0.2.0*
+                                      *Current version 0.2.1*
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
@@ -32,6 +32,11 @@ ___
 
 
 #### **_Change Log:_** ####
+    *Version 0.2.1
+     1 August 2015
+     -Added more achievements
+     -Started working on upgrades
+___
     *Version 0.2.0
      31 July 2015
       -Started working on "Buy All" function
@@ -71,5 +76,5 @@ ___
        -Added initial code
        -Created save / load functionality
 
-*created by KoKsMAN*
+*created by KoKsMAN & Nak0o0*
 ___
