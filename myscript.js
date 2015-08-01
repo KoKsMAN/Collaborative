@@ -2,6 +2,36 @@
 var player = {
   tech: 0,
   energy: 0,
+  upgrades:{
+    //Auto CLicker
+    autoClicker: 0,
+    //Tech
+    engi5Perc: 0.1 * 5 / 100,
+    engi25Perc: 0.1 * 25 / 100,
+    andro5Perc: 0.1 * 5 / 100,
+    andro25Perc: 0.1 * 25 / 100,
+    robot5Perc: 0.1 * 5 / 100,
+    robot25Perc: 0.1 * 25 / 100,
+    resLab5Perc: 0.1 * 5 / 100,
+    resLab25Perc: 0.1 * 25 / 100,
+    resFact5Perc: 0.1 * 5 / 100,
+    resFact25Perc: 0.1 * 25 / 100,
+    roboFact5Perc: 0.1 * 5 / 100,
+    roboFact25Perc: 0.1 * 25 / 100,
+    cybLab5Perc: 0.1 * 5 / 100,
+    cybLab25Perc: 0.1 * 25 / 100,
+    //Energy
+    battPck5Perc: 0.1 * 5 / 100,
+    battPck25Perc: 0.1 * 25 / 100,
+    pwrGen5Perc: 0.1 * 5 / 100,
+    pwrGen25Perc: 0.1 * 25 / 100,
+    genRoom5Perc: 0.1 * 5 / 100,
+    genRoom25Perc: 0.1 * 25 / 100,
+    solPan5Perc: 0.1 * 5 / 100,
+    solPan25Perc: 0.1 * 25 / 100,
+    solPanFarm5Perc: 0.1 * 5 / 100,
+    solPanFarm25Perc: 0.1 * 25 / 100,
+  },
   achievements: {
      first: 0,
      second: 0,
@@ -14,10 +44,10 @@ var player = {
 //initialize tech building data
 var engineer = {
   name: "Engineer",
-  owned: 0,
+  owned: 1,
   cost: 15,
   nextC: 15,
-  generates: 1
+  generates: 0.1
 };
 var android = {
   name: "Android",
@@ -152,7 +182,10 @@ function gameLoad(){
   if (typeof savegame.achievements !== "undefined") player.achievements = savegame.achievements;
 
 }
-
+//check save
+//function checkSave(){
+//  alert(JSON.stringify(savegame));
+//}
 //delete save
 function deleteSave(){
   localStorage.removeItem('player');
@@ -170,7 +203,7 @@ function deleteSave(){
 
   location.reload();
 }
-var nextCost;
+
 //Tech Buy
 function techBuy(amount, building, id, arrayPlace){
   building.nextC = (amount * Math.floor(building.cost * Math.pow(1.15,building.owned)));
@@ -203,10 +236,6 @@ function prettify(input){
 	return output;
 }
 
-//achievements
-
-
-
 //function buyAllTech(building, arrayPlace){
 //  var total = Math.floor(player.tech / building.nextC);
 //  console.log(building.nextC);
@@ -231,27 +260,25 @@ function prettify(input){
 //}
 
 function updateTotals(){
-  player.tech += (engineer.owned * engineer.generates);
-  player.tech += (android.owned * android.generates);
-  player.tech += (robot.owned * robot.generates);
-  player.tech += (resLab.owned * resLab.generates);
-  player.tech += (resFac.owned * resFac.generates);
-  player.tech += (roboticsFact.owned * roboticsFact.generates);
-  player.tech += (cyberLab.owned * cyberLab.generates);
+  player.tech += prettify((engineer.owned * (engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.tech += prettify((android.owned * (android.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.tech += prettify((robot.owned * (robot.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.tech += prettify((resLab.owned * (resLab.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.tech += prettify((resFac.owned * (resFac.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.tech += prettify((roboticsFact.owned * (roboticsFact.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.tech += prettify((cyberLab.owned * (cyberLab.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
   //Energy
-  player.energy += (battPack.owned * battPack.generates);
-  player.energy += (pwrGen.owned * pwrGen.generates);
-  player.energy += (genRoom.owned * genRoom.generates);
-  player.energy += (solPan.owned * solPan.generates);
-  player.energy += (solPanFarm.owned * solPanFarm.generates);
+  player.energy += prettify((battPack.owned * (battPack.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.energy += prettify((pwrGen.owned * (pwrGen.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.energy += prettify((genRoom.owned * (genRoom.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.energy += prettify((solPan.owned * (solPan.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.energy += prettify((solPanFarm.owned * (solPanFarm.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
 
 }
-
+//achievements
 function checkAchievements (){
   if (engineer.owned === 1 && player.achievements.first !== 1 ){
     player.achievements.first = 1;
-    alert("Way to get started !");
-
   }
   if (player.achievements.first !== 0){
     document.getElementById("first").className = "unlocked";
@@ -259,7 +286,7 @@ function checkAchievements (){
 
   if (player.tech === 30 && player.achievements.second !== 1){
     player.achievements.second = 1;
-    alert("Keep it up !");
+
   }
     if (player.achievements.second !== 0){
     document.getElementById("second").className = "unlocked";
@@ -273,18 +300,18 @@ function getResource(player, resource, amount, id) {
 
 
 window.setInterval(function() {
-    console.log("I'm working");
+console.log(0.1 * 5 / 100);
+  //  console.log("I'm working");
     updateTotals();
     gameSave();
-    getResource(player, 'tech' , 1, "Tech");
+  //  getResource(player, 'tech' , 1, "Tech");
     getResource(player, 'energy' , 1, "Energy");
     checkAchievements ();
 
 }, 1000);
 
 window.setInterval(function() {
-    console.log("I'm working Too");
-        console.log(player.achievements.first);
+    //console.log("I'm working Too");
     // Tech
     document.getElementById('Engineers').innerHTML = engineer.owned;
     document.getElementById('Androids').innerHTML = android.owned;
@@ -300,7 +327,7 @@ window.setInterval(function() {
     document.getElementById('solPan').innerHTML = solPan.owned;
     document.getElementById('solPanFarm').innerHTML = solPanFarm.owned;
     //Cash
-    document.getElementById('Tech').innerHTML = player.tech;
+    document.getElementById('Tech').innerHTML = prettify(player.tech);
     document.getElementById('Energy').innerHTML = player.energy;
     //Cost Tech
     document.getElementsByClassName('Cost')[0].innerHTML = engineer.nextC;
