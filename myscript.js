@@ -327,7 +327,6 @@ function checkAchievements (){
     document.getElementById("first").className = "unlocked";
   }
     //2
-    function checkAchievements (){
     if (engineer.owned === 500 && player.achievements.second !== 1 ){
      player.achievements.second = 1;
      console.log("");
@@ -336,8 +335,7 @@ function checkAchievements (){
       document.getElementById("second").className = "unlocked";
     }
     //3
-    function checkAchievements (){
-    if (engineer.owned === 1000 && player.achievements.third !== 1 ){
+      if (engineer.owned === 1000 && player.achievements.third !== 1 ){
       player.achievements.third = 1;
       console.log("");
     }
@@ -345,7 +343,6 @@ function checkAchievements (){
       document.getElementById("third").className = "unlocked";
     }
     //4
-    function checkAchievements (){
     if (engineer.owned === 5000 && player.achievements.fourth !== 1 ){
       player.achievements.fourth = 1;
       console.log("");
@@ -354,7 +351,6 @@ function checkAchievements (){
       document.getElementById("fourth").className = "unlocked";
     }
     //5
-    function checkAchievements (){
     if (engineer.owned === 10000 && player.achievements.fifth !== 1 ){
       player.achievements.fifth = 1;
     console.log("");
@@ -364,7 +360,6 @@ function checkAchievements (){
     }
     //Androids Achievements
     //6
-    function checkAchievements (){
     if (android.owned === 5 && player.achievements.sixth !== 1 ){
       player.achievements.sixth = 1;
       console.log("");
@@ -373,8 +368,7 @@ function checkAchievements (){
       document.getElementById("sixth").className = "unlocked";
     }
     //7
-    function checkAchievements (){
-    if (android.owned === 400 && player.achievements.seventh !== 1 ){
+  if (android.owned === 400 && player.achievements.seventh !== 1 ){
       player.achievements.seventh = 1;
       console.log("");
     }
@@ -382,8 +376,7 @@ function checkAchievements (){
       document.getElementById("seventh").className = "unlocked";
     }
     //8
-    function checkAchievements (){
-    if (android.owned === 900 && player.achievements.eighth !== 1 ){
+  if (android.owned === 900 && player.achievements.eighth !== 1 ){
       player.achievements.eighth = 1;
       console.log("");
     }
@@ -391,7 +384,6 @@ function checkAchievements (){
       document.getElementById("eighth").className = "unlocked";
     }
     //9
-    function checkAchievements (){
     if (android.owned === 4000 && player.achievements.nineth !== 1 ){
       player.achievements.nineth = 1;
       console.log("");
@@ -400,7 +392,6 @@ function checkAchievements (){
       document.getElementById("nineth").className = "unlocked";
     }
     //10
-    function checkAchievements (){
     if (android.owned === 9000 && player.achievements.tenth !== 1 ){
       player.achievements.tenth = 1;
     console.log("");
@@ -410,7 +401,6 @@ function checkAchievements (){
     }
     //Robots Achievements
     //11
-    function checkAchievements (){
     if (android.owned === 10 && player.achievements.eleventh !== 1 ){
       player.achievements.eleventh = 1;
       console.log("");
@@ -419,7 +409,6 @@ function checkAchievements (){
       document.getElementById("eleventh").className = "unlocked";
     }
     //12
-    function checkAchievements (){
     if (robot.owned === 450 && player.achievements.twelfth !== 1 ){
       player.achievements.twelfth = 1;
       console.log("");
@@ -428,7 +417,6 @@ function checkAchievements (){
       document.getElementById("twelfth").className = "unlocked";
     }
     //13
-    function checkAchievements (){
     if (robot.owned === 950 && player.achievements.thirteenth !== 1 ){
       player.achievements.thirteenth = 1;
       console.log("");
@@ -437,7 +425,6 @@ function checkAchievements (){
       document.getElementById("thirteenth").className = "unlocked";
     }
     //14
-    function checkAchievements (){
     if (robot.owned === 4500 && player.achievements.fourteenth !== 1 ){
       player.achievements.fourteenth = 1;
       console.log("");
@@ -446,7 +433,6 @@ function checkAchievements (){
       document.getElementById("fourteenth").className = "unlocked";
     }
     //15
-    function checkAchievements (){
     if (robot.owned === 9500 && player.achievements.fifteenth !== 1 ){
       player.achievements.fifteenth = 1;
     console.log("");
@@ -456,7 +442,6 @@ function checkAchievements (){
     }
     //Research Lab Achievements
     //16
-    function checkAchievements (){
     if (resLab.owned === 50 && player.achievements.sixteenth !== 1 ){
       player.achievements.sixteenth = 1;
       console.log("");
@@ -465,7 +450,6 @@ function checkAchievements (){
       document.getElementById("sixteenth").className = "unlocked";
     }
     //17
-    function checkAchievements (){
     if (resLab.owned === 700 && player.achievements.seventeenth !== 1 ){
       player.achievements.seventeenth = 1;
       console.log("");
@@ -474,7 +458,6 @@ function checkAchievements (){
       document.getElementById("seventeenth").className = "unlocked";
     }
     //18
-    function checkAchievements (){
     if (resLab.owned === 1300 && player.achievements.eighteenth !== 1 ){
       player.achievements.eighteenth = 1;
       console.log("");
@@ -483,7 +466,6 @@ function checkAchievements (){
       document.getElementById("eighteenth").className = "unlocked";
     }
     //19
-    function checkAchievements (){
     if (resLab.owned === 6000 && player.achievements.nineteenth !== 1 ){
       player.achievements.nineteenth = 1;
       console.log("");
@@ -492,14 +474,12 @@ function checkAchievements (){
       document.getElementById("nineteenth").className = "unlocked";
     }
     //20
-    function checkAchievements (){
     if (resLab.owned === 10000 && player.achievements.twentieth !== 1 ){
       player.achievements.twentieth = 1;
     console.log("");
     }
     //Research Facility Achievements
     //21
-    function checkAchievements (){
     if (resFac.owned === 40 && player.achievements.twenty-first !== 1 ){
       player.achievements.twenty-first = 1;
       console.log("");
@@ -508,7 +488,6 @@ function checkAchievements (){
       document.getElementById("twenty-first").className = "unlocked";
     }
     //22
-    function checkAchievements (){
     if (resFac.owned === 600 && player.achievements.twenty-second !== 1 ){
       player.achievements.twenty-second = 1;
       console.log("");
@@ -517,7 +496,6 @@ function checkAchievements (){
       document.getElementById("twenty-second").className = "unlocked";
     }
     //23
-    function checkAchievements (){
     if (resFac.owned === 1000 && player.achievements.twenty-third !== 1 ){
       player.achievements.twenty-third = 1;
       console.log("");
@@ -526,7 +504,6 @@ function checkAchievements (){
       document.getElementById("twenty-third").className = "unlocked";
     }
     //24
-    function checkAchievements (){
     if (resFac.owned === 5000 && player.achievements.twenty-fourth !== 1 ){
       player.achievements.twenty-fourth = 1;
       console.log("");
@@ -535,7 +512,6 @@ function checkAchievements (){
       document.getElementById("twenty-fourth").className = "unlocked";
     }
     //25
-    function checkAchievements (){
     if (resFac.owned === 10000 && player.achievements.twenty-fifth !== 1 ){
       player.achievements.twenty-fifth = 1;
     console.log("");
@@ -546,7 +522,6 @@ function checkAchievements (){
     }
     //Robotics Factory Achievements
     //26
-    function checkAchievements (){
     if (roboticsFact.owned === 60 && player.achievements.twenty-sixth !== 1 ){
       player.achievements.twenty-sixth = 1;
       console.log("");
@@ -555,7 +530,6 @@ function checkAchievements (){
       document.getElementById("twenty-sixth").className = "unlocked";
     }
     //27
-    function checkAchievements (){
     if (roboticsFact.owned === 600 && player.achievements.twenty-seventh!== 1 ){
       player.achievements.twenty-seventh = 1;
       console.log("");
@@ -564,7 +538,6 @@ function checkAchievements (){
       document.getElementById("twenty-seventh").className = "unlocked";
     }
     //28
-    function checkAchievements (){
     if (roboticsFact.owned === 1200 && player.achievements.twenty-eighth!== 1 ){
       player.achievements.twenty-eighth= 1;
       console.log("");
@@ -573,7 +546,6 @@ function checkAchievements (){
       document.getElementById("twenty-eighth").className = "unlocked";
     }
     //29
-    function checkAchievements (){
     if (roboticsFact.owned === 5500 && 5500player.achievements.twenty-nineth!== 1 ){
       player.achievements.twenty-nineth = 1;
       console.log("");
@@ -581,7 +553,6 @@ function checkAchievements (){
     if (player.achievements.twenty-nineth!== 0){
       document.getElementById("twenty-nineth").className = "unlocked";
     }
-    //30
     function checkAchievements (){
     if (roboticsFact.owned === 10000 && player.achievements.thirtieth !== 1 ){
       player.achievements.thirtieth = 1;
@@ -593,7 +564,6 @@ function checkAchievements (){
     }
     //Cybernetics Labs Achievements
     //31
-    function checkAchievements (){
     if (cyberLab.owned === 80 && player.achievements.thirty-first!== 1 ){
       player.achievements.thirty-first= 1;
       console.log("");
@@ -602,8 +572,7 @@ function checkAchievements (){
       document.getElementById("thirty-first").className = "unlocked";
     }
     //32
-    function checkAchievements (){
-    if (cyberLab.owned === 800 && player.achievements.thirty-second!== 1 ){
+  if (cyberLab.owned === 800 && player.achievements.thirty-second!== 1 ){
       player.achievements.thirty-second= 1;
       console.log("");
     }
@@ -611,7 +580,6 @@ function checkAchievements (){
       document.getElementById("thirty-second").className = "unlocked";
     }
     //33
-    function checkAchievements (){
     if (cyberLab.owned === 1600 && player.achievements.thirty-third!== 1 ){
       player.achievements.thirty-third= 1;
       console.log("");
@@ -620,7 +588,6 @@ function checkAchievements (){
       document.getElementById("thirty-third").className = "unlocked";
     }
     //34
-    function checkAchievements (){
     if (cyberLab.owned === 6000 && 5500player.achievements.thirty-fourth!== 1 ){
       player.achievements.thirty-fourth = 1;
       console.log("");
@@ -629,7 +596,6 @@ function checkAchievements (){
       document.getElementById("thirty-fourth").className = "unlocked";
     }
     //35
-    function checkAchievements (){
     if (cyberLab.owned === 10000 && player.achievements.thirty-fifth!== 1 ){
       player.achievements.thirty-fifth = 1;
     console.log("");
