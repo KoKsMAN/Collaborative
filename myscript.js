@@ -605,6 +605,55 @@ function checkAchievements (){
       document.getElementById("thirty-fifth").className = "unlocked";
     }
 
+    //Energy
+    //Battery Pack
+    //36
+    if (battPack.owned === 1 && player.achievements.thirty-sixth !== 1 ){
+    player.achievements.thirty-sixth = 1;
+    console.log("");;
+
+  }
+  if (player.achievements.thirty-sixth !== 0){
+    document.getElementById("thirty-sixth").className = "unlocked";
+  }
+
+   //37
+   if (battPack.owned === 500 && player.achievements.thirty-seventh !== 1 ){
+   player.achievements.thirty-seventh = 1;
+   console.log("");;
+
+ }
+ if (player.achievements.thirty-seventh !== 0){
+   document.getElementById("thirty-seventh").className = "unlocked";
+ }
+  //38
+  if (battPack.owned === 1000 && player.achievements.thirty-eighth !== 1 ){
+  player.achievements.thirty-eighth = 1;
+  console.log("");;
+
+ }
+  if (player.achievements.thirty-eighth !== 0){
+  document.getElementById("thirty-eighth").className = "unlocked";
+}
+//39
+ if (battPack.owned === 5000 && player.achievements.thirty-nineth !== 1 ){
+ player.achievements.thirty-nineth = 1;
+ console.log("");;
+
+ }
+ if (player.achievements.thirty-nineth !== 0){
+ document.getElementById("thirty-nineth").className = "unlocked";
+ }
+//40
+ if (battPack.owned === 10000 && player.achievements.fortieth !== 1 ){
+ player.achievements.fortieth = 1;
+ console.log("");;
+
+}
+if (player.achievements.fortieth !== 0){
+document.getElementById("fortieth").className = "unlocked";
+}
+//Power Generator
 
 
 }
