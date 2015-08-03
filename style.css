@@ -9,10 +9,11 @@ h1 {text-align: center;}
 html *{font-size: 23px; color: white; font-family: Recharge;}
 h1 {color: white; font-family: Arial;}
 .btn:hover {background-color: #A1C436;}
-.container {margin-top: 100px; padding-bottom: 35px;}
-.tab-content{background-color: #E8E8F0; color: black;}
+#cont-up {margin-top: 100px; padding-bottom: 35px;}
+.tab-content, .tab-content span {background-color: #E8E8F0; color: black;}
 #tech, #tech span, #energy, #energy span {color: black;font-size: 18px;}
 #upgrades h1, #settings p, #settings button, #achievements p {color: black;}
+#Player-upgrades, #Tech-upgrades, #Energy-upgrades {color: black;}
 #wrapper {min-height:100%; position:relative;}
 #techbtn:hover {background-color: #5bc436; color: black;}
 #energybtn:hover {background-color: #e5e80c; color: black;}
@@ -25,7 +26,12 @@ ul:hover {color: black;}
 #changelog a {color: blue;}
 #achievements li, h4 {color: black;}
 .unlocked {background-color: green;}
-
+#pills-basic, #pills-basic a {color: black;}
+#myID0 {color: black;}
+.tab-pane {color: black;}
+.container {padding: 0px;}
+#upgrade-nav {color: black;}
+#achlist li {margin-bottom: 2px;}
 /*#footer {height: 35px; background-color: #030405;}
 #nick{float: left; text-align: left; margin-left: 10px;}
 #changelog {text-align: right; margin-right: 10px;}*/

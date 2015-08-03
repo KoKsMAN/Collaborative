@@ -6,31 +6,31 @@ var player = {
     //Auto CLicker
     autoClicker: 0,
     //Tech
-    engi5Perc: 0.1 * 5 / 100,
-    engi25Perc: 0.1 * 25 / 100,
-    andro5Perc: 0.1 * 5 / 100,
-    andro25Perc: 0.1 * 25 / 100,
-    robot5Perc: 0.1 * 5 / 100,
-    robot25Perc: 0.1 * 25 / 100,
-    resLab5Perc: 0.1 * 5 / 100,
-    resLab25Perc: 0.1 * 25 / 100,
-    resFact5Perc: 0.1 * 5 / 100,
-    resFact25Perc: 0.1 * 25 / 100,
-    roboFact5Perc: 0.1 * 5 / 100,
-    roboFact25Perc: 0.1 * 25 / 100,
-    cybLab5Perc: 0.1 * 5 / 100,
-    cybLab25Perc: 0.1 * 25 / 100,
+    engi5Perc: 0,
+    engi25Perc: 0,
+    andro5Perc: 0,
+    andro25Perc: 0,
+    robot5Perc: 0,
+    robot25Perc: 0,
+    resLab5Perc: 0,
+    resLab25Perc: 0,
+    resFact5Perc: 0,
+    resFact25Perc: 0,
+    roboFact5Perc: 0,
+    roboFact25Perc: 0,
+    cybLab5Perc: 0,
+    cybLab25Perc: 0,
     //Energy
-    battPck5Perc: 0.1 * 5 / 100,
-    battPck25Perc: 0.1 * 25 / 100,
-    pwrGen5Perc: 0.1 * 5 / 100,
-    pwrGen25Perc: 0.1 * 25 / 100,
-    genRoom5Perc: 0.1 * 5 / 100,
-    genRoom25Perc: 0.1 * 25 / 100,
-    solPan5Perc: 0.1 * 5 / 100,
-    solPan25Perc: 0.1 * 25 / 100,
-    solPanFarm5Perc: 0.1 * 5 / 100,
-    solPanFarm25Perc: 0.1 * 25 / 100,
+    battPck5Perc: 0,
+    battPck25Perc: 0,
+    pwrGen5Perc: 0,
+    pwrGen25Perc: 0,
+    genRoom5Perc: 0,
+    genRoom25Perc: 0,
+    solPan5Perc: 0,
+    solPan25Perc: 0,
+    solPanFarm5Perc: 0,
+    solPanFarm25Perc: 0,
   },
   achievements: {
      first: 0,
@@ -91,6 +91,7 @@ var cyberLab = {
   nextC: 200000,
   generates: 400
 };
+
 //initialize energy building data
 var battPack = {
   name: "Battery Pack",
@@ -180,12 +181,15 @@ function gameLoad(){
   if (typeof savegame12.owned !== "undefined") solPanFarm.owned = savegame12.owned;
   //Achievements
   if (typeof savegame.achievements !== "undefined") player.achievements = savegame.achievements;
-
+  //Upgrades
+  if (typeof savegame.upgrades !== "undefined") player.upgrades = savegame.upgrades;
 }
 //check save
 //function checkSave(){
 //  alert(JSON.stringify(savegame));
 //}
+
+
 //delete save
 function deleteSave(){
   localStorage.removeItem('player');
@@ -203,6 +207,7 @@ function deleteSave(){
 
   location.reload();
 }
+
 
 //Tech Buy
 function techBuy(amount, building, id, arrayPlace){
@@ -231,33 +236,29 @@ function energyBuy(amount, building, id, arrayPlace){
 
 }
 
+
+function buyUpgrade(techcost, energycost, up, amount){
+  var gowno = up;
+    if(techcost <= player.tech && energycost <= player.energy){
+      player.tech -= techcost;
+      player.energy -= energycost;
+      player.upgrades[up] = amount;
+      console.log("Done, upgrade purchased");
+    }
+    console.log("UP" + " " + up);
+
+}
+
+function getResource(player, resource, amount, id) {
+    player[resource] += amount;
+    document.getElementById(id).innerHTML = player[resource];
+}
+
+
 function prettify(input){
     var output = Math.round(input * 1000000)/1000000;
 	return output;
 }
-
-//function buyAllTech(building, arrayPlace){
-//  var total = Math.floor(player.tech / building.nextC);
-//  console.log(building.nextC);
-//  building.nextC = ( Math.floor(building.cost * Math.pow(1.15,building.owned)));
-//    if (total >= 1){
-//    building.owned += total;
-//    player.tech -= total * building.nextC;
-//    document.getElementsByClassName('Cost')[arrayPlace].innerHTML = building.nextC;
-//  }
-//}
-
-//function buyAllEnergy(building, arrayPlace){
-//  var total = Math.floor(player.energy / building.nextC);
-//  console.log(building.nextC);
-//  building.nextC = ( Math.floor(building.cost * Math.pow(1.15,building.owned)));
-//    if (total >= 1){
-//    building.owned += total;
-//    player.energy -= total * building.nextC;
-//    document.getElementById('Energy').innerHTML = player.energy;
-//    document.getElementsByClassName('Cost')[arrayPlace].innerHTML = building.nextC;
-//  }
-//}
 
 function updateTotals(){
   player.tech += prettify((engineer.owned * (engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
@@ -293,14 +294,10 @@ function checkAchievements (){
   }
 }
 
-function getResource(player, resource, amount, id) {
-    player[resource] += amount;
-    document.getElementById(id).innerHTML = player[resource];
-}
 
 
 window.setInterval(function() {
-console.log(0.1 * 5 / 100);
+console.log(player.upgrades.engi5Perc);
   //  console.log("I'm working");
     updateTotals();
     gameSave();
@@ -345,3 +342,27 @@ window.setInterval(function() {
     document.getElementsByClassName('Cost')[11].innerHTML = solPanFarm.nextC;
 
 }, 100);
+
+
+//function buyAllTech(building, arrayPlace){
+//  var total = Math.floor(player.tech / building.nextC);
+//  console.log(building.nextC);
+//  building.nextC = ( Math.floor(building.cost * Math.pow(1.15,building.owned)));
+//    if (total >= 1){
+//    building.owned += total;
+//    player.tech -= total * building.nextC;
+//    document.getElementsByClassName('Cost')[arrayPlace].innerHTML = building.nextC;
+//  }
+//}
+
+//function buyAllEnergy(building, arrayPlace){
+//  var total = Math.floor(player.energy / building.nextC);
+//  console.log(building.nextC);
+//  building.nextC = ( Math.floor(building.cost * Math.pow(1.15,building.owned)));
+//    if (total >= 1){
+//    building.owned += total;
+//    player.energy -= total * building.nextC;
+//    document.getElementById('Energy').innerHTML = player.energy;
+//    document.getElementsByClassName('Cost')[arrayPlace].innerHTML = building.nextC;
+//  }
+//}
