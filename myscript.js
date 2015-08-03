@@ -188,6 +188,7 @@ function gameSave(){
 //game load
 function gameLoad(){
 
+
   var savegame = JSON.parse(localStorage.getItem("player"));
   var savegame2 = JSON.parse(localStorage.getItem("engineer"));
   var savegame3 = JSON.parse(localStorage.getItem("android"));
