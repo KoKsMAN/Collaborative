@@ -319,7 +319,6 @@ function checkAchievements (){
 
 
 window.setInterval(function() {
-console.log(player.upgrades.engi5Perc);
   //  console.log("I'm working");
     updateTotals();
     gameSave();
@@ -365,7 +364,7 @@ window.setInterval(function() {
     document.getElementsByClassName('Cost')[9].innerHTML = genRoom.nextC;
     document.getElementsByClassName('Cost')[10].innerHTML = solPan.nextC;
     document.getElementsByClassName('Cost')[11].innerHTML = solPanFarm.nextC;
-    
+
 
 }, 100);
 
