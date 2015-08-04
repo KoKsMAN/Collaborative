@@ -87,5 +87,5 @@ ___
        -Added initial code
        -Created save / load functionality
 
-*created by <h5>KoKsMAN</h5><h7> & Nak0o0</h7>*
+*created by KoKsMAN & Nak0o0*
 ___
