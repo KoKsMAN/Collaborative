@@ -4,7 +4,10 @@ var player = {
   energy: 0,
   upgrades:{
     //Auto CLicker
-    autoClicker: 0,
+    autoClickerTech: 0,
+    autoClickerEnergy: 0,
+    doubleClickerTech: 0,
+    doubleClickerEnergy: 0,
     //Tech
     engi5Perc: 0,
     engi25Perc: 0,
@@ -40,7 +43,7 @@ var player = {
      fifth: 0,
   }
 };
-
+nums = ['k','M','B','T','Qa','Qi', 'Sx', 'Sp', 'Oc', 'No', 'De', 'UnD', 'DuD', 'TrD', 'QaD', 'QiD', 'SeD', 'SpD', 'OcD', 'NoD', 'Vi', 'UnV'];
 //initialize tech building data
 var engineer = {
   name: "Engineer",
@@ -86,7 +89,7 @@ var roboticsFact = {
 };
 var cyberLab = {
   name: "Cybernetics Lab",
-  owned: 0,
+  owned: 1,
   cost: 200000,
   nextC: 200000,
   generates: 400
@@ -211,11 +214,12 @@ function deleteSave(){
 
 //Tech Buy
 function techBuy(amount, building, id, arrayPlace){
-  building.nextC = (amount * Math.floor(building.cost * Math.pow(1.15,building.owned)));
+  building.nextC = ((amount * Math.floor(building.cost * Math.pow(1.15,building.owned))));
   if (building.nextC <= player.tech){
     building.owned += amount;
     player.tech -= building.nextC;
-    document.getElementById('Tech').innerHTML = player.tech;
+    document.getElementById('Tech').innerHTML = suffixy(player.tech, 2);
+    document.getElementsByClassName('Generating')[arrayPlace].innerHTML = suffixy((building.owned * building.generates), 2);
 
 }
   else {
@@ -238,7 +242,6 @@ function energyBuy(amount, building, id, arrayPlace){
 
 
 function buyUpgrade(techcost, energycost, up, amount){
-  var gowno = up;
     if(techcost <= player.tech && energycost <= player.energy){
       player.tech -= techcost;
       player.energy -= energycost;
@@ -260,20 +263,39 @@ function prettify(input){
 	return output;
 }
 
+function suffixy(num, dec){
+    dec = dec || 0; //how many decimal places do we want?
+    var suffixes = ['','k','M','B','T','Qa','Qi', 'Sx', 'Sp', 'Oc', 'No', 'De', 'UnD', 'DuD', 'TrD', 'QaD', 'QiD', 'SeD', 'SpD', 'OcD'];
+    var ord = floor(Math.log(Math.abs(num))/Math.log(10)/3); //the abs to make sure our number is always positive when being put through a log operation. divide by 3 at the end because our suffixes goes up by orders of 3
+    var suffix = suffixes[ord];
+    var rounded = Math.round(num/(Math.pow(10, ord*3-dec)))/Math.pow(10, dec);
+    return rounded+ " " + suffix;
+
+}
+
+function floor(num){
+    //special floor needed to deal with floating point calculations
+    if(num - Math.floor(num) >= 0.9999999999999991){
+        return Math.ceil(num);
+    } else{
+        return Math.floor(num);
+    }
+}
+
 function updateTotals(){
-  player.tech += prettify((engineer.owned * (engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.tech += prettify((android.owned * (android.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.tech += prettify((robot.owned * (robot.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.tech += prettify((resLab.owned * (resLab.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.tech += prettify((resFac.owned * (resFac.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.tech += prettify((roboticsFact.owned * (roboticsFact.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.tech += prettify((cyberLab.owned * (cyberLab.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.tech += ((engineer.owned * (engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.tech += ((android.owned * (android.generates + player.upgrades.andro5Perc + player.upgrades.andro25Perc )));
+  player.tech += ((robot.owned * (robot.generates + player.upgrades.robot5Perc + player.upgrades.robot25Perc )));
+  player.tech += ((resLab.owned * (resLab.generates + player.upgrades.resLab5Perc + player.upgrades.resLab25Perc )));
+  player.tech += ((resFac.owned * (resFac.generates + player.upgrades.resFact5Perc + player.upgrades.resFact25Perc )));
+  player.tech += ((roboticsFact.owned * (roboticsFact.generates + player.upgrades.roboFact5Perc + player.upgrades.roboFact25Perc )));
+  player.tech += ((cyberLab.owned * (cyberLab.generates + player.upgrades.cybLab5Perc + player.upgrades.cybLab25Perc )));
   //Energy
-  player.energy += prettify((battPack.owned * (battPack.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.energy += prettify((pwrGen.owned * (pwrGen.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.energy += prettify((genRoom.owned * (genRoom.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.energy += prettify((solPan.owned * (solPan.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.energy += prettify((solPanFarm.owned * (solPanFarm.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
+  player.energy += ((battPack.owned * (battPack.generates + player.upgrades.battPck5Perc + player.upgrades.battPck25Perc )));
+  player.energy += ((pwrGen.owned * (pwrGen.generates + player.upgrades.pwrGen5Perc + player.upgrades.pwrGen25Perc )));
+  player.energy += ((genRoom.owned * (genRoom.generates + player.upgrades.genRoom5Perc + player.upgrades.genRoom25Perc )));
+  player.energy += ((solPan.owned * (solPan.generates + player.upgrades.solPan5Perc + player.upgrades.solPan25Perc )));
+  player.energy += ((solPanFarm.owned * (solPanFarm.generates + player.upgrades.solPanFarm5Perc + player.upgrades.solPanFarm25Perc )));
 
 }
 //achievements
@@ -324,22 +346,26 @@ window.setInterval(function() {
     document.getElementById('solPan').innerHTML = solPan.owned;
     document.getElementById('solPanFarm').innerHTML = solPanFarm.owned;
     //Cash
+    if (player.tech <= 1000){
     document.getElementById('Tech').innerHTML = prettify(player.tech);
+  }
+  else {document.getElementById('Tech').innerHTML = suffixy(player.tech, 2);}
     document.getElementById('Energy').innerHTML = player.energy;
     //Cost Tech
-    document.getElementsByClassName('Cost')[0].innerHTML = engineer.nextC;
-    document.getElementsByClassName('Cost')[1].innerHTML = android.nextC;
-    document.getElementsByClassName('Cost')[2].innerHTML = robot.nextC;
-    document.getElementsByClassName('Cost')[3].innerHTML = resLab.nextC;
-    document.getElementsByClassName('Cost')[4].innerHTML = resFac.nextC;
-    document.getElementsByClassName('Cost')[5].innerHTML = roboticsFact.nextC;
-    document.getElementsByClassName('Cost')[6].innerHTML = cyberLab.nextC;
+    document.getElementsByClassName('Cost')[0].innerHTML = suffixy(engineer.nextC, 2);
+    document.getElementsByClassName('Cost')[1].innerHTML = suffixy(android.nextC, 2);
+    document.getElementsByClassName('Cost')[2].innerHTML = suffixy(robot.nextC, 2);
+    document.getElementsByClassName('Cost')[3].innerHTML = suffixy(resLab.nextC, 2);
+    document.getElementsByClassName('Cost')[4].innerHTML = suffixy(resFac.nextC, 2);
+    document.getElementsByClassName('Cost')[5].innerHTML = suffixy(roboticsFact.nextC, 2);
+    document.getElementsByClassName('Cost')[6].innerHTML = suffixy(cyberLab.nextC, 2);
     //Cost Energy
     document.getElementsByClassName('Cost')[7].innerHTML = battPack.nextC;
     document.getElementsByClassName('Cost')[8].innerHTML = pwrGen.nextC;
     document.getElementsByClassName('Cost')[9].innerHTML = genRoom.nextC;
     document.getElementsByClassName('Cost')[10].innerHTML = solPan.nextC;
     document.getElementsByClassName('Cost')[11].innerHTML = solPanFarm.nextC;
+    
 
 }, 100);
 

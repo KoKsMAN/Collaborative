@@ -2,6 +2,8 @@
 @font-face { font-family: Recharge; src: url('fonts/recharge.ttf'); }
 #Tech, #Energy {font-family: Digital;}
 #tech {font-size: 18px;}
+.tab1 {color:black; border-top: 1px solid black; font-size: 18px;}
+.tab1 span {font-size: 18px;}
 body {background-color: #121b23; margin:0; padding:0; height:100%;}
 #logo {display: block; margin-left: auto; margin-right: auto;}
 #resources { display: block; position:absolute; left:50%; margin-left:-50px;}
@@ -11,7 +13,7 @@ h1 {color: white; font-family: Arial;}
 .btn:hover {background-color: #A1C436;}
 #cont-up {margin-top: 100px; padding-bottom: 35px;}
 .tab-content, .tab-content span {background-color: #E8E8F0; color: black;}
-#tech, #tech span, #energy, #energy span {color: black;font-size: 18px;}
+
 #upgrades h1, #settings p, #settings button, #achievements p {color: black;}
 #Player-upgrades, #Tech-upgrades, #Energy-upgrades {color: black;}
 #wrapper {min-height:100%; position:relative;}
