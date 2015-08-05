@@ -36,6 +36,7 @@ var player = {
     solPanFarm25Perc: 0,
   },
   achievements: {
+     points: 0,
      first: 0,
      second: 0,
      third: 0,
@@ -112,11 +113,12 @@ var player = {
 
   }
 };
+var progBar = document.getElementsByClassName("progress-bar");
 nums = ['k','M','B','T','Qa','Qi', 'Sx', 'Sp', 'Oc', 'No', 'De', 'UnD', 'DuD', 'TrD', 'QaD', 'QiD', 'SeD', 'SpD', 'OcD', 'NoD', 'Vi', 'UnV'];
 //initialize tech building data
 var engineer = {
   name: "Engineer",
-  owned: 1,
+  owned: 0,
   cost: 15,
   nextC: 15,
   generates: 0.1
@@ -126,7 +128,7 @@ var android = {
   owned: 0,
   cost: 100,
   nextC: 100,
-  generates: 2
+  generates: 0.5
 };
 var robot = {
   name: "Robot",
@@ -158,7 +160,7 @@ var roboticsFact = {
 };
 var cyberLab = {
   name: "Cybernetics Lab",
-  owned: 1,
+  owned: 0,
   cost: 200000,
   nextC: 200000,
   generates: 400
@@ -376,37 +378,45 @@ function checkAchievements (){
 //1.
     if (engineer.owned === 1 && player.achievements.first !== 1 ){
     player.achievements.first = 1;
+    player.achievements.points++;
+
   }
   if (player.achievements.first !== 0){
     document.getElementById("first").className = "unlocked";
+
   }
 //2
-    if (engineer.owned === 500 && player.achievements.second !== 1 ){
+    if (engineer.owned === 2 && player.achievements.second !== 1 ){
      player.achievements.second = 1;
+     player.achievements.points++;
 
     }
     if (player.achievements.second !== 0){
       document.getElementById("second").className = "unlocked";
+
     }
 //3
-      if (engineer.owned === 1000 && player.achievements.third !== 1 ){
+      if (engineer.owned === 3 && player.achievements.third !== 1 ){
       player.achievements.third = 1;
-
+      player.achievements.points++;
     }
     if (player.achievements.third !== 0){
       document.getElementById("third").className = "unlocked";
+
     }
 //4
-    if (engineer.owned === 5000 && player.achievements.fourth !== 1 ){
+    if (engineer.owned === 4 && player.achievements.fourth !== 1 ){
       player.achievements.fourth = 1;
+player.achievements.points++;
 
     }
     if (player.achievements.fourth !== 0){
       document.getElementById("fourth").className = "unlocked";
     }
 //5
-    if (engineer.owned === 10000 && player.achievements.fifth !== 1 ){
+    if (engineer.owned === 5 && player.achievements.fifth !== 1 ){
       player.achievements.fifth = 1;
+player.achievements.points++;
 
     }
     if (player.achievements.fifth !== 0){
@@ -791,21 +801,13 @@ function checkAchievements (){
 //49
   if (genRoom.owned === 4600 && player.achievements.forty_nineth !== 1 ){
     player.achievements.forty_nineth = 1;
-
-
   }
   if (player.achievements.forty_nineth !== 0){
    document.getElementById("forty-nineth").className = "unlocked";
  }
-
-  if (player.tech === 30 && player.achievements.second !== 1){
-    player.achievements.second = 1;
-
 //50
   if (genRoom.owned === 9900 && player.achievements.fiftieth!== 1 ){
     player.achievements.fiftieth= 1;
-
-
   }
   if (player.achievements.fiftieth!== 0){
     document.getElementById("fiftieth").className = "unlocked";
@@ -993,16 +995,17 @@ function checkAchievements (){
     if (player.achievements.seventieth!== 0){
       document.getElementById("seventieth").className = "unlocked";
     }
+    progBar[0].style.width = parseInt(player.achievements.points) + "%";
+    document.getElementById('points').innerHTML = parseInt(player.achievements.points) + "/ 100";
+    document.getElementById('ach-counter').innerHTML = parseInt(player.achievements.points) + "%";
 }
-}
-
 window.setInterval(function() {
-  //  console.log("I'm working");
+    console.log(player.achievements.points);
     updateTotals();
     gameSave();
   //  getResource(player, 'tech' , 1, "Tech");
     getResource(player, 'energy' , 1, "Energy");
-    checkAchievements ();
+
 
 }, 1000);
 
@@ -1042,7 +1045,7 @@ window.setInterval(function() {
     document.getElementsByClassName('Cost')[9].innerHTML = genRoom.nextC;
     document.getElementsByClassName('Cost')[10].innerHTML = solPan.nextC;
     document.getElementsByClassName('Cost')[11].innerHTML = solPanFarm.nextC;
-
+    checkAchievements ();
 
 }, 100);
 

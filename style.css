@@ -34,6 +34,9 @@ ul:hover {color: black;}
 .container {padding: 0px;}
 #upgrade-nav {color: black;}
 #achlist li {margin-bottom: 2px;}
+#achievements li {margin-bottom: 2px;}
+#achievements ul {list-style-type: none;}
+#achievements h4 {margin-left: 5px;}
 /*#footer {height: 35px; background-color: #030405;}
 #nick{float: left; text-align: left; margin-left: 10px;}
 #changelog {text-align: right; margin-right: 10px;}*/
