@@ -34,6 +34,7 @@ ___
 #### **_Change Log:_** ####
     *Version 0.2.5
      4 August 2015
+      -Shortened big numbers to be more user-friendly.
       -Minor fixes to the code
       -Started working on a way to hide elements and make them appear with game's progress
 ___
