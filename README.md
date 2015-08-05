@@ -1,6 +1,6 @@
 ![alt text](http://i.imgur.com/4uIdcnB.png)
 
-                                      *Current version 0.2.5*
+                                      *Current version 0.2.6*
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
@@ -10,28 +10,36 @@ ___
 | |
 |   DONE        |
 | |
-| ✓Basic functionality|
-| ✓Basic game's topic|
-| ✓Basic units, currency and buildings|
-| ✓Create page layout|
-| ✓Units and buildings cost increase formula|
-| ✓Partial achievements system|
-| ✓Units and buildings resource income|
-| ✓A way to display high numbers in shorter and more user-friendly way|
+| ✓ Basic functionality|
+| ✓ Basic game's topic|
+| ✓ Basic units, currency and buildings|
+| ✓ Create page layout|
+| ✓ Units and buildings cost increase formula|
+| ✓ Partial achievements system|
+| ✓ Units and buildings resource income|
+| ✓ A way to display high numbers in shorter and more user-friendly way|
+| ✓ Complete achievements system|
 | |
 | TO BE DONE |
 | |
-|✗Support for older browsers|
-|✗Cookies saves|
-|✗Gameplay statistics|
-|✗User settings|
-|✗Complete achievements system|
-|✗Create user interface elements|
-|✗Bring the website online|
-|✗Introduce upgrades|
+|✗ Support for older browsers|
+|✗ Cookies saves|
+|✗ Gameplay statistics|
+|✗ User settings|
+|✗ Create user interface elements|
+|✗ Bring the website online|
+|✗ Introduce upgrades|
+|✗ Make new units and buildings appear on the list over the course of game|
+
 
 
 #### **_Change Log:_** ####
+    *Version 0.2.6
+     5 August 2015
+      -COMPLETE achievement system
+      -Added interactive progress bar to visualize accumulated achievement points
+      -Minor fixes to the code
+___
     *Version 0.2.5
      4 August 2015
       -Shortened big numbers to be more user-friendly.
