@@ -118,7 +118,7 @@ nums = ['k','M','B','T','Qa','Qi', 'Sx', 'Sp', 'Oc', 'No', 'De', 'UnD', 'DuD', '
 //initialize tech building data
 var engineer = {
   name: "Engineer",
-  owned: 0,
+  owned: 5,
   cost: 15,
   nextC: 15,
   generates: 0.1
@@ -291,8 +291,6 @@ function techBuy(amount, building, id, arrayPlace){
     building.owned += amount;
     player.tech -= building.nextC;
     document.getElementById('Tech').innerHTML = suffixy(player.tech, 2);
-    document.getElementsByClassName('Generating')[arrayPlace].innerHTML = suffixy((building.owned * building.generates), 2);
-
 }
   else {
       console.log("Not enough resources");
@@ -999,13 +997,36 @@ player.achievements.points++;
     document.getElementById('points').innerHTML = parseInt(player.achievements.points) + "/ 100";
     document.getElementById('ach-counter').innerHTML = parseInt(player.achievements.points) + "%";
 }
+
+/* Elements hide function
+function hideElements(){
+  if (player.tech >= 5){
+    document.getElementById('andro').style.display = 'block';
+  }
+  if (player.tech >= 10){
+    document.getElementById('robo').style.display = 'block';
+  }
+  if (player.tech >= 15){
+    document.getElementById('resLabo').style.display = 'block';
+  }
+  if (player.tech >= 20){
+    document.getElementById('resFact').style.display = 'block';
+  }
+  if (player.tech >= 25){
+    document.getElementById('robFact').style.display = 'block';
+  }
+  if (player.tech >= 30){
+    document.getElementById('cyberLabo').style.display = 'block';
+  }
+}*/
+
 window.setInterval(function() {
     console.log(player.achievements.points);
     updateTotals();
     gameSave();
   //  getResource(player, 'tech' , 1, "Tech");
     getResource(player, 'energy' , 1, "Energy");
-
+  //  hideElements();
 
 }, 1000);
 
@@ -1045,7 +1066,7 @@ window.setInterval(function() {
     document.getElementsByClassName('Cost')[9].innerHTML = genRoom.nextC;
     document.getElementsByClassName('Cost')[10].innerHTML = solPan.nextC;
     document.getElementsByClassName('Cost')[11].innerHTML = solPanFarm.nextC;
-    checkAchievements ();
+    //checkAchievements ();
 
 }, 100);
 
