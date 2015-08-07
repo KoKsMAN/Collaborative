@@ -1,6 +1,6 @@
 ![alt text](http://i.imgur.com/4uIdcnB.png)
 
-                                      *Current version 0.2.6*
+                                      *Current version 0.2.7*
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
@@ -19,6 +19,7 @@ ___
 | ✓ Units and buildings resource income|
 | ✓ A way to display high numbers in shorter and more user-friendly way|
 | ✓ Complete achievements system|
+| ✓ Make new units and buildings appear on the list over the course of game|
 | |
 | TO BE DONE |
 | |
@@ -29,72 +30,76 @@ ___
 |✗ Create user interface elements|
 |✗ Bring the website online|
 |✗ Introduce upgrades|
-|✗ Make new units and buildings appear on the list over the course of game|
+
 
 
 
 #### **_Change Log:_** ####
+    *Version 0.2.7
+     6 August 2015
+      -Added elements hiding function (not activated for now, still needs testing).
+      -Code optimization.
+___
     *Version 0.2.6
      5 August 2015
-      -COMPLETE achievement system
-      -Added interactive progress bar to visualize accumulated achievement points
-      -Minor fixes to the code
+      -COMPLETE achievement system.
+      -Added interactive progress bar to visualize accumulated achievement points.
+      -Minor fixes to the code.
 ___
     *Version 0.2.5
      4 August 2015
       -Shortened big numbers to be more user-friendly.
-      -Minor fixes to the code
-      -Started working on a way to hide elements and make them appear with game's progress
+      -Minor fixes to the code.
+      -Started working on a way to hide elements and make them appear with game's progress.
 ___
     *Version 0.2.2
      3 August 2015
-     -Added upgrades function
-     -Added upgrades dynamic tubs
-     -Minor fixes to the code
+     -Added upgrades function.
+     -Added upgrades dynamic tubs.
+     -Minor fixes to the code.
 ___
     *Version 0.2.1
      1 August 2015
-     -Added more achievements
-     -Started working on upgrades
+     -Added more achievements.
+     -Started working on upgrades.
 ___
     *Version 0.2.0
      31 July 2015
-      -Started working on "Buy All" function
-      -Created achievements system (still needs update)
+      -Started working on "Buy All" function.
+      -Created achievements system (still needs update).
 ___
     *Version 0.1.9
      30 July 2015
-      -Added units and buildings cost increase formula
-      -Minor fixes to the code
-      -Added achievements tab
+      -Added units and buildings cost increase formula.
+      -Minor fixes to the code.
+      -Added achievements tab.
 ___
     *Version 0.1.5
      29 July 2015
-      -Added more GUI elements
-      -Changed font
+      -Added more GUI elements.
+      -Changed font.
 ___
     *Version 0.1.0
      28 July 2015
-      -Created few GUI elements
-      -Created game's logo
-      -Added website background
+      -Created few GUI elements.
+      -Created game's logo.
+      -Added website background.
 ___
     *Version 0.0.6
      27 July 2015
-      -Optimized the code
+      -Optimized the code.
 ___
     *Version 0.0.5
      26 July 2015
-      -Added temporary website background
-      -Added "Buy 1, Buy 5, Buy All" buttons
-      -Minor fixes to the code
+      -Added temporary website background.
+      -Added "Buy 1, Buy 5, Buy All" buttons.
+      -Minor fixes to the code.
 ___
-
     *Version 0.0.1
      25 July 2015
-       -Started the project
-       -Added initial code
-       -Created save / load functionality
+       -Started the project.
+       -Added initial code.
+       -Created save / load functionality.
 
 *created by KoKsMAN & Nak0o0*
 ___
