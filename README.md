@@ -20,6 +20,7 @@ ___
 | ✓ A way to display high numbers in shorter and more user-friendly way|
 | ✓ Complete achievements system|
 | ✓ Make new units and buildings appear on the list over the course of game|
+| ✓ Introduce upgrades|
 | |
 | TO BE DONE |
 | |
@@ -29,12 +30,21 @@ ___
 |✗ User settings|
 |✗ Create user interface elements|
 |✗ Bring the website online|
-|✗ Introduce upgrades|
+
 
 
 
 
 #### **_Change Log:_** ####
+    *Version 0.2.9
+     12 August 2015
+      -Introduced upgrades (still needs correct values for pricing and minor fixes).
+___
+    *Version 0.2.7a
+     8 August 2015
+      -Changes to the code in preparation for cookie saves functionality.
+      -Code optimization.
+___
     *Version 0.2.7
      6 August 2015
       -Added elements hiding function (not activated for now, still needs testing).
