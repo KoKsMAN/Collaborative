@@ -15,18 +15,19 @@ html *{font-size: 23px; color: white; font-family: Recharge;}
 .tab1 span {font-size: 18px;}
 .tab2 {color:black; border-bottom: 2px solid #e5e80c; font-size: 18px;}
 .tab2 span {font-size: 18px;}
+.tab4 {font-size: 18px;}
 .tab-content, .tab-content span {background-color: #E8E8F0; color: black;}
 .tab-pane {color: black;}
 #settings p, #settings button, #achievements p {color: black;}
-#upgrades ul {background-color:#0847b0;}
-#upgrades {border-bottom: 4px solid #0847b0;}
+#upgrades {background-color:#0847b0; border-bottom: 1px solid #0847b0;}
+#upgrades li {font-size: 18px;}
 #achlist li {margin-bottom: 2px;}
 #achievements li, h4 {color: black;}
-#achievements li {margin-bottom: 2px;}
-#achievements ul {list-style-type: none;}
+#achievements li {margin-bottom: 2px; font-size: 18px;}
 #achievements h4 {margin-left: 5px;}
 .unlocked {background-color: green;}
-
+#Player-upgrades li, #Tech-upgrades li, #Energy-upgrades li {color: black;}
+ul {list-style-type: none;}
 /* PSEUDO CLASSES */
 .btn:hover {background-color: #A1C436;}
 #techbtn:hover {background-color: #5bc436; color: black;}

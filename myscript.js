@@ -308,6 +308,7 @@ function buyUpgrade(techcost, energycost, up, amount){
 
 }
 
+
 function getResource(player, resource, amount) {
     player[resource] += amount;
 }
@@ -1006,7 +1007,7 @@ function hideElements(){
 }*/
 
 window.setInterval(function() {
-  console.log(player.achievements.points);
+  console.log(player.upgrades.engi5Perc);
   updateTotals();
   gameSave();
   getResource(player, 'tech' , 1);
