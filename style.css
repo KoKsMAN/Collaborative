@@ -1,16 +1,24 @@
 @font-face { font-family: Digital; src: url('fonts/digital.ttf'); }
 @font-face { font-family: Recharge; src: url('fonts/recharge.ttf'); }
-body {background-color: #121b23; margin:0; padding:0; height:100%;}
+html,body{min-height:100%;}
+body {background-color: #121b23; margin:0; padding:0; height:100%;
+      background-image: url('img/moontopright.png'), url('img/moonbotleft.png');
+      background-size: 200px 200px;
+      background-repeat: no-repeat;
+      background-position: top right, bottom left;
+
+    }
 html *{font-size: 23px; color: white; font-family: Recharge;}
 #nick, #nick a {font-size: 15px;}
 #changelog a {color: blue;}
 #logo {display: block; margin-left: auto; margin-right: auto;}
+#social-links {margin-left: 5px; width: 180px; height: 55px;}
 #resources {display: block; position:absolute; left:50%; margin-left:-50px;}
 #Tech, #Energy {font-family: Digital;}
 #tech, #energy {font-size: 18px;}
 #wrapper {min-height:100%; position:relative;}
 .container {padding: 0px;}
-#cont-up {margin-top: 100px; padding-bottom: 35px;}
+#cont-up {margin-top: 100px; margin-bottom: 100px;}
 .tab1 {color:black; border-bottom: 2px solid #5bc436; font-size: 18px;}
 .tab1 span {font-size: 18px;}
 .tab2 {color:black; border-bottom: 2px solid #e5e80c; font-size: 18px;}
@@ -19,12 +27,14 @@ html *{font-size: 23px; color: white; font-family: Recharge;}
 .tab-content, .tab-content span {background-color: #E8E8F0; color: black;}
 .tab-pane {color: black;}
 #settings p, #settings button, #achievements p {color: black;}
-#upgrades {background-color:#0847b0; border-bottom: 1px solid #0847b0;}
+#upgrades {background-image: url('img/achievement3.png'); border-bottom: 1px solid #0847b0;}
 #upgrades li {font-size: 18px;}
 #achlist li {margin-bottom: 2px;}
+#achievements>p {text-align: center;}
 #achievements li, h4 {color: black;}
 #achievements li {margin-bottom: 2px; font-size: 18px;}
-#achievements h4 {margin-left: 5px;}
+#achievements h5 {margin-left: 5px; text-align: center; color: black;}
+#achievements h4 {font-size: 20px;}
 .unlocked {background-color: green;}
 #Player-upgrades li, #Tech-upgrades li, #Energy-upgrades li {color: black;}
 ul {list-style-type: none;}
@@ -38,5 +48,18 @@ ul {list-style-type: none;}
 #upgrades a:hover {color:black;}
 ul:hover {color: black;}
 .glyphicon {color: #808080;}
-
+.upgrade-unlocked {width: 90px; height: 90px; background-image: url('img/hexbtn90.png'); margin-left: 30px;}
+.buttontest {width: 390px; height: 56px; background-image: url('img/upgradebuttons4.png'); background-repeat: no-repeat; background-size: cover; margin-left: 2px;}
+#buttontest:hover {background-image: url('img/hexbtn90.png');}
+.media-body {background-image: url('img/achievement3.png'); border: 3px solid gray; color: white}
+.media-heading {color: rgb(242, 242, 242);margin-left: 5px;}
+.media-para {color: #908a84 !important; font-size: 15px; margin-left: 5px;}
+.media {height: 50px;}
+.achievement-unlocked {background-image: url('img/achievementunlocked.png');height: 50px;}
+.achpoints {float: right; font-size: 30px; margin-right: 3px; color: white !important;}
 /*#andro,#robo ,#resLabo, #resFact, #robFact, #cyberLabo {display: none;}*/
+.progress {background: rgba(237, 237, 237, 1); border: 1px solid rgba(204, 200, 200, 1); border-radius: 5px; height: 27px;}
+.progress-bar-custom {background: rgba(65, 201, 76, 1);}
+.progress {background: rgba(237, 237, 237, 1); border: 1px solid rgba(204, 200, 200, 1); border-radius: 5px; height: 27px;}
+.progress-bar-custom {background: rgba(53, 166, 63, 1);}
+.progress-striped .progress-bar-custom {background-color: rgba(53, 166, 63, 1); background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(0.25,rgba(255, 255, 255, 0.23),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(255, 255, 255, 0.23)),color-stop(0.75,rgba(255, 255, 255, 0.23)),color-stop(0.75,transparent),to(transparent))); background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, 0.23) 25%,transparent 25%,transparent 50%,rgba(255, 255, 255, 0.23) 50%,rgba(255, 255, 255, 0.23) 75%,transparent 75%,transparent); background-image: linear-gradient(45deg,rgba(255, 255, 255, 0.23) 25%,transparent 25%,transparent 50%,rgba(255, 255, 255, 0.23) 50%,rgba(255, 255, 255, 0.23) 75%,transparent 75%,transparent); background-size: 10px 10px;}
