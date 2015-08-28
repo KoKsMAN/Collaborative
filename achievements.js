@@ -82,7 +82,7 @@ function checkAchievements() {
     document.getElementById("eleventh").className = "unlocked";
   }
   //12
-  if (player.engineer.owned === 2 && player.achievements.twelfth !== 1) {
+  if (player.engineer.owned === 500 && player.achievements.twelfth !== 1) {
     player.achievements.twelfth = 1;
     player.achievements.points++;
   }
@@ -90,7 +90,7 @@ function checkAchievements() {
     document.getElementById("twelfth").className = "unlocked";
   }
   //13
-  if (player.engineer.owned === 3 && player.achievements.thirteenth !== 1) {
+  if (player.engineer.owned === 1000 && player.achievements.thirteenth !== 1) {
     player.achievements.thirteenth = 1;
     player.achievements.points++;
   }
@@ -98,7 +98,7 @@ function checkAchievements() {
     document.getElementById("thirteenth").className = "unlocked";
   }
   //14
-  if (player.engineer.owned === 4 && player.achievements.fourteenth !== 1) {
+  if (player.engineer.owned === 5000 && player.achievements.fourteenth !== 1) {
     player.achievements.fourteenth = 1;
     player.achievements.points++;
   }
