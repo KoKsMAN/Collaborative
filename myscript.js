@@ -1,6 +1,6 @@
 //initialize player data
 var player = {
-  tech: 0,
+  tech: 15,
   energy: 0,
   engineer: {
     name: "Engineer",
@@ -276,7 +276,7 @@ function techBuy(amount, building, id, arrayPlace){
     building.owned += amount;
     player.tech -= building.nextC;
     document.getElementById('Tech').innerHTML = suffixy(player.tech, 2);
-    document.getElementsByClassName('Cost')[arrayPlace].innerHTML = suffixy(building.nextC, 2);
+    building.nextC = ((amount * Math.floor(building.cost * Math.pow(1.15,building.owned))));
 }
   else {
       console.log("Not enough resources");
@@ -355,16 +355,44 @@ function updateTotals(){
   player.energy += ((player.genRoom.owned * (player.genRoom.generates + player.upgrades.genRoom5Perc + player.upgrades.genRoom25Perc )));
   player.energy += ((player.solPan.owned * (player.solPan.generates + player.upgrades.solPan5Perc + player.upgrades.solPan25Perc )));
   player.energy += ((player.solPanFarm.owned * (player.solPanFarm.generates + player.upgrades.solPanFarm5Perc + player.upgrades.solPanFarm25Perc )));
+  //Generating
+  document.getElementsByClassName('Generating')[0].innerHTML = prettify((player.engineer.owned * (player.engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc)));
+  document.getElementsByClassName('Generating')[1].innerHTML = prettify((player.android.owned * (player.android.generates + player.upgrades.andro5Perc + player.upgrades.andro25Perc)));
+  document.getElementsByClassName('Generating')[2].innerHTML = prettify((player.robot.owned * (player.robot.generates + player.upgrades.robot5Perc + player.upgrades.robot25Perc)));
+  document.getElementsByClassName('Generating')[3].innerHTML = prettify((player.resLab.owned * (player.resLab.generates + player.upgrades.resLab5Perc + player.upgrades.resLab25Perc)));
+  document.getElementsByClassName('Generating')[4].innerHTML = prettify((player.resFac.owned * (player.resFac.generates + player.upgrades.resFact5Perc + player.upgrades.resFact25Perc)));
+  document.getElementsByClassName('Generating')[5].innerHTML = prettify((player.roboticsFact.owned * (player.roboticsFact.generates + player.upgrades.roboFact5Perc + player.upgrades.roboFact25Perc)));
+  document.getElementsByClassName('Generating')[6].innerHTML = prettify((player.cyberLab.owned * (player.cyberLab.generates + player.upgrades.cybLab5Perc + player.upgrades.cybLab25Perc)));
+  document.getElementsByClassName('Generating')[7].innerHTML = prettify((player.battPack.owned * (player.battPack.generates + player.upgrades.battPck5Perc + player.upgrades.battPck25Perc)));
+  document.getElementsByClassName('Generating')[8].innerHTML = prettify((player.pwrGen.owned * (player.pwrGen.generates + player.upgrades.pwrGen5Perc + player.upgrades.pwrGen25Perc)));
+  document.getElementsByClassName('Generating')[9].innerHTML = prettify((player.genRoom.owned * (player.genRoom.generates + player.upgrades.genRoom5Perc + player.upgrades.genRoom25Perc)));
+  document.getElementsByClassName('Generating')[10].innerHTML = prettify((player.solPan.owned * (player.solPan.generates + player.upgrades.solPan5Perc + player.upgrades.solPan25Perc)));
+  document.getElementsByClassName('Generating')[11].innerHTML = prettify((player.solPanFarm.owned * (player.solPanFarm.generates + player.upgrades.solPanFarm5Perc + player.upgrades.solPanFarm25Perc)));
+  //Cost
+  document.getElementsByClassName('Cost')[0].innerHTML = suffixy(player.engineer.nextC, 2);
+  document.getElementsByClassName('Cost')[1].innerHTML = suffixy(player.android.nextC, 2);
+  document.getElementsByClassName('Cost')[2].innerHTML = suffixy(player.robot.nextC, 2);
+  document.getElementsByClassName('Cost')[3].innerHTML = suffixy(player.resLab.nextC, 2);
+  document.getElementsByClassName('Cost')[4].innerHTML = suffixy(player.resFac.nextC, 2);
+  document.getElementsByClassName('Cost')[5].innerHTML = suffixy(player.roboticsFact.nextC, 2);
+  document.getElementsByClassName('Cost')[6].innerHTML = suffixy(player.cyberLab.nextC, 2);
+  //Cost Energy
+  document.getElementsByClassName('Cost')[7].innerHTML = suffixy(player.battPack.nextC);
+  document.getElementsByClassName('Cost')[8].innerHTML = suffixy(player.pwrGen.nextC);
+  document.getElementsByClassName('Cost')[9].innerHTML = suffixy(player.genRoom.nextC);
+  document.getElementsByClassName('Cost')[10].innerHTML = suffixy(player.solPan.nextC);
+  document.getElementsByClassName('Cost')[11].innerHTML = suffixy(player.solPanFarm.nextC);
+
 }
 
 function checkUpgrades(){
   if (player.upgrades.engi5Perc !== 0){
-    document.getElementById('buttontest').className ="upgrade-unlocked";
+    document.getElementById('buttontest').className ="btn btn-success";
   }
 }
 
 window.setInterval(function() {
-  console.log(player.upgrades.engi5Perc);
+  console.log(player.engineer.nextC);
   updateTotals();
   gameSave();
   getResource(player, 'tech' , 1);
@@ -391,12 +419,17 @@ window.setInterval(function() {
   document.getElementById('solPanFarm').innerHTML = player.solPanFarm.owned;
   //Cash
   if (player.tech <= 1000){
-  document.getElementById('Tech').innerHTML = prettify(player.tech);
+    document.getElementById('Tech').innerHTML = prettify(player.tech);
   }
   else {
     document.getElementById('Tech').innerHTML = suffixy(player.tech, 2);
   }
-  document.getElementById('Energy').innerHTML = player.energy;
+  if (player.energy <= 1000){
+    document.getElementById('Energy').innerHTML = player.energy;
+  }
+  else {
+    document.getElementById('Energy').innerHTML = suffixy(player.energy, 2);
+  }
   //checkAchievements ();
   checkUpgrades();
 }, 100);
@@ -446,18 +479,3 @@ function hideElements(){
 //    document.getElementsByClassName('Cost')[arrayPlace].innerHTML = building.nextC;
 //  }
 //}
-
-//Cost Tech
-/*  document.getElementsByClassName('Cost')[0].innerHTML = suffixy(player.engineer.nextC, 2);
-document.getElementsByClassName('Cost')[1].innerHTML = suffixy(player.android.nextC, 2);
-document.getElementsByClassName('Cost')[2].innerHTML = suffixy(player.robot.nextC, 2);
-document.getElementsByClassName('Cost')[3].innerHTML = suffixy(player.resLab.nextC, 2);
-document.getElementsByClassName('Cost')[4].innerHTML = suffixy(player.resFac.nextC, 2);
-document.getElementsByClassName('Cost')[5].innerHTML = suffixy(player.roboticsFact.nextC, 2);
-document.getElementsByClassName('Cost')[6].innerHTML = suffixy(player.cyberLab.nextC, 2);
-//Cost Energy
-document.getElementsByClassName('Cost')[7].innerHTML = suffixy(player.battPack.nextC);
-document.getElementsByClassName('Cost')[8].innerHTML = suffixy(player.pwrGen.nextC);
-document.getElementsByClassName('Cost')[9].innerHTML = suffixy(player.genRoom.nextC);
-document.getElementsByClassName('Cost')[10].innerHTML = suffixy(player.solPan.nextC);
-document.getElementsByClassName('Cost')[11].innerHTML = suffixy(player.solPanFarm.nextC);*/
