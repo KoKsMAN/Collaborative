@@ -1,6 +1,6 @@
-![alt text](http://i.imgur.com/4uIdcnB.png)
+![alt text](http://imgur.com/M7X5T0Q.png)
 
-                                      *Current version 0.2.7*
+                                      *Current Version 0.3.1*
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
@@ -36,6 +36,19 @@ ___
 
 
 #### **_Change Log:_** ####
+    *Version 0.3.1
+     28 August 2015
+      -Fixed unit cost not updating properly.
+      -Fixed unit resource generation.
+      -Some visual tweaking.
+___
+    *Version 0.3.0
+     27 August 2015
+      -Fixes to the code.
+      -Few new layout elements.
+      -Moved achievements into separate file.
+      -Updated games logo.
+___
     *Version 0.2.9
      12 August 2015
       -Introduced upgrades (still needs correct values for pricing and minor fixes).
