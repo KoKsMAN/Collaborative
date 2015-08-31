@@ -47,7 +47,7 @@ ___
       -Fixes to the code.
       -Few new layout elements.
       -Moved achievements into separate file.
-      -Updated games logo.
+      -Updated game's logo.
 ___
     *Version 0.2.9
      12 August 2015
