@@ -1,6 +1,6 @@
 //initialize player data
 var player = {
-  tech: 1000,
+  tech: 100,
   energy: 0,
   engineer: {
     name: "Engineer",
@@ -273,32 +273,33 @@ function deleteSave(){
 
 
 //Tech Buy
-function techBuy(amount, building, id, arrayPlace){
-  building.nextC = ((amount * Math.floor(building.cost * Math.pow(1.15,building.owned))));
+function techBuy(building){
+  building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
   if (building.nextC <= player.tech){
-    building.owned += amount;
+    building.owned++;
     player.tech -= building.nextC;
     document.getElementById('Tech').innerHTML = suffixy(player.tech, 2);
-    building.nextC = ((amount * Math.floor(building.cost * Math.pow(1.15,building.owned))));
+    building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
 }
   else {
       console.log("Not enough resources");
   }
 }
 //Energy Buy
-function energyBuy(amount, building, id, arrayPlace){
-  building.nextC = (amount * Math.floor(building.cost * Math.pow(1.15,building.owned)));
+function energyBuy(building){
+  building.nextC = (Math.floor(building.cost * Math.pow(1.15,building.owned)));
   if (building.nextC <= player.energy){
-    building.owned += amount;
+    building.owned++;
     player.energy -= building.nextC;
     document.getElementById("Energy").innerHTML = suffixy(player.energy, 2);
+    building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
 }
   else {
       console.log("Not enough resources");
   }
 }
 
-function energyBuyFive(building, amountToPurchase, resource){ //Now you send two values, building and amountToPurchase.
+function buildingBuyFive(building, resource, amountToPurchase, id){ //Now you send two values, building and amountToPurchase.
     var exponentialIncrease = 1.15; //**Easier to put this up here, so you only have to change one number if you want to rebalance this.
     var nextCost = 0; //**There's no reason to store nextC in the player object. You'll want to calculate this out when you check it, then have it be disposed
     nextCost = Math.floor((building.cost * Math.pow(exponentialIncrease, building.owned)) * ((Math.pow(exponentialIncrease, amountToPurchase) - 1) / (exponentialIncrease - 1)));
@@ -306,7 +307,7 @@ function energyBuyFive(building, amountToPurchase, resource){ //Now you send two
     if (nextCost <= player[resource]){ //checks if player can afford the purchase
         building.owned += amountToPurchase; //increments the amount of buildings by amount to purchase
         player[resource] -= nextCost; // removes the resource used to purchase the building
-        document.getElementById("Tech").innerHTML = suffixy(player[resource], 2); // updates the amount of resource on the screen.
+        document.getElementById(id).innerHTML = suffixy(player[resource], 2); // updates the amount of resource on the screen.
         building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
         console.log(nextCost);
     }
