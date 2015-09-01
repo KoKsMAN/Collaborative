@@ -1,6 +1,6 @@
 ![alt text](http://imgur.com/M7X5T0Q.png)
 
-                                      *Current Version 0.3.1*
+                                      *Current Version 0.3.5*
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
@@ -21,21 +21,28 @@ ___
 | ✓ Complete achievements system|
 | ✓ Make new units and buildings appear on the list over the course of game|
 | ✓ Introduce upgrades|
+| ✓ Create user interface elements (PARTIAL)|
+| ✓ Bring the website online|
 | |
 | TO BE DONE |
 | |
-|✗ Support for older browsers|
-|✗ Cookies saves|
-|✗ Gameplay statistics|
-|✗ User settings|
-|✗ Create user interface elements|
-|✗ Bring the website online|
+| ✗ Support for older browsers|
+| ✗ Cookies saves|
+| ✗ Gameplay statistics|
+| ✗ User settings|
 
 
 
 
 
 #### **_Change Log:_** ####
+
+    *Version 0.3.5
+     1 September 2015
+      -Fixed buy 5 button // thanks to https://www.reddit.com/user/Brownprobe for his help with the formula.
+      -Changed background.
+      -Fixes to the code.
+____
     *Version 0.3.1
      28 August 2015
       -Fixed unit cost not updating properly.
