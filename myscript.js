@@ -447,7 +447,7 @@ window.setInterval(function() {
   console.log(player.engineer.nextC);
   updateTotals();
   gameSave();
-  getResource(player, 'tech' , 10);
+  getResource(player, 'tech' , 1);
   getResource(player, 'energy', 1);
   hideElements();
   checkAchievements ();
