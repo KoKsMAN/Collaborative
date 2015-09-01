@@ -1,6 +1,6 @@
 ![alt text](http://imgur.com/M7X5T0Q.png)
 
-                                      *Current Version 0.3.5*
+                                      *Current Version 0.3.5a*
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
@@ -37,9 +37,15 @@ ___
 
 #### **_Change Log:_** ####
 
+    *Version 0.3.5a
+      1 September 2015
+       -Adjusted cost of energy buildings.
+       -Adjusted cost of upgrades.
+       -Owned upgrades are visually more appealing.
+___
     *Version 0.3.5
      1 September 2015
-      -Fixed buy 5 button **
+      -Fixed buy 5 button. **
       -Changed background.
       -Fixes to the code.
 **Thanks to [Brownprobe](https://www.reddit.com/user/Brownprobe) for his help with the formula.
