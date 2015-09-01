@@ -39,7 +39,7 @@ ___
 
     *Version 0.3.5
      1 September 2015
-      -Fixed buy 5 button // thanks to https://www.reddit.com/user/Brownprobe for his help with the formula.
+      -Fixed buy 5 button // thanks to [Brownprobe](https://www.reddit.com/user/Brownprobe) for his help with the formula.
       -Changed background.
       -Fixes to the code.
 ____
