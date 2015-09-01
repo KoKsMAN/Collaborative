@@ -1,6 +1,6 @@
 //initialize player data
 var player = {
-  tech: 100,
+  tech: 0,
   energy: 0,
   engineer: {
     name: "Engineer",
@@ -269,9 +269,6 @@ function deleteSave() {
   localStorage.removeItem('player');
   location.reload();
 }
-
-
-
 //Buy One
 function buyOne(building, resource, id) {
   building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned))));
@@ -285,22 +282,23 @@ function buyOne(building, resource, id) {
   }
 }
 //Buy Five
-function BuyFive(building, resource, amountToPurchase, id) { //Now you send two values, building and amountToPurchase.
-  var exponentialIncrease = 1.15; //**Easier to put this up here, so you only have to change one number if you want to rebalance this.
-  var nextCost = 0; //**There's no reason to store nextC in the player object. You'll want to calculate this out when you check it, then have it be disposed
+function BuyFive(building, resource, amountToPurchase, id) { //Send two values, building and amountToPurchase.
+  var exponentialIncrease = 1.15; //Used to change the value for rebalancing later.
+  var nextCost = 0;
   nextCost = Math.floor((building.cost * Math.pow(exponentialIncrease, building.owned)) * ((Math.pow(exponentialIncrease, amountToPurchase) - 1) / (exponentialIncrease - 1)));
   //now determines cost of any number of buildings
   if (nextCost <= player[resource]) { //checks if player can afford the purchase
     building.owned += amountToPurchase; //increments the amount of buildings by amount to purchase
     player[resource] -= nextCost; // removes the resource used to purchase the building
     document.getElementById(id).innerHTML = suffixy(player[resource], 2); // updates the amount of resource on the screen.
-    building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned))));
+    building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned)))); //displays cost of next purchase
     console.log(nextCost);
   } else {
     console.log("Not enough resources");
   }
 }
 //Buy All
+/* STILL NEEDS SOME WORK ON THE RESOURCE REMOVAL
 function buyAll(building, resource, id) {
   var exponentialIncrease = 1.15;
   var nextCost = 0;
@@ -314,7 +312,7 @@ function buyAll(building, resource, id) {
 }
 function log10(val) {
   return Math.log(val) / Math.LN10;
-}
+}*/
 
 function buyUpgrade(techcost, energycost, up, amount) {
   if (techcost <= player.tech && energycost <= player.energy) {
@@ -362,7 +360,39 @@ function floor(num) {
     return Math.floor(num);
   }
 }
-
+function hideElements(){
+  if (player.tech >= 50){
+    document.getElementById('andro').style.display = 'block';
+  }
+  if (player.tech >= 250){
+    document.getElementById('robo').style.display = 'block';
+  }
+  if (player.tech >= 500){
+    document.getElementById('resLabo').style.display = 'block';
+  }
+  if (player.tech >= 1000){
+    document.getElementById('resFact').style.display = 'block';
+  }
+  if (player.tech >= 2000){
+    document.getElementById('robFact').style.display = 'block';
+  }
+  if (player.tech >= 3000){
+    document.getElementById('cyberLabo').style.display = 'block';
+  }
+//energy
+if (player.energy >= 250){
+  document.getElementById('pwrgen').style.display = 'block';
+}
+if (player.energy >= 500){
+  document.getElementById('generoom').style.display = 'block';
+}
+if (player.energy >= 1000){
+  document.getElementById('solarpan').style.display = 'block';
+}
+if (player.energy >= 2000){
+  document.getElementById('solarfarm').style.display = 'block';
+}
+}
 function updateTotals() {
   player.tech += ((player.engineer.owned * (player.engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc)));
   player.tech += ((player.android.owned * (player.android.generates + player.upgrades.andro5Perc + player.upgrades.andro25Perc)));
@@ -417,9 +447,10 @@ window.setInterval(function() {
   console.log(player.engineer.nextC);
   updateTotals();
   gameSave();
-  //getResource(player, 'tech' , 1);
+  getResource(player, 'tech' , 10);
   getResource(player, 'energy', 1);
-  // hideElements();
+  hideElements();
+  checkAchievements ();
   //save_game();
 }, 1000);
 
@@ -450,43 +481,7 @@ window.setInterval(function() {
   } else {
     document.getElementById('Energy').innerHTML = suffixy(player.energy, 1);
   }
-  //checkAchievements ();
   checkUpgrades();
 }, 100);
 
-/* Elements hide function
-function hideElements(){
-  if (player.tech >= 5){
-    document.getElementById('andro').style.display = 'block';
-  }
-  if (player.tech >= 10){
-    document.getElementById('robo').style.display = 'block';
-  }
-  if (player.tech >= 15){
-    document.getElementById('resLabo').style.display = 'block';
-  }
-  if (player.tech >= 20){
-    document.getElementById('resFact').style.display = 'block';
-  }
-  if (player.tech >= 25){
-    document.getElementById('robFact').style.display = 'block';
-  }
-  if (player.tech >= 30){
-    document.getElementById('cyberLabo').style.display = 'block';
-  }
-}*/
-
-
-
-
-//function buyAllEnergy(building, arrayPlace){
-//  var total = Math.floor(player.energy / building.nextC);
-//  console.log(building.nextC);
-//  building.nextC = ( Math.floor(building.cost * Math.pow(1.15,building.owned)));
-//    if (total >= 1){
-//    building.owned += total;
-//    player.energy -= total * building.nextC;
-//    document.getElementById('Energy').innerHTML = player.energy;
-//    document.getElementsByClassName('Cost')[arrayPlace].innerHTML = building.nextC;
-//  }
-//}
+//Elements hide function
