@@ -22,7 +22,7 @@ ___
 | ✓ Make new units and buildings appear on the list over the course of game|
 | ✓ Introduce upgrades|
 | ✓ Create user interface elements (PARTIAL)|
-| ✓ Bring the website online|
+|  [✓ Bring the website online](http://koksman.github.io/SpaceColonists/)|
 | |
 | TO BE DONE |
 | |
