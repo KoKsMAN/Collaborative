@@ -82,13 +82,13 @@
             </div>
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" onclick="techBuy(player.engineer)">Buy 1</button>
+                <button type="button" class="btn btn-default" onclick="buyOne(player.engineer, 'tech', 'Tech')">Buy 1</button>
               </div>
               <div class="btn-group" role="group">
                 <button type="button" class="btn btn-default" onclick="buildingBuyFive(player.engineer, 'tech', 5, 'Tech')">Buy 5</button>
               </div>
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" onclick="buyAllTech(player.engineer, 0)">Buy All</button>
+                <button type="button" class="btn btn-default" onclick="buyAll(player.engineer, 'tech', 'Tech')">Buy All</button>
               </div>
             </div>
           </div>
@@ -232,7 +232,7 @@
             </div>
             <div class="btn-group btn-group-justified" role="group" aria-label="...">
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" onclick="energyBuy(player.battPack)">Buy 1</button>
+                <button type="button" class="btn btn-default" onclick="buyOne(player.battPack, 'energy', 'Energy')">Buy 1</button>
               </div>
               <div class="btn-group" role="group">
                 <button type="button" class="btn btn-default" onclick="buildingBuyFive(player.battPack, 'energy', 5, 'Energy')">Buy 5</button>

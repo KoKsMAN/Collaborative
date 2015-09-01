@@ -87,7 +87,7 @@ var player = {
     nextC: 15,
     generates: 1,
   },
-  upgrades:{
+  upgrades: {
     //Auto CLicker
     autoClickerTech: 0,
     autoClickerEnergy: 0,
@@ -121,91 +121,91 @@ var player = {
     solPanFarm25Perc: 0,
   },
   achievements: {
-     points: 0,
-     first: 0,
-     second: 0,
-     third: 0,
-     fourth: 0,
-     fifth: 0,
-     sixth: 0,
-     seventh: 0,
-     eighth: 0,
-     nineth: 0,
-     tenth: 0,
-     eleventh: 0,
-     twelfth: 0,
-     thirteenth: 0,
-     fourteenth: 0,
-     fifteenth: 0,
-     sixteenth: 0,
-     seventeenth: 0,
-     eighteenth: 0,
-     nineteenth: 0,
-     twentieth: 0,
-     twenty_first: 0,
-     twenty_second: 0,
-     twenty_third: 0,
-     twenty_fourth: 0,
-     twenty_fifth: 0,
-     twenty_sixth: 0,
-     twenty_seventh: 0,
-     twenty_eighth: 0,
-     twenty_nineth: 0,
-     thirtieth: 0,
-     thirty_first: 0,
-     thirty_second: 0,
-     thirty_third: 0,
-     thirty_fourth: 0,
-     thirty_fifth: 0,
-     thirty_sixth: 0,
-     thirty_seventh: 0,
-     thirty_eighth: 0,
-     thirty_nineth: 0,
-     fortieth: 0,
-     forty_first: 0,
-     forty_second: 0,
-     forty_third: 0,
-     forty_fourth: 0,
-     forty_fifth: 0,
-     forty_sixth: 0,
-     forty_seventh: 0,
-     forty_eighth: 0,
-     forty_nineth: 0,
-     fiftieth: 0,
-     fifty_first: 0,
-     fifty_second: 0,
-     fifty_third: 0,
-     fifty_fourth: 0,
-     fifty_fifth: 0,
-     fifty_sixth: 0,
-     fifty_seventh: 0,
-     fifty_eighth: 0,
-     fifty_nineth: 0,
-     sixtieth: 0,
-     sixty_first: 0,
-     sixty_second: 0,
-     sixty_third: 0,
-     sixty_fourth: 0,
-     sixty_fifth: 0,
-     sixty_sixth: 0,
-     sixty_seventh: 0,
-     sixty_eighth: 0,
-     sixty_nineth: 0,
-     seventieth: 0,
-     eightieth: 0,
-     ninetieth: 0,
-     one_hundredth: 0
+    points: 0,
+    first: 0,
+    second: 0,
+    third: 0,
+    fourth: 0,
+    fifth: 0,
+    sixth: 0,
+    seventh: 0,
+    eighth: 0,
+    nineth: 0,
+    tenth: 0,
+    eleventh: 0,
+    twelfth: 0,
+    thirteenth: 0,
+    fourteenth: 0,
+    fifteenth: 0,
+    sixteenth: 0,
+    seventeenth: 0,
+    eighteenth: 0,
+    nineteenth: 0,
+    twentieth: 0,
+    twenty_first: 0,
+    twenty_second: 0,
+    twenty_third: 0,
+    twenty_fourth: 0,
+    twenty_fifth: 0,
+    twenty_sixth: 0,
+    twenty_seventh: 0,
+    twenty_eighth: 0,
+    twenty_nineth: 0,
+    thirtieth: 0,
+    thirty_first: 0,
+    thirty_second: 0,
+    thirty_third: 0,
+    thirty_fourth: 0,
+    thirty_fifth: 0,
+    thirty_sixth: 0,
+    thirty_seventh: 0,
+    thirty_eighth: 0,
+    thirty_nineth: 0,
+    fortieth: 0,
+    forty_first: 0,
+    forty_second: 0,
+    forty_third: 0,
+    forty_fourth: 0,
+    forty_fifth: 0,
+    forty_sixth: 0,
+    forty_seventh: 0,
+    forty_eighth: 0,
+    forty_nineth: 0,
+    fiftieth: 0,
+    fifty_first: 0,
+    fifty_second: 0,
+    fifty_third: 0,
+    fifty_fourth: 0,
+    fifty_fifth: 0,
+    fifty_sixth: 0,
+    fifty_seventh: 0,
+    fifty_eighth: 0,
+    fifty_nineth: 0,
+    sixtieth: 0,
+    sixty_first: 0,
+    sixty_second: 0,
+    sixty_third: 0,
+    sixty_fourth: 0,
+    sixty_fifth: 0,
+    sixty_sixth: 0,
+    sixty_seventh: 0,
+    sixty_eighth: 0,
+    sixty_nineth: 0,
+    seventieth: 0,
+    eightieth: 0,
+    ninetieth: 0,
+    one_hundredth: 0
   }
 };
 var progBar = document.getElementsByClassName("progress-bar");
-nums = ['k','M','B','T','Qa','Qi', 'Sx', 'Sp', 'Oc', 'No', 'De', 'UnD', 'DuD', 'TrD', 'QaD', 'QiD', 'SeD', 'SpD', 'OcD', 'NoD'];
+nums = ['k', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No', 'De', 'UnD', 'DuD', 'TrD', 'QaD', 'QiD', 'SeD', 'SpD', 'OcD', 'NoD'];
 // ================ HTML LOCAL STORAGE SAVE =====================//
 //game save
-function gameSave(){
- localStorage.setItem("player",JSON.stringify(player));
+function gameSave() {
+  localStorage.setItem("player", JSON.stringify(player));
 }
 //game load
-function gameLoad(){
+function gameLoad() {
   var savegame = JSON.parse(localStorage.getItem("player"));
   //Resources
   if (typeof savegame.tech !== "undefined") player.tech = savegame.tech;
@@ -265,70 +265,70 @@ function load_game() {
 }*/
 
 //delete save
-function deleteSave(){
+function deleteSave() {
   localStorage.removeItem('player');
   location.reload();
 }
 
 
 
-//Tech Buy
-function techBuy(building){
-  building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
-  if (building.nextC <= player.tech){
+//Buy One
+function buyOne(building, resource, id) {
+  building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned))));
+  if (building.nextC <= player[resource]) {
     building.owned++;
-    player.tech -= building.nextC;
-    document.getElementById('Tech').innerHTML = suffixy(player.tech, 2);
-    building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
-}
-  else {
-      console.log("Not enough resources");
+    player[resource] -= building.nextC;
+    document.getElementById(id).innerHTML = suffixy(player[resource], 2);
+    building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned))));
+  } else {
+    console.log("Not enough resources");
   }
 }
-//Energy Buy
-function energyBuy(building){
-  building.nextC = (Math.floor(building.cost * Math.pow(1.15,building.owned)));
-  if (building.nextC <= player.energy){
-    building.owned++;
-    player.energy -= building.nextC;
-    document.getElementById("Energy").innerHTML = suffixy(player.energy, 2);
-    building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
-}
-  else {
-      console.log("Not enough resources");
+//Buy Five
+function BuyFive(building, resource, amountToPurchase, id) { //Now you send two values, building and amountToPurchase.
+  var exponentialIncrease = 1.15; //**Easier to put this up here, so you only have to change one number if you want to rebalance this.
+  var nextCost = 0; //**There's no reason to store nextC in the player object. You'll want to calculate this out when you check it, then have it be disposed
+  nextCost = Math.floor((building.cost * Math.pow(exponentialIncrease, building.owned)) * ((Math.pow(exponentialIncrease, amountToPurchase) - 1) / (exponentialIncrease - 1)));
+  //now determines cost of any number of buildings
+  if (nextCost <= player[resource]) { //checks if player can afford the purchase
+    building.owned += amountToPurchase; //increments the amount of buildings by amount to purchase
+    player[resource] -= nextCost; // removes the resource used to purchase the building
+    document.getElementById(id).innerHTML = suffixy(player[resource], 2); // updates the amount of resource on the screen.
+    building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned))));
+    console.log(nextCost);
+  } else {
+    console.log("Not enough resources");
   }
 }
-
-function buildingBuyFive(building, resource, amountToPurchase, id){ //Now you send two values, building and amountToPurchase.
-    var exponentialIncrease = 1.15; //**Easier to put this up here, so you only have to change one number if you want to rebalance this.
-    var nextCost = 0; //**There's no reason to store nextC in the player object. You'll want to calculate this out when you check it, then have it be disposed
-    nextCost = Math.floor((building.cost * Math.pow(exponentialIncrease, building.owned)) * ((Math.pow(exponentialIncrease, amountToPurchase) - 1) / (exponentialIncrease - 1)));
-    //now determines cost of any number of buildings
-    if (nextCost <= player[resource]){ //checks if player can afford the purchase
-        building.owned += amountToPurchase; //increments the amount of buildings by amount to purchase
-        player[resource] -= nextCost; // removes the resource used to purchase the building
-        document.getElementById(id).innerHTML = suffixy(player[resource], 2); // updates the amount of resource on the screen.
-        building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
-        console.log(nextCost);
-    }
-    else {
-        console.log("Not enough resources");
-    }
+//Buy All
+function buyAll(building, resource, id) {
+  var exponentialIncrease = 1.15;
+  var nextCost = 0;
+  var toBuy = (log10(((player[resource] / (building.cost * Math.pow(exponentialIncrease, building.owned))) * (exponentialIncrease - 1)) + 1) / log10(exponentialIncrease));
+  //var toRemove = Math.floor((building.cost * Math.pow(exponentialIncrease, building.owned)) * ((Math.pow(exponentialIncrease, toBuy) - 1) / (exponentialIncrease - 1)));
+  if (toBuy <= player[resource]) {
+    //player[resource] -= toRemove;
+    building.owned += parseInt(toBuy);
+    building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned))));
+  }
+}
+function log10(val) {
+  return Math.log(val) / Math.LN10;
 }
 
-function buyUpgrade(techcost, energycost, up, amount){
-    if(techcost <= player.tech && energycost <= player.energy){
-      player.tech -= techcost;
-      player.energy -= energycost;
-      player.upgrades[up] = amount;
-      console.log("Done, upgrade purchased");
-      document.getElementById('buttontest').className ="upgrade-unlocked";
-    }
-    console.log("UP" + " " + up);
+function buyUpgrade(techcost, energycost, up, amount) {
+  if (techcost <= player.tech && energycost <= player.energy) {
+    player.tech -= techcost;
+    player.energy -= energycost;
+    player.upgrades[up] = amount;
+    console.log("Done, upgrade purchased");
+    document.getElementById('buttontest').className = "upgrade-unlocked";
+  }
+  console.log("UP" + " " + up);
 }
 
-function backgroundChange(){
-  if (document.getElementById('buttontestt').className == "buttontest"){
+function backgroundChange() {
+  if (document.getElementById('buttontestt').className == "buttontest") {
     document.getElementById('buttontestt').className = "upgrade-unlocked";
   } else {
     document.getElementById('buttontestt').className = "buttontest";
@@ -337,46 +337,46 @@ function backgroundChange(){
 }
 
 function getResource(player, resource, amount) {
-    player[resource] += amount;
+  player[resource] += amount;
 }
 
-function prettify(input){
-    var output = Math.round(input * 1000000)/1000000;
-	return output;
+function prettify(input) {
+  var output = Math.round(input * 1000000) / 1000000;
+  return output;
 }
 
-function suffixy(num, dec){
-    dec = dec || 0; //how many decimal places do we want?
-    var suffixes = ['','k','M','B','T','Qa','Qi', 'Sx', 'Sp', 'Oc', 'No', 'De', 'UnD', 'DuD', 'TrD', 'QaD', 'QiD', 'SeD', 'SpD', 'OcD'];
-    var ord = floor(Math.log(Math.abs(num))/Math.log(10)/3); //the abs to make sure our number is always positive when being put through a log operation. divide by 3 at the end because our suffixes goes up by orders of 3
-    var suffix = suffixes[ord];
-    var rounded = Math.round(num/(Math.pow(10, ord*3-dec)))/Math.pow(10, dec);
-    return rounded+ " " + suffix;
+function suffixy(num, dec) {
+  dec = dec || 0; //how many decimal places do we want?
+  var suffixes = ['', 'k', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No', 'De', 'UnD', 'DuD', 'TrD', 'QaD', 'QiD', 'SeD', 'SpD', 'OcD'];
+  var ord = floor(Math.log(Math.abs(num)) / Math.log(10) / 3); //the abs to make sure our number is always positive when being put through a log operation. divide by 3 at the end because our suffixes goes up by orders of 3
+  var suffix = suffixes[ord];
+  var rounded = Math.round(num / (Math.pow(10, ord * 3 - dec))) / Math.pow(10, dec);
+  return rounded + " " + suffix;
 }
 
-function floor(num){
-    //special floor needed to deal with floating point calculations
-    if(num - Math.floor(num) >= 0.9999999999999991){
-        return Math.ceil(num);
-    } else{
-        return Math.floor(num);
-    }
+function floor(num) {
+  //special floor needed to deal with floating point calculations
+  if (num - Math.floor(num) >= 0.9999999999999991) {
+    return Math.ceil(num);
+  } else {
+    return Math.floor(num);
+  }
 }
 
-function updateTotals(){
-  player.tech += ((player.engineer.owned * (player.engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc )));
-  player.tech += ((player.android.owned * (player.android.generates + player.upgrades.andro5Perc + player.upgrades.andro25Perc )));
-  player.tech += ((player.robot.owned * (player.robot.generates + player.upgrades.robot5Perc + player.upgrades.robot25Perc )));
-  player.tech += ((player.resLab.owned * (player.resLab.generates + player.upgrades.resLab5Perc + player.upgrades.resLab25Perc )));
-  player.tech += ((player.resFac.owned * (player.resFac.generates + player.upgrades.resFact5Perc + player.upgrades.resFact25Perc )));
-  player.tech += ((player.roboticsFact.owned * (player.roboticsFact.generates + player.upgrades.roboFact5Perc + player.upgrades.roboFact25Perc )));
-  player.tech += ((player.cyberLab.owned * (player.cyberLab.generates + player.upgrades.cybLab5Perc + player.upgrades.cybLab25Perc )));
+function updateTotals() {
+  player.tech += ((player.engineer.owned * (player.engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc)));
+  player.tech += ((player.android.owned * (player.android.generates + player.upgrades.andro5Perc + player.upgrades.andro25Perc)));
+  player.tech += ((player.robot.owned * (player.robot.generates + player.upgrades.robot5Perc + player.upgrades.robot25Perc)));
+  player.tech += ((player.resLab.owned * (player.resLab.generates + player.upgrades.resLab5Perc + player.upgrades.resLab25Perc)));
+  player.tech += ((player.resFac.owned * (player.resFac.generates + player.upgrades.resFact5Perc + player.upgrades.resFact25Perc)));
+  player.tech += ((player.roboticsFact.owned * (player.roboticsFact.generates + player.upgrades.roboFact5Perc + player.upgrades.roboFact25Perc)));
+  player.tech += ((player.cyberLab.owned * (player.cyberLab.generates + player.upgrades.cybLab5Perc + player.upgrades.cybLab25Perc)));
   //Energy
-  player.energy += ((player.battPack.owned * (player.battPack.generates + player.upgrades.battPck5Perc + player.upgrades.battPck25Perc )));
-  player.energy += ((player.pwrGen.owned * (player.pwrGen.generates + player.upgrades.pwrGen5Perc + player.upgrades.pwrGen25Perc )));
-  player.energy += ((player.genRoom.owned * (player.genRoom.generates + player.upgrades.genRoom5Perc + player.upgrades.genRoom25Perc )));
-  player.energy += ((player.solPan.owned * (player.solPan.generates + player.upgrades.solPan5Perc + player.upgrades.solPan25Perc )));
-  player.energy += ((player.solPanFarm.owned * (player.solPanFarm.generates + player.upgrades.solPanFarm5Perc + player.upgrades.solPanFarm25Perc )));
+  player.energy += ((player.battPack.owned * (player.battPack.generates + player.upgrades.battPck5Perc + player.upgrades.battPck25Perc)));
+  player.energy += ((player.pwrGen.owned * (player.pwrGen.generates + player.upgrades.pwrGen5Perc + player.upgrades.pwrGen25Perc)));
+  player.energy += ((player.genRoom.owned * (player.genRoom.generates + player.upgrades.genRoom5Perc + player.upgrades.genRoom25Perc)));
+  player.energy += ((player.solPan.owned * (player.solPan.generates + player.upgrades.solPan5Perc + player.upgrades.solPan25Perc)));
+  player.energy += ((player.solPanFarm.owned * (player.solPanFarm.generates + player.upgrades.solPanFarm5Perc + player.upgrades.solPanFarm25Perc)));
   //Generating
   document.getElementsByClassName('Generating')[0].innerHTML = prettify((player.engineer.owned * (player.engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc)));
   document.getElementsByClassName('Generating')[1].innerHTML = prettify((player.android.owned * (player.android.generates + player.upgrades.andro5Perc + player.upgrades.andro25Perc)));
@@ -407,9 +407,9 @@ function updateTotals(){
 
 }
 
-function checkUpgrades(){
-  if (player.upgrades.engi5Perc !== 0){
-    document.getElementById('buttontest').className ="btn btn-success";
+function checkUpgrades() {
+  if (player.upgrades.engi5Perc !== 0) {
+    document.getElementById('buttontest').className = "btn btn-success";
   }
 }
 
@@ -418,7 +418,7 @@ window.setInterval(function() {
   updateTotals();
   gameSave();
   //getResource(player, 'tech' , 1);
-  getResource(player, 'energy' , 1);
+  getResource(player, 'energy', 1);
   // hideElements();
   //save_game();
 }, 1000);
@@ -440,16 +440,14 @@ window.setInterval(function() {
   document.getElementById('solPan').innerHTML = player.solPan.owned;
   document.getElementById('solPanFarm').innerHTML = player.solPanFarm.owned;
   //Cash
-  if (player.tech <= 1000){
+  if (player.tech <= 1000) {
     document.getElementById('Tech').innerHTML = prettify(player.tech);
-  }
-  else {
+  } else {
     document.getElementById('Tech').innerHTML = suffixy(player.tech, 1);
   }
-  if (player.energy <= 1000){
+  if (player.energy <= 1000) {
     document.getElementById('Energy').innerHTML = player.energy;
-  }
-  else {
+  } else {
     document.getElementById('Energy').innerHTML = suffixy(player.energy, 1);
   }
   //checkAchievements ();
@@ -479,16 +477,7 @@ function hideElements(){
 }*/
 
 
-//function buyAllTech(building, arrayPlace){
-//  var total = Math.floor(player.tech / building.nextC);
-//  console.log(building.nextC);
-//  building.nextC = ( Math.floor(building.cost * Math.pow(1.15,building.owned)));
-//    if (total >= 1){
-//    building.owned += total;
-//    player.tech -= total * building.nextC;
-//    document.getElementsByClassName('Cost')[arrayPlace].innerHTML = building.nextC;
-//  }
-//}
+
 
 //function buyAllEnergy(building, arrayPlace){
 //  var total = Math.floor(player.energy / building.nextC);
