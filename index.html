@@ -5,6 +5,7 @@
   <title>Space Colonists</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="myscript.js"></script>
@@ -919,7 +920,7 @@
           <p id="changelog"><a href="https://github.com/KoKsMAN/Collaborative/blob/master/README.md" target="_blank">Changelog</a></p>
           <p>Layout resources found on <a href="http://www.freepik.com/">Freepik.</a></p>
           <br />
-          <p>The Game saves progress automatically every 3 minutes.</p>
+          <p>The Game saves progress automatically every 1 minute.</p>
           <p>Press "Save Game" button to save game if you don't want to wait for auto save.</p>
           <button type="button" id="Delete" onclick="gameSave()">Save Game</button>
           <br />
@@ -929,7 +930,7 @@
         </div>
         <!-- ============ NEWS TAB ============ -->
         <div id="news" class="tab-pane fade">
-          <h1 id="current-version">*Current Version 0.3.5a*</h1>
+          <h1 id="current-version">*Current Version 0.3.6*</h1>
           <h2 class="changelog-exp">Development road map</h2>
           <div class="changelog-item">
             <h3>DONE:</h3>
@@ -980,6 +981,15 @@
             </ul>
           </div>
           <h2 class="changelog-exp">Changelog</h2>
+
+          <div class="changelog-item">
+            <h3>*Version 0.3.6* September 3rd, 2015</h3>
+            <ul>
+              <li>- Added manual save button and changed the interval of auto save (every 1 minute).<br /> User is notified via message when save takes place.</li>
+              <li>- Added new tab "News" to easier keep track of changelog / known bugs and development status.</li>
+              <li>- Fixed error in some of the achievements. Now all unlocked achievements should increase achievement score.</li>
+            </ul>
+          </div>
 
           <div class="changelog-item">
             <h3>*Version 0.3.5a* September 1st, 2015</h3>
