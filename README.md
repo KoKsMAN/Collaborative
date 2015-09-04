@@ -54,7 +54,7 @@ ___
 
 |KNOWN BUGS|
 | ------------- |
-|☠ Buy all buttons aren't working. |
+|☠ Currently none |
 
 
 
