@@ -1,14 +1,7 @@
 ![alt text](http://imgur.com/M7X5T0Q.png)
 
                                       *Current Version 0.3.7
--Buy all button has been fixed
--Upgrades appear together with units they belong to.
--Added reminder about auto save
--Fixed Robot buttons not displaying correctly.
--Deleting Save data shouldn't change the layout size anymore.
 
-Move from TO DO into DO:
-Add Dev changelog to the website.*
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
