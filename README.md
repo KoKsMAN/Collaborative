@@ -1,6 +1,7 @@
 ![alt text](http://imgur.com/M7X5T0Q.png)
 
-                                      *Current Version 0.3.8
+                                      *Current Version 0.3.7
+
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
@@ -50,14 +51,11 @@ ___
 
 
 
+
+
+
 #### **_Change Log:_** ####
-    *Version 0.3.8
-     5 September 2015
-      -Added option to import / export save data via key.
-      -Fixed horizontal scroll bar bug.
-      -Auto save reminder should scale with window width now.
-      -Small visual changes and tweaks.
-___
+
     *Version 0.3.7
      4 September 2015
       -Buy all button has been fixed
