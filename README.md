@@ -1,6 +1,6 @@
 ![alt text](http://imgur.com/M7X5T0Q.png)
 
-                                      *Current Version 0.3.6*
+                                      *Current Version 0.3.8
 ___
 
 <em> Space Colonists is a java script incremental game prototype. </em>
@@ -23,6 +23,7 @@ ___
 | ✓ Introduce upgrades|
 | ✓ Create user interface elements (PARTIAL)|
 |  [✓ Bring the website online](http://koksman.github.io/SpaceColonists/)|
+| ✓ Add Dev changelog on the website.|
 | |
 | TO BE DONE |
 | |
@@ -30,7 +31,6 @@ ___
 | ✗ Cookies saves|
 | ✗ Gameplay statistics|
 | ✗ User settings|
-| ✗ Add Dev changelog on the website.|
 | ✗ Make buildings have their functions rather than being idle resource givers.|
 | ✗ Make both resources to be used in relation to each other. |
 | ✗ Add new resources (?).|
@@ -46,16 +46,28 @@ ___
 
 |KNOWN BUGS|
 | ------------- |
-|☠ Buy all buttons aren't working. |
-
-
-
+|☠ Currently none |
 
 
 
 #### **_Change Log:_** ####
-
+    *Version 0.3.8
+     5 September 2015
+      -Added option to import / export save data via key.
+      -Fixed horizontal scroll bar bug.
+      -Auto save reminder should scale with window width now.
+      -Small visual changes and tweaks.
+___
+    *Version 0.3.7
+     4 September 2015
+      -Buy all button has been fixed
+      -Upgrades appear together with units they belong to.
+      -Added reminder about auto save
+      -Fixed Robot buttons not displaying correctly.
+      -Deleting Save data shouldn't change the layout size anymore.
+___
     *Version 0.3.6
+     3 September 2015
     - Added manual save button and changed the interval of auto save (every 1 minute). User is notified via message when save takes place.
     - Added new tab "News" to easier keep track of changelog / known bugs and development status.
     - Fixed error in some of the achievements. Now all unlocked achievements should increase achievement score.
