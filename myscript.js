@@ -197,6 +197,16 @@ var player = {
     one_hundredth: 0
   }
 };
+function hideNotify(){
+  document.getElementById('top-notify').style.display ="none";
+  localStorage.setItem('asavepopup', 'false'); //store state in localStorage
+}
+function checkHidden() {
+    var show = localStorage.getItem('asavepopup');
+    if(show === 'false'){
+         document.getElementById('top-notify').style.display = "none";
+    }
+}
 var progBar = document.getElementsByClassName("progress-bar");
 nums = ['k', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No', 'De', 'UnD', 'DuD', 'TrD', 'QaD', 'QiD', 'SeD', 'SpD', 'OcD', 'NoD'];
 // ================ HTML LOCAL STORAGE SAVE =====================//
@@ -206,6 +216,18 @@ function gameSave() {
   $(document).ready(function(){
     $('#Game-Save').delay().fadeIn('slow').delay(2000).fadeOut('slow');
 });
+}
+function gameSaveString(){
+  var string = localStorage.setItem("player", JSON.stringify(player)); //assign sava data to variable
+  var compressed = window.btoa(JSON.stringify(player)); //encode save data
+  document.getElementById('impo-expo').innerHTML = compressed; //send endcoded save data into text area
+  console.log("Saving finished");
+}
+function gameLoadString(){
+		var compressed = document.getElementById('impo-expo').value; // retrieve compressed string
+		var decompressed = window.atob(compressed); //  decode compressed string
+    player = JSON.parse(decompressed); // parse decoded values into player object
+		console.log("Loading finished");
 }
 //game load
 function gameLoad() {
@@ -270,23 +292,10 @@ function load_game() {
 //delete save
 function deleteSave() {
   localStorage.removeItem('player');
-  location.reload();
-}
-<<<<<<< 1a562f93f5a7d723343c71c2ba0bcf80b26b7975
-//Buy One
-function buyOne(building, resource, id) {
-  building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned))));
-  if (building.nextC <= player[resource]) {
-    building.owned++;
-    player[resource] -= building.nextC;
-    document.getElementById(id).innerHTML = suffixy(player[resource], 2);
-    building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned))));
-  } else {
-    console.log("Not enough resources");
-  }
+  localStorage.removeItem('asavepopup');
 }
 //Buy Five
-function BuyFive(building, resource, amountToPurchase, id) { //Send two values, building and amountToPurchase.
+function buyBuilding(building, resource, amountToPurchase, id) { //Send two values, building and amountToPurchase.
   var exponentialIncrease = 1.15; //Used to change the value for rebalancing later.
   var nextCost = 0;
   nextCost = Math.floor((building.cost * Math.pow(exponentialIncrease, building.owned)) * ((Math.pow(exponentialIncrease, amountToPurchase) - 1) / (exponentialIncrease - 1)));
@@ -302,68 +311,15 @@ function BuyFive(building, resource, amountToPurchase, id) { //Send two values, 
   }
 }
 //Buy All
-/* STILL NEEDS SOME WORK ON THE RESOURCE REMOVAL
 function buyAll(building, resource, id) {
   var exponentialIncrease = 1.15;
   var nextCost = 0;
   var toBuy = (log10(((player[resource] / (building.cost * Math.pow(exponentialIncrease, building.owned))) * (exponentialIncrease - 1)) + 1) / log10(exponentialIncrease));
-  //var toRemove = Math.floor((building.cost * Math.pow(exponentialIncrease, building.owned)) * ((Math.pow(exponentialIncrease, toBuy) - 1) / (exponentialIncrease - 1)));
-  if (toBuy <= player[resource]) {
-    //player[resource] -= toRemove;
-    building.owned += parseInt(toBuy);
-    building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned))));
-  }
-=======
-
-
-
-//Tech Buy
-function techBuy(building){
-  building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
-  if (building.nextC <= player.tech){
-    building.owned++;
-    player.tech -= building.nextC;
-    document.getElementById('Tech').innerHTML = suffixy(player.tech, 2);
-    building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
-}
-  else {
-      console.log("Not enough resources");
-  }
-}
-//Energy Buy
-function energyBuy(building){
-  building.nextC = (Math.floor(building.cost * Math.pow(1.15,building.owned)));
-  if (building.nextC <= player.energy){
-    building.owned++;
-    player.energy -= building.nextC;
-    document.getElementById("Energy").innerHTML = suffixy(player.energy, 2);
-    building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
-}
-  else {
-      console.log("Not enough resources");
-  }
-}
-
-function buildingBuyFive(building, resource, amountToPurchase, id){ //Now you send two values, building and amountToPurchase.
-    var exponentialIncrease = 1.15; //**Easier to put this up here, so you only have to change one number if you want to rebalance this.
-    var nextCost = 0; //**There's no reason to store nextC in the player object. You'll want to calculate this out when you check it, then have it be disposed
-    nextCost = Math.floor((building.cost * Math.pow(exponentialIncrease, building.owned)) * ((Math.pow(exponentialIncrease, amountToPurchase) - 1) / (exponentialIncrease - 1)));
-    //now determines cost of any number of buildings
-    if (nextCost <= player[resource]){ //checks if player can afford the purchase
-        building.owned += amountToPurchase; //increments the amount of buildings by amount to purchase
-        player[resource] -= nextCost; // removes the resource used to purchase the building
-        document.getElementById(id).innerHTML = suffixy(player[resource], 2); // updates the amount of resource on the screen.
-        building.nextC = ((Math.floor(building.cost * Math.pow(1.15,building.owned))));
-        console.log(nextCost);
-    }
-    else {
-        console.log("Not enough resources");
-    }
->>>>>>> Updated buttons
+  buyBuilding(building, resource, Math.floor(toBuy), id);
 }
 function log10(val) {
   return Math.log(val) / Math.LN10;
-}*/
+}
 
 function buyUpgrade(techcost, energycost, up, amount) {
   if (techcost <= player.tech && energycost <= player.energy) {
@@ -413,34 +369,44 @@ function floor(num) {
 function hideElements(){
   if (player.tech >= 50){
     document.getElementById('andro').style.display = 'block';
+    document.getElementById('andro2').style.display = 'block';
   }
   if (player.tech >= 250){
     document.getElementById('robo').style.display = 'block';
+    document.getElementById('robo2').style.display = 'block';
   }
   if (player.tech >= 500){
     document.getElementById('resLabo').style.display = 'block';
+    document.getElementById('resLabo2').style.display = 'block';
   }
   if (player.tech >= 1000){
     document.getElementById('resFact').style.display = 'block';
+    document.getElementById('resFact2').style.display = 'block';
   }
   if (player.tech >= 2000){
     document.getElementById('robFact').style.display = 'block';
+    document.getElementById('robFact2').style.display = 'block';
   }
   if (player.tech >= 3000){
     document.getElementById('cyberLabo').style.display = 'block';
+    document.getElementById('cyberLabo2').style.display = 'block';
   }
 //energy
 if (player.energy >= 250){
   document.getElementById('pwrgen').style.display = 'block';
+  document.getElementById('pwrgen2').style.display = 'block';
 }
 if (player.energy >= 500){
   document.getElementById('generoom').style.display = 'block';
+  document.getElementById('generoom2').style.display = 'block';
 }
 if (player.energy >= 1000){
   document.getElementById('solarpan').style.display = 'block';
+  document.getElementById('solarpan2').style.display = 'block';
 }
 if (player.energy >= 2000){
   document.getElementById('solarfarm').style.display = 'block';
+  document.getElementById('solarfarm2').style.display = 'block';
 }
 }
 function updateTotals() {
