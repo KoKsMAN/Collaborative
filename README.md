@@ -46,7 +46,7 @@ ___
 
 |KNOWN BUGS|
 | ------------- |
-|☠ Currently none |
+|☠ Upgrades button removes resources despite owning this upgrade. |
 
 
 
