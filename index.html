@@ -50,16 +50,6 @@
       <p>Your progress is saved automatically each minute. If you are in hurry and can't wait for next auto save, click the "Save Game" button located in "Settings" Tab."</p>
       <button id="notify-button" type="button" class="btn btn-default" onclick="hideNotify()">Got it!</button>
     </div>
-    <p id="nick">Coded by <a href="https://github.com/KoKsMAN" target="_blank">KoKsMAN</a> & <a href="https://github.com/Nak0o0" target="_blank">Nak0o0</a></p>
-    <div id="social-links">
-      <a href="https://www.reddit.com/r/incremental_games/comments/3j7j2v/space_colonists_my_first_take_on_js_incremental/" target="_blank">
-        <img src="img/reddit.png" width="48" name="reddit" onmouseover="this.src='img/reddit-hover.png'; reddit.width='55';" onmouseout="this.src='img/reddit.png'; reddit.width='48';" border="0" alt="" />
-      </a>
-      <a href="https://github.com/KoKsMAN" target="_blank">
-        <img src="img/github.png" width="48" name="github" onmouseover="this.src='img/github-hover.png'; github.width='55';" onmouseout="this.src='img/github.png'; github.width='48';" border="0" alt="" />
-      </a>
-    </div>
-
     <img id="logo" src="img/SpaceColonistsLogotrans2.png" alt="...">
 
     <div id="resources">
@@ -85,7 +75,7 @@
       <ul class="nav nav-tabs">
         <li class="active">
           <a id="staffbtn" href="#staff">
-            <img src="img/creditsgray.png" width="32" alt="...">  Staff</a>
+            <img src="img/creditsgray.png" width="32" alt="..."> Staff</a>
         </li>
         <li>
           <a id="techbtn" href="#tech">
@@ -755,7 +745,7 @@
           <div class="media">
             <div id="fifth" class="media-body">
               <p class="achpoints">1</p>
-              <h4 class="media-heading">It's raining money.</h4>
+              <h4 class="media-heading">It's raining money</h4>
               <p class="media-para">Collect 50.000.000 Credits</p>
             </div>
           </div>
@@ -987,31 +977,36 @@
           <div class="media">
             <div id="twenty_first" class="media-body">
               <p class="achpoints">1</p>
-              <h4 class="media-heading">Bought 10 robots</h4>
+              <h4 class="media-heading">I, robot</h4>
+              <p class="media-para">Bought 1 Robot</p>
             </div>
           </div>
           <div class="media">
             <div id="twenty_second" class="media-body">
               <p class="achpoints">1</p>
-              <h4 class="media-heading">Bought 450 robots</h4>
+              <h4 class="media-heading">Three Laws of Robotics</h4>
+              <p class="media-para">Bought 450 Robots</p>
             </div>
           </div>
           <div class="media">
             <div id="twenty_third" class="media-body">
               <p class="achpoints">1</p>
-              <h4 class="media-heading">Bought 950 robots</h4>
+              <h4 class="media-heading">VIKI's plan</h4>
+              <p class="media-para">Bought 950 Robots</p>
             </div>
           </div>
           <div class="media">
             <div id="twenty_fourth" class="media-body">
               <p class="achpoints">1</p>
-              <h4 class="media-heading">Bought 4.500 robots</h4>
+              <h4 class="media-heading">Will's nightmare</h4>
+              <p class="media-para">Bought 4.500 Robots</p>
             </div>
           </div>
           <div class="media">
             <div id="twenty_fifth" class="media-body">
               <p class="achpoints">1</p>
-              <h4 class="media-heading">Bought 9.500 robots</h4>
+              <h4 class="media-heading">NS-5 carnage</h4>
+              <p class="media-para">Bought 9.500 Robots</p>
             </div>
           </div>
           <!--Research Labs-->
@@ -1450,15 +1445,20 @@
           <br />
           <br />
           <span>ALPHA FEATURE</span>
-          <p>You can generate key to safeguard your data or continue progress on different device / computer.</p><br/ >
-          <p>Please Note that you have to generate new key if you want to include new progress after last key load</p><br />
-          <p>To save, press on generate key button and copy the key (Ctrl+c). Keep that key somewhere safe.</p><br/>
-            <p>To load, paste your key (Ctrl+v) into the text box and click on "Load" button.</p><br />
-            <textarea id="impo-expo"></textarea><br/>
-            <input class="btn btn-default" onclick="gameLoadString()" type="submit" value="Load">
-            <button type="button" class="btn btn-default" onclick="gameSaveString()">Generate Key</button>
-            <p>Press "Delete Save" button to remove save data from local storage.</p>
-            <button type="button" class="btn btn-danger" id="Delete" onclick="deleteSave(); history.go(0)">Delete Save</button>
+          <p>You can generate key to safeguard your data or continue progress on different device / computer.</p>
+          <br/>
+          <p>Please Note that you have to generate new key if you want to include new progress after last key load</p>
+          <br />
+          <p>To save, press on generate key button and copy the key (Ctrl+c). Keep that key somewhere safe.</p>
+          <br/>
+          <p>To load, paste your key (Ctrl+v) into the text box and click on "Load" button.</p>
+          <br />
+          <textarea id="impo-expo"></textarea>
+          <br/>
+          <input class="btn btn-default" onclick="gameLoadString()" type="submit" value="Load">
+          <button type="button" class="btn btn-default" onclick="gameSaveString()">Generate Key</button>
+          <p>Press "Delete Save" button to remove save data from local storage.</p>
+          <button type="button" class="btn btn-danger" id="Delete" onclick="deleteSave(); history.go(0)">Delete Save</button>
         </div>
         <div id="Site-Tab" class="tab-pane fade">
           <p>You can rename your commander and colony by clicking the button below.</p>
@@ -1466,14 +1466,16 @@
         </div>
         <div id="Statistics-Tab" class="tab-pane fade">
           <div id="stats">
-            <p>Number of mouse clicks :<span id="mouse-clicks"></span> times.</p>
+            <p>Number of mouse clicks :
+              <span id="mouse-clicks"></span> times.</p>
 
           </div>
         </div>
         <div id="Contact-Tab" class="tab-pane fade">
           <p>Have you found annoying bug ? Do you have an idea on how to improve the game ? Is there any missing feature you'd like to see ?</p>
           <p>Please use following email address for contact:
-            <span>contact[dot]spacecolonists[at]gmail.com<span>
+            <span>contact[dot]spacecolonists[at]gmail.com
+              <span>
           </p>
           <p>Alternatively you can use the following link to reddit thread:
             <a href="https://www.reddit.com/r/incremental_games/comments/3j7j2v/space_colonists_my_first_take_on_js_incremental/" target="_blank">
@@ -1499,6 +1501,28 @@
       </div>
       <div id="Game-Save">Game Saved !</div>
     </div>
+    <nav id="footer" class="navbar navbar-inverse navbar-bottom">
+      <div class="footer-container">
+        <div class="bs-social">
+          <ul class="bs-social-buttons">
+            <li class="github-btn">
+              <a href="https://www.reddit.com/r/incremental_games/comments/3j7j2v/space_colonists_my_first_take_on_js_incremental/" target="_blank">
+                <img src="img/reddit.png" width="48" name="reddit" onmouseover="this.src='img/reddit-hover.png'; reddit.width='48';" onmouseout="this.src='img/reddit.png'; reddit.width='48';" border="0" alt="" />
+              </a>
+            </li>
+            <li class="reddit-btn">
+              <a href="https://github.com/KoKsMAN" target="_blank">
+                <img src="img/github.png" width="48" name="github" onmouseover="this.src='img/github-hover.png'; github.width='48';" onmouseout="this.src='img/github.png'; github.width='48';" border="0" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <p id="footer-content">
+          Space Colonists coded by |
+          <a target="_blank" href="https://github.com/KoKsMAN">KoKsMAN</a> and <a target="_blank" href="https://github.com/Nak0o0">Nak0o0</a>
+        </p>
+      </div>
+    </nav>
   </div>
 </body>
 
