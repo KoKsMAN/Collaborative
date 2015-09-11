@@ -410,88 +410,88 @@ function checkAchievements() {
   if (player.achievements.fiftieth !== 0) {
     document.getElementById("fiftieth").className = "achievement-unlocked";
   }
-                //Power Generator Achievements
-  //51
-  if (player.pwrGen.owned === 5 && player.achievements.fifty_first - first !== 1) {
-    player.achievements.fifty_first = 1;
-    player.achievements.points++;
-  }
-  if (player.achievements.fifty_first !== 0) {
-    document.getElementById("fifty_first").className = "achievement-unlocked";
-  }
-  //52
-  if (player.pwrGen.owned === 400 && player.achievements.fifty_second !== 1) {
-    player.achievements.fifty_second = 1;
-    player.achievements.points++;
-  }
-  if (player.achievements.fifty_second !== 0) {
-    document.getElementById("fifty_second").className = "achievement-unlocked";
-  }
-  //53
-  if (player.pwrGen.owned === 900 && player.achievements.fifty_third !== 1) {
-    player.achievements.fifty_third = 1;
-    player.achievements.points++;
-  }
-  if (player.achievements.fifty_third !== 0) {
-    document.getElementById("fifty_third").className = "achievement-unlocked";
-  }
-  //54
-  if (player.pwrGen.owned === 4000 && player.achievements.fifty_fourth !== 1) {
-    player.achievements.fifty_fourth = 1;
-    player.achievements.points++;
-  }
-  if (player.achievements.fifty_fourth !== 0) {
-    document.getElementById("fifty_fourth").className = "achievement-unlocked";
-  }
-  //55
-  if (player.pwrGen.owned === 9000 && player.achievements.fifty_fifth !== 1) {
-    player.achievements.fifty_fifth = 1;
-    player.achievements.points++;
-  }
-  if (player.achievements.fifty_fifth !== 0) {
-    document.getElementById("fifty_fifth").className = "achievement-unlocked";
-  }
-                //Generator Room Achievements
-  //56
-  if (player.genRoom.owned === 15 && player.achievements.fifty_sixth !== 1) {
-    player.achievements.fifty_sixth = 1;
-    player.achievements.points++;
-  }
-  if (player.achievements.fifty_sixth !== 0) {
-    document.getElementById("fifty_sixth").className = "achievement-unlocked";
-  }
-  //57
-  if (player.genRoom.owned === 450 && player.achievements.fifty_seventh !== 1) {
-    player.achievements.fifty_seventh = 1;
-    player.achievements.points++;
-  }
-  if (player.achievements.fifty_seventh !== 0) {
-    document.getElementById("fifty_seventh").className = "achievement-unlocked";
-  }
-  //58
-  if (player.genRoom.owned === 970 && player.achievements.fifty_eighth !== 1) {
-    player.achievements.fifty_eighth = 1;
-    player.achievements.points++;
-  }
-  if (player.achievements.fifty_eighth !== 0) {
-    document.getElementById("fifty_eighth").className = "achievement-unlocked";
-  }
-  //59
-  if (player.genRoom.owned === 4600 && player.achievements.fifty_nineth !== 1) {
-    player.achievements.fifty_nineth = 1;
-    player.achievements.points++;
-  }
-  if (player.achievements.fifty_nineth !== 0) {
-    document.getElementById("fifty_nineth").className = "achievement-unlocked";
-  }
-  //60
-  if (player.genRoom.owned === 9900 && player.achievements.sixtieth !== 1) {
-    player.achievements.sixtieth = 1;
-    player.achievements.points++;
-  }
-  if (player.achievements.sixtieth !== 0) {
-    document.getElementById("sixtieth").className = "achievement-unlocked";
-  }
+/*  //Power Generator Achievements
+//51
+if (player.pwrGen.owned === 5 && player.achievements.fifty_first - first !== 1) {
+player.achievements.fifty_first = 1;
+player.achievements.points++;
+}
+if (player.achievements.fifty_first !== 0) {
+document.getElementById("fifty_first").className = "achievement-unlocked";
+}
+//52
+if (player.pwrGen.owned === 400 && player.achievements.fifty_second !== 1) {
+player.achievements.fifty_second = 1;
+player.achievements.points++;
+}
+if (player.achievements.fifty_second !== 0) {
+document.getElementById("fifty_second").className = "achievement-unlocked";
+}
+//53
+if (player.pwrGen.owned === 900 && player.achievements.fifty_third !== 1) {
+player.achievements.fifty_third = 1;
+player.achievements.points++;
+}
+if (player.achievements.fifty_third !== 0) {
+document.getElementById("fifty_third").className = "achievement-unlocked";
+}
+//54
+if (player.pwrGen.owned === 4000 && player.achievements.fifty_fourth !== 1) {
+player.achievements.fifty_fourth = 1;
+player.achievements.points++;
+}
+if (player.achievements.fifty_fourth !== 0) {
+document.getElementById("fifty_fourth").className = "achievement-unlocked";
+}
+//55
+if (player.pwrGen.owned === 9000 && player.achievements.fifty_fifth !== 1) {
+player.achievements.fifty_fifth = 1;
+player.achievements.points++;
+}
+if (player.achievements.fifty_fifth !== 0) {
+document.getElementById("fifty_fifth").className = "achievement-unlocked";
+}
+  //Generator Room Achievements
+//56
+if (player.genRoom.owned === 15 && player.achievements.fifty_sixth !== 1) {
+player.achievements.fifty_sixth = 1;
+player.achievements.points++;
+}
+if (player.achievements.fifty_sixth !== 0) {
+document.getElementById("fifty_sixth").className = "achievement-unlocked";
+}
+//57
+if (player.genRoom.owned === 450 && player.achievements.fifty_seventh !== 1) {
+player.achievements.fifty_seventh = 1;
+player.achievements.points++;
+}
+if (player.achievements.fifty_seventh !== 0) {
+document.getElementById("fifty_seventh").className = "achievement-unlocked";
+}
+//58
+if (player.genRoom.owned === 970 && player.achievements.fifty_eighth !== 1) {
+player.achievements.fifty_eighth = 1;
+player.achievements.points++;
+}
+if (player.achievements.fifty_eighth !== 0) {
+document.getElementById("fifty_eighth").className = "achievement-unlocked";
+}
+//59
+if (player.genRoom.owned === 4600 && player.achievements.fifty_nineth !== 1) {
+player.achievements.fifty_nineth = 1;
+player.achievements.points++;
+}
+if (player.achievements.fifty_nineth !== 0) {
+document.getElementById("fifty_nineth").className = "achievement-unlocked";
+}
+//60
+if (player.genRoom.owned === 9900 && player.achievements.sixtieth !== 1) {
+player.achievements.sixtieth = 1;
+player.achievements.points++;
+}
+if (player.achievements.sixtieth !== 0) {
+document.getElementById("sixtieth").className = "achievement-unlocked";
+} */
                 //Solar Panel Achievements
   //61
   if (player.solPan.owned === 20 && player.achievements.sixty_first !== 1) {
@@ -575,6 +575,6 @@ function checkAchievements() {
     document.getElementById("seventieth").className = "achievement-unlocked";
   }
   document.getElementById('ach-bar').style.width = parseInt(player.achievements.points) + "%";
-  document.getElementById('points').innerHTML = parseInt(player.achievements.points) + "/ 100";
+  document.getElementById('points').innerHTML = parseInt(player.achievements.points) + "/ 70";
   document.getElementById('ach-counter').innerHTML = parseInt(player.achievements.points) + "%";
 }

@@ -2,10 +2,10 @@
 @font-face { font-family: Recharge; src: url('fonts/recharge.ttf'); }
 @font-face { font-family: LGot; src: url('fonts/lgot.otf'); }
 html,body{min-height:100%;}
-body {background-image: url('img/moontopright.png'),url('img/bottom.png'), url('img/Stars_Pattern_clip_art_hightt.png'); margin:0; padding:0; height:100%;
-      background-repeat: no-repeat, no-repeat, repeat;
-      background-size: 200px, 1000px, 800px;
-      background-position: top right, bottom center;
+body {background-image: url('img/bottom.png'), url('img/Stars_Pattern_clip_art_hightt.png'); margin:0; padding:0; height:100%;
+      background-repeat: no-repeat, repeat;
+      background-size: 1000px, 800px;
+      background-position: bottom center;
       /*background-attachment:fixed;*/
     }
 html *{font-size: 23px; color: white; font-family: Recharge;}
@@ -16,10 +16,9 @@ html *{font-size: 23px; color: white; font-family: Recharge;}
 #logo {display: block; margin-left: auto; margin-right: auto;}
 #social-links {margin-left: 5px; width: 180px; height: 55px;}
 #resources {display: block; position:absolute; left:50%; margin-left:-50px;}
-#Tech, #Energy {font-family: Digital;}
-#tech, #energy {font-size: 18px;}
+#Tech, #Energy, #Credits, #Uranium, #power-balance {font-family: Digital;}
 #wrapper {min-height:100%; position:relative;}
-#andro{display:none;}
+/*#andro{display:none;}
 #andro2{display:none;}
 #robo{display:none;}
 #robo2{display:none;}
@@ -38,15 +37,16 @@ html *{font-size: 23px; color: white; font-family: Recharge;}
 #solarpan {display:none;}
 #solarpan2 {display:none;}
 #solarfarm {display:none;}
-#solarfarm2 {display:none;}
+#solarfarm2 {display:none;}*/
 #imgexpsave {width: 100px;}
 .container {padding: 0px;}
-#cont-up {margin-top: 100px; margin-bottom: 100px;padding-bottom: 330px;}
-.tab1 {color:black; border-bottom: 2px solid #5bc436; font-size: 18px;}
-.tab1 span {font-size: 18px;}
-.tab2 {color:black; border-bottom: 2px solid #e5e80c; font-size: 18px;}
-.tab2 span {font-size: 18px;}
-.tab4 {font-size: 18px;}
+#cont-up {margin-top: 320px; margin-bottom: 100px;padding-bottom: 330px;}
+.tab1 {border-bottom: 2px solid #e80c26;}
+.tab2 {border-bottom: 2px solid #5bc436;}
+.tab3 {border-bottom: 2px solid #e5e80c;}
+.tab4 {border-bottom: 2px solid #cc0ce8;}
+.tab1 span, .tab2 span, .tab3 span, .tab4 span {font-size: 18px;}
+.tab1, .tab2, .tab3, .tab4 {color:black; font-size: 18px;}
 .tab-content, .tab-content span, .tab-content h5  {background-color: #E8E8F0; color: black;}
 .tab-pane {color: black;}
 .tab-text, .tab-text span {margin-left: 5px; color: black; font-size: 18px}
@@ -58,6 +58,8 @@ html *{font-size: 23px; color: white; font-family: Recharge;}
 #settings ul {background-image: url('img/achievement3.png');font-size: 18px;}
 #achlist li {margin-bottom: 2px;}
 #stats {color: black; padding-top: 5px; padding-bottom: 5px;}
+#Save-Tab p, #Site-Tab p, #Statistics-Tab p, #Contact-Tab p, #Credits-Tab p {margin-left: 5px;font-size: 30px;color:black; font-family: "LGot";}
+#Save-Tab span, #Contact-Tab span, #Statistics-Tab span, #Credits-Tab span {margin-left: 5px;font-size: 32px;color:blue; font-family: "LGot";}
 #achievements>p {text-align: center;}
 #achievements li, h4 {color: black;}
 #achievements li {margin-bottom: 2px; font-size: 18px;}
@@ -77,15 +79,16 @@ textarea {resize: none;color:black; font-size: 10px; width: 500px; height: 200px
 #Game-Save {left: 50%; right: 50%; color: white; display: none; position: absolute; width: 200px; height: 50px;}
 /* PSEUDO CLASSES */
 .btn:hover {background-color: #A1C436;}
+#staffbtn:hover {background-color: #e80c26; color: black;}
 #techbtn:hover {background-color: #5bc436; color: black;}
 #energybtn:hover {background-color: #e5e80c; color: black;}
+#uraniumbtn:hover {background-color: #cc0ce8; color: black;}
 #upgradesbtn:hover {background-color: #0c5fe8; color: black;}
 #settingsbtn:hover {background-color: #E8930C; color: black;}
-#achbtn:hover {background-color: #cc0ce8; color: black;}
-#newsbtn:hover {background-color: #e80c26; color: black;}
 #settings li:hover {background-color:black;}
 #upgrades a:hover {color:black;}
 #settings a:hover {color:black;}
+.dropdown-menu > li > a:hover {background-color: #E8930C;background-image: none;}
 ul:hover {color: black;}
 .glyphicon {color: #808080;}
 .upgrade-unlocked {width: 90px; height: 90px; background-image: url('img/hexbtn90.png'); margin-left: 30px;}

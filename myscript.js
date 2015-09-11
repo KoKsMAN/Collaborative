@@ -1,104 +1,232 @@
 //initialize player data
 var player = {
   clicks: 0,
-  speed: 2,
-  tech: 0,
-  energy: 0,
+  speed: 1,
+  credits: 150,
+  tech: 500,
+  energy: 500,
+  uranium: 0,
   commander: {
     commanderName: "temp",
     colonyName: "temp",
   },
-  engineer: {
-    name: "Engineer",
-    owned: 0,
-    cost: 15,
-    nextC: 15,
+  // Staff data
+  colonist: {
+    owned: 1,
     generates: 0.1,
+    requires: {
+      cost: 15,
+      nextC: 15
+    }
   },
-  android: {
-    name: "Android",
+  engineer: {
     owned: 0,
-    cost: 100,
-    nextC: 100,
     generates: 0.5,
+    requires: {
+      cost: 100,
+      nextC: 100
+    }
+  },
+  inventor: {
+    owned: 0,
+    generates: 4,
+    requires: {
+      cost: 500,
+      nextC: 500
+    }
+  },
+  scientist: {
+    owned: 0,
+    generates: 10,
+    requires: {
+      cost: 3000,
+      nextC: 3000
+    }
   },
   robot: {
-    name: "Robot",
     owned: 0,
-    cost: 500,
-    nextC: 500,
-    generates: 4,
+    generates: 40,
+    requires: {
+      cost: 10000,
+      nextC: 10000
+    }
+  },
+  android: {
+    owned: 0,
+    generates: 100,
+    requires: {
+      cost: 40000,
+      nextC: 40000
+    }
+  },
+// Tech data
+  workbench: {
+    owned: 0,
+    generates: 1,
+    requires: {
+      cost: 150,
+      nextC: 150,
+      staffCost: 1,
+      powerCost: 1
+    }
+  },
+  workshop: {
+    owned: 0,
+    generates: 50,
+    requires: {
+      cost: 1000,
+      nextC: 1000,
+      staffCost: 1,
+      powerCost: 0
+    }
   },
   resLab: {
-    name: "Research Lab",
     owned: 0,
-    cost: 3000,
-    nextC: 3000,
-    generates: 10,
+    generates: 40,
+    requires: {
+      cost: 5000,
+      nextC: 5000,
+      staffCost: 1,
+      powerCost: 0
+    }
   },
   resFac: {
-    name: "Research Facility",
     owned: 0,
-    cost: 10000,
-    nextC: 10000,
-    generates: 40,
+    generates: 100,
+    requires: {
+      cost: 30000,
+      nextC: 30000,
+      staffCost: 1,
+      powerCost: 0
+    }
   },
   roboticsFact: {
-    name: "Robotics Factory",
     owned: 0,
-    cost: 40000,
-    nextC: 40000,
-    generates: 100,
+    generates: 400,
+    requires: {
+      cost: 100000,
+      nextC: 100000,
+      staffCost: 1,
+      powerCost: 0
+    }
   },
   cyberLab: {
-    name: "Cybernetics Lab",
     owned: 0,
-    cost: 200000,
-    nextC: 200000,
     generates: 400,
+    requires: {
+      cost: 4000000,
+      nextC: 4000000,
+      staffCost: 1,
+      powerCost: 0
+    }
   },
-  //initialize energy building data
+//Energy data
   battPack: {
-    name: "Battery Pack",
     owned: 0,
-    cost: 15,
-    nextC: 15,
-    generates: 0.1,
-  },
-  pwrGen: {
-    name: "Power Generator",
-    owned: 0,
-    cost: 100,
-    nextC: 100,
-    generates: 0.5,
-  },
-  genRoom: {
-    name: "Generator Room",
-    owned: 0,
-    cost: 500,
-    nextC: 500,
-    generates: 4,
+    generates: 1.2,
+    requires: {
+      cost: 75,
+      nextC: 75,
+      staffCost: 1,
+      powerCost: 0
+    }
   },
   solPan: {
-    name: "Solar Panels",
     owned: 0,
-    cost: 3000,
-    nextC: 3000,
-    generates: 10,
+    generates: 1,
+    requires: {
+      cost: 500,
+      nextC: 500,
+      staffCost: 1,
+      powerCost: 0
+    }
   },
   solPanFarm: {
-    name: "Solar Panel Farm",
     owned: 0,
-    cost: 10000,
-    nextC: 10000,
-    generates: 40,
+    generates: 5,
+    requires: {
+      cost: 2500,
+      nextC: 2500,
+      staffCost: 1,
+      powerCost: 0
+    }
+  },
+  termPowStation: {
+    owned: 0,
+    generates: 30,
+    requires: {
+      cost: 15000,
+      nextC: 15000,
+      staffCost: 1,
+      powerCost: 0
+    }
+  },
+  nucPowPlant: {
+    owned: 0,
+    generates: 90,
+    requires: {
+      cost: 50000,
+      nextC: 50000,
+      staffCost: 1,
+      powerCost: 0
+    }
+  },
+  fusReactor: {
+    owned: 0,
+    generates: 200,
+    requires: {
+      cost: 200000,
+      nextC: 200000,
+      staffCost: 1,
+      powerCost: 0
+    }
+  },
+  uraReactor: {
+    owned: 0,
+    generates: 500,
+    requires: {
+      cost: 1000000,
+      nextC: 1000000,
+      staffCost: 1,
+      powerCost: 0
+    }
+  },
+  //Uranium data
+  miner: {
+    owned: 0,
+    generates: 400,
+    requires: {
+      cost: 200000,
+      nextC: 200000
+    }
+  },
+  uraSmelter: {
+    owned: 0,
+    generates: 0.1,
+    requires: {
+      cost: 15,
+      nextC: 15,
+      staffCost: 1,
+      powerCost: 0
+    }
+  },
+  uraRefinery: {
+    owned: 0,
+    generates: 10,
+    requires: {
+      cost: 3000,
+      nextC: 3000,
+      staffCost: 1,
+      powerCost: 0
+    }
   },
   upgrades: {
-    //Auto CLicker
-    autoClickerTech: 0,
-    autoClickerEnergy: 0,
-    doubleClickerTech: 0,
-    doubleClickerEnergy: 0,
+    user: {
+      //Auto CLicker
+      manager: 0,
+      energyAssistant: 0,
+      chiefResearcher: 0
+    },
     //Tech
     engi5Perc: 0,
     engi25Perc: 0,
@@ -124,7 +252,7 @@ var player = {
     solPan5Perc: 0,
     solPan25Perc: 0,
     solPanFarm5Perc: 0,
-    solPanFarm25Perc: 0,
+    solPanFarm25Perc: 0
   },
   achievements: {
     points: 0,
@@ -222,6 +350,7 @@ if (player.commander.colonyName === "temp") {
   document.getElementById('colony-name').innerHTML = "Colony:" + " " + player.commander.colonyName;
 }
 }
+
 function renameCharacter(){
 //Ask player for commander and colony names
   var commanderNamee = prompt("What is your name, commander ?");
@@ -272,64 +401,44 @@ function gameLoad() {
   //FPS
   if (typeof savegame.speed !== "undefined") player.speed = savegame.speed;
   //Resources
+  if (typeof savegame.credits !== "undefined") player.credits = savegame.credits;
   if (typeof savegame.tech !== "undefined") player.tech = savegame.tech;
   if (typeof savegame.energy !== "undefined") player.energy = savegame.energy;
-  //Units Tech
+  if (typeof savegame.uranium !== "undefined") player.uranium = savegame.uranium;
+  //Commander
   if (typeof savegame.commander !== "undefined") player.commander = savegame.commander;
+  //Units Staff
+  if (typeof savegame.colonist !== "undefined") player.colonist = savegame.colonist;
   if (typeof savegame.engineer !== "undefined") player.engineer = savegame.engineer;
-  if (typeof savegame.android !== "undefined") player.android = savegame.android;
+  if (typeof savegame.inventor !== "undefined") player.inventor = savegame.inventor;
+  if (typeof savegame.scientist !== "undefined") player.scientist = savegame.scientist;
   if (typeof savegame.robot !== "undefined") player.robot = savegame.robot;
+  if (typeof savegame.android !== "undefined") player.android = savegame.android;
+
+  //Units Tech
+  if (typeof savegame.workbench !== "undefined") player.workbench = savegame.workbench;
+  if (typeof savegame.workshop !== "undefined") player.workshop = savegame.workshop;
   if (typeof savegame.resLab !== "undefined") player.resLab = savegame.resLab;
   if (typeof savegame.resFac !== "undefined") player.resFac = savegame.resFac;
   if (typeof savegame.roboticsFact !== "undefined") player.roboticsFact = savegame.roboticsFact;
   if (typeof savegame.cyberLab !== "undefined") player.cyberLab = savegame.cyberLab;
   //Units Energy
   if (typeof savegame.battPack !== "undefined") player.battPack = savegame.battPack;
-  if (typeof savegame.pwrGen !== "undefined") player.pwrGen = savegame.pwrGen;
-  if (typeof savegame.genRoom !== "undefined") player.genRoom = savegame.genRoom;
   if (typeof savegame.solPan !== "undefined") player.solPan = savegame.solPan;
   if (typeof savegame.solPanFarm !== "undefined") player.solPanFarm = savegame.solPanFarm;
+  if (typeof savegame.termPowStation !== "undefined") player.termPowStation = savegame.termPowStation;
+  if (typeof savegame.nucPowPlant !== "undefined") player.nucPowPlant = savegame.nucPowPlant;
+  if (typeof savegame.fusReactor !== "undefined") player.fusReactor = savegame.fusReactor;
+  if (typeof savegame.uraReactor !== "undefined") player.uraReactor = savegame.uraReactor;
+  //Units Uranium
+  if (typeof savegame.miner !== "undefined") player.miner = savegame.miner;
+  if (typeof savegame.uraSmelter !== "undefined") player.uraSmelter = savegame.uraSmelter;
+  if (typeof savegame.uraRefinery !== "undefined") player.uraRefinery = savegame.uraRefinery;
   //Achievements
   if (typeof savegame.achievements !== "undefined") player.achievements = savegame.achievements;
   //Upgrades
   if (typeof savegame.upgrades !== "undefined") player.upgrades = savegame.upgrades;
 }
-//game load
-
-
-// ================ COOKIE SAVE =====================//
-/*function set_cookie(cookie_name,value) {
-    expiry = new Date();
-    expiry.setTime(new Date().getTime() + (10*60*1000));
-    var c_value=escape(btoa(JSON.stringify(value))) +
-    "; expires="+expiry.toUTCString();
-    document.cookie=cookie_name + "=" + c_value;
-}
-
-function get_cookie(cookie_name) {
-    var c_value = document.cookie;
-    var c_start = c_value.indexOf(" " + cookie_name + "=");
-    if (c_start == -1) {
-        c_start = c_value.indexOf(cookie_name + "=");
-    }
-    if (c_start == -1) return false;
-    c_start = c_value.indexOf("=", c_start) + 1;
-    var c_end = c_value.indexOf(";", c_start);
-    if (c_end == -1) {
-        c_end = c_value.length;
-    }
-    c_value = atob(unescape(c_value.substring(c_start,c_end)));
-    return JSON.parse(c_value);
-}
-
-function save_game() {
-    set_cookie('clickclick_save', player);
-}
-function load_game() {
-    var save_data = getCookie('clickclick_save');
-       if (!save_data) return;
-    player = save_data;
-}*/
 
 //delete save
 function deleteSave() {
@@ -340,13 +449,13 @@ function deleteSave() {
 function buyBuilding(building, resource, amountToPurchase, id) { //Send two values, building and amountToPurchase.
   var exponentialIncrease = 1.15; //Used to change the value for rebalancing later.
   var nextCost = 0;
-  nextCost = Math.floor((building.cost * Math.pow(exponentialIncrease, building.owned)) * ((Math.pow(exponentialIncrease, amountToPurchase) - 1) / (exponentialIncrease - 1)));
+  nextCost = Math.floor((building.requires.cost * Math.pow(exponentialIncrease, building.owned)) * ((Math.pow(exponentialIncrease, amountToPurchase) - 1) / (exponentialIncrease - 1)));
   //now determines cost of any number of buildings
   if (nextCost <= player[resource]) { //checks if player can afford the purchase
     building.owned += amountToPurchase; //increments the amount of buildings by amount to purchase
     player[resource] -= nextCost; // removes the resource used to purchase the building
     document.getElementById(id).innerHTML = suffixy(player[resource], 2); // updates the amount of resource on the screen.
-    building.nextC = ((Math.floor(building.cost * Math.pow(1.15, building.owned)))); //displays cost of next purchase
+    building.requires.nextC = ((Math.floor(building.requires.cost * Math.pow(1.15, building.owned)))); //displays cost of next purchase
     //console.log(nextCost);
   } else {
     console.log("Not enough resources");
@@ -356,8 +465,8 @@ function buyBuilding(building, resource, amountToPurchase, id) { //Send two valu
 function buyAll(building, resource, id) {
   var exponentialIncrease = 1.15;
   var nextCost = 0;
-  var toBuy = (log10(((player[resource] / (building.cost * Math.pow(exponentialIncrease, building.owned))) * (exponentialIncrease - 1)) + 1) / log10(exponentialIncrease));
-  buyBuilding(building, resource, Math.floor(toBuy), id);
+  var toBuy = (log10(((player[resource] / (building.requires.cost * Math.pow(exponentialIncrease, building.owned))) * (exponentialIncrease - 1)) + 1) / log10(exponentialIncrease));
+  buyBuilding(building, resource, Math.floor(toBuy), id, worker);
 }
 function log10(val) {
   return Math.log(val) / Math.LN10;
@@ -452,47 +561,162 @@ if (player.energy >= 2000){
 }
 }
 function updateTotals() {
-  player.tech += ((player.engineer.owned * (player.engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc) / player.speed));
-  player.tech += ((player.android.owned * (player.android.generates + player.upgrades.andro5Perc + player.upgrades.andro25Perc) / player.speed));
-  player.tech += ((player.robot.owned * (player.robot.generates + player.upgrades.robot5Perc + player.upgrades.robot25Perc) / player.speed));
-  player.tech += ((player.resLab.owned * (player.resLab.generates + player.upgrades.resLab5Perc + player.upgrades.resLab25Perc) / player.speed));
-  player.tech += ((player.resFac.owned * (player.resFac.generates + player.upgrades.resFact5Perc + player.upgrades.resFact25Perc) / player.speed));
-  player.tech += ((player.roboticsFact.owned * (player.roboticsFact.generates + player.upgrades.roboFact5Perc + player.upgrades.roboFact25Perc) / player.speed));
-  player.tech += ((player.cyberLab.owned * (player.cyberLab.generates + player.upgrades.cybLab5Perc + player.upgrades.cybLab25Perc) / player.speed));
-  //Energy
-  player.energy += ((player.battPack.owned * (player.battPack.generates + player.upgrades.battPck5Perc + player.upgrades.battPck25Perc) / player.speed));
-  player.energy += ((player.pwrGen.owned * (player.pwrGen.generates + player.upgrades.pwrGen5Perc + player.upgrades.pwrGen25Perc) / player.speed));
-  player.energy += ((player.genRoom.owned * (player.genRoom.generates + player.upgrades.genRoom5Perc + player.upgrades.genRoom25Perc) / player.speed));
-  player.energy += ((player.solPan.owned * (player.solPan.generates + player.upgrades.solPan5Perc + player.upgrades.solPan25Perc) / player.speed));
-  player.energy += ((player.solPanFarm.owned * (player.solPanFarm.generates + player.upgrades.solPanFarm5Perc + player.upgrades.solPanFarm25Perc) / player.speed));
-  //Generating
-  document.getElementsByClassName('Generating')[0].innerHTML = prettify((player.engineer.owned * (player.engineer.generates + player.upgrades.engi5Perc + player.upgrades.engi25Perc)));
-  document.getElementsByClassName('Generating')[1].innerHTML = prettify((player.android.owned * (player.android.generates + player.upgrades.andro5Perc + player.upgrades.andro25Perc)));
-  document.getElementsByClassName('Generating')[2].innerHTML = prettify((player.robot.owned * (player.robot.generates + player.upgrades.robot5Perc + player.upgrades.robot25Perc)));
-  document.getElementsByClassName('Generating')[3].innerHTML = prettify((player.resLab.owned * (player.resLab.generates + player.upgrades.resLab5Perc + player.upgrades.resLab25Perc)));
-  document.getElementsByClassName('Generating')[4].innerHTML = prettify((player.resFac.owned * (player.resFac.generates + player.upgrades.resFact5Perc + player.upgrades.resFact25Perc)));
-  document.getElementsByClassName('Generating')[5].innerHTML = prettify((player.roboticsFact.owned * (player.roboticsFact.generates + player.upgrades.roboFact5Perc + player.upgrades.roboFact25Perc)));
-  document.getElementsByClassName('Generating')[6].innerHTML = prettify((player.cyberLab.owned * (player.cyberLab.generates + player.upgrades.cybLab5Perc + player.upgrades.cybLab25Perc)));
-  document.getElementsByClassName('Generating')[7].innerHTML = prettify((player.battPack.owned * (player.battPack.generates + player.upgrades.battPck5Perc + player.upgrades.battPck25Perc)));
-  document.getElementsByClassName('Generating')[8].innerHTML = prettify((player.pwrGen.owned * (player.pwrGen.generates + player.upgrades.pwrGen5Perc + player.upgrades.pwrGen25Perc)));
-  document.getElementsByClassName('Generating')[9].innerHTML = prettify((player.genRoom.owned * (player.genRoom.generates + player.upgrades.genRoom5Perc + player.upgrades.genRoom25Perc)));
-  document.getElementsByClassName('Generating')[10].innerHTML = prettify((player.solPan.owned * (player.solPan.generates + player.upgrades.solPan5Perc + player.upgrades.solPan25Perc)));
-  document.getElementsByClassName('Generating')[11].innerHTML = prettify((player.solPanFarm.owned * (player.solPanFarm.generates + player.upgrades.solPanFarm5Perc + player.upgrades.solPanFarm25Perc)));
-  //Cost
-  document.getElementsByClassName('Cost')[0].innerHTML = suffixy(player.engineer.nextC, 2);
-  document.getElementsByClassName('Cost')[1].innerHTML = suffixy(player.android.nextC, 2);
-  document.getElementsByClassName('Cost')[2].innerHTML = suffixy(player.robot.nextC, 2);
-  document.getElementsByClassName('Cost')[3].innerHTML = suffixy(player.resLab.nextC, 2);
-  document.getElementsByClassName('Cost')[4].innerHTML = suffixy(player.resFac.nextC, 2);
-  document.getElementsByClassName('Cost')[5].innerHTML = suffixy(player.roboticsFact.nextC, 2);
-  document.getElementsByClassName('Cost')[6].innerHTML = suffixy(player.cyberLab.nextC, 2);
-  //Cost Energy
-  document.getElementsByClassName('Cost')[7].innerHTML = suffixy(player.battPack.nextC, 2);
-  document.getElementsByClassName('Cost')[8].innerHTML = suffixy(player.pwrGen.nextC, 2);
-  document.getElementsByClassName('Cost')[9].innerHTML = suffixy(player.genRoom.nextC, 2);
-  document.getElementsByClassName('Cost')[10].innerHTML = suffixy(player.solPan.nextC, 2);
-  document.getElementsByClassName('Cost')[11].innerHTML = suffixy(player.solPanFarm.nextC, 2);
+  var energyOutcome = prettify(((player.workbench.owned * player.workbench.requires.powerCost) + (player.workshop.owned * player.workshop.requires.powerCost) +
+                      (player.resLab.owned * player.resLab.requires.powerCost) + (player.resFac.owned * player.resFac.requires.powerCost) +
+                      (player.roboticsFact.owned * player.roboticsFact.requires.powerCost) + (player.cyberLab.owned * player.cyberLab.requires.powerCost)));
+  var energyIncome =  prettify(((player.battPack.owned * player.battPack.generates) + (player.solPan.owned * player.solPan.generates) +
+                      (player.solPanFarm.owned * player.solPanFarm.generates) + (player.termPowStation.owned * player.termPowStation.generates) +
+                      (player.nucPowPlant.owned * player.nucPowPlant.generates) + (player.fusReactor.owned * player.fusReactor.generates) +
+                      (player.uraReactor.owned * player.uraReactor.generates)));
+  //Credits
+  player.credits += ((player.colonist.owned * player.colonist.generates) / player.speed);
+  player.credits += ((player.engineer.owned * player.engineer.generates) / player.speed);
+  player.credits += ((player.inventor.owned * player.inventor.generates) / player.speed);
+  player.credits += ((player.scientist.owned * player.scientist.generates) / player.speed);
+  player.credits += ((player.robot.owned * player.robot.generates) / player.speed);
+  player.credits += ((player.android.owned * player.android.generates) / player.speed);
+  getResource(player, 'credits' , 1);
 
+  if (energyOutcome < energyIncome || energyOutcome == energyIncome ){
+  //Tech
+    player.tech += ((player.workbench.owned * player.workbench.generates) / player.speed);
+    player.tech += ((player.workshop.owned * player.workshop.generates) / player.speed);
+    player.tech += ((player.resLab.owned * player.resLab.generates) / player.speed);
+    player.tech += ((player.resFac.owned * player.resFac.generates) / player.speed);
+    player.tech += ((player.roboticsFact.owned * player.roboticsFact.generates) / player.speed);
+    player.tech += ((player.cyberLab.owned * player.cyberLab.generates) / player.speed);
+    //Uranium
+    player.uranium += ((player.miner.owned * player.miner.generates) / player.speed);
+    player.uranium += ((player.uraSmelter.owned * player.uraSmelter.generates) / player.speed);
+    player.uranium += ((player.uraRefinery.owned * player.uraRefinery.generates) / player.speed);
+    //Energy remove
+    player.energy -= ((player.workbench.owned * player.workbench.requires.powerCost) / player.speed);
+    player.energy -= ((player.workshop.owned * player.workshop.requires.powerCost) / player.speed);
+    player.energy -= ((player.resLab.owned * player.resLab.requires.powerCost) / player.speed);
+    player.energy -= ((player.resFac.owned * player.resFac.requires.powerCost) / player.speed);
+    player.energy -= ((player.roboticsFact.owned * player.roboticsFact.requires.powerCost) / player.speed);
+    player.energy -= ((player.cyberLab.owned * player.cyberLab.requires.powerCost) / player.speed);
+    getResource(player, 'tech' , 1);
+    getResource(player, 'uranium', 1);
+  }
+  //Energy add
+  player.energy += ((player.battPack.owned * player.battPack.generates) / player.speed);
+  player.energy += ((player.solPan.owned * player.solPan.generates) / player.speed);
+  player.energy += ((player.solPanFarm.owned * player.solPanFarm.generates) / player.speed);
+  player.energy += ((player.termPowStation.owned * player.termPowStation.generates) / player.speed);
+  player.energy += ((player.nucPowPlant.owned * player.nucPowPlant.generates) / player.speed);
+  player.energy += ((player.fusReactor.owned * player.fusReactor.generates) / player.speed);
+  player.energy += ((player.uraReactor.owned * player.uraReactor.generates) / player.speed);
+  getResource(player, 'energy', 1);
+
+  if (player.credits <= 1000){
+    document.getElementById('Credits').innerHTML = prettify(player.credits, 1);
+  } else {
+    document.getElementById('Credits').innerHTML = suffixy(player.credits, 2);
+  }
+  if (player.tech <= 1000){
+    document.getElementById('Tech').innerHTML = prettify(player.tech, 1);
+  } else {
+    document.getElementById('Tech').innerHTML = suffixy(player.tech, 2);
+  }
+  if (player.energy <= 1000){
+    document.getElementById('Energy').innerHTML = prettify(player.energy, 1);
+  } else {
+    document.getElementById('Energy').innerHTML = suffixy(player.energy, 2);
+  }
+  if (player.uranium <= 1000){
+    document.getElementById('Uranium').innerHTML = prettify(player.uranium, 1);
+  } else {
+    document.getElementById('Uranium').innerHTML = suffixy(player.uranium, 2);
+  }
+
+  if(energyOutcome > energyIncome) {
+    document.getElementById('power-balance').innerHTML = "-" + prettify(energyOutcome - energyIncome) + "/sec";
+} else if (energyOutcome == energyIncome){
+    document.getElementById('power-balance').innerHTML = "balanced";
+} else {
+    document.getElementById('power-balance').innerHTML = "+" + prettify(energyIncome - energyOutcome) + "/sec";
+}
+    // Staff
+  document.getElementById('colonist').innerHTML = player.colonist.owned;
+  document.getElementById('engineer').innerHTML = player.engineer.owned;
+  document.getElementById('inventor').innerHTML = player.inventor.owned;
+  document.getElementById('scientist').innerHTML = player.scientist.owned;
+  document.getElementById('robot').innerHTML = player.robot.owned;
+  document.getElementById('android').innerHTML = player.android.owned;
+    // Tech
+  document.getElementById('workbench').innerHTML = player.workbench.owned;
+  document.getElementById('workshop').innerHTML = player.workshop.owned;
+  document.getElementById('research-lab').innerHTML = player.resLab.owned;
+  document.getElementById('research-facility').innerHTML = player.resFac.owned;
+  document.getElementById('robotics-factory').innerHTML = player.roboticsFact.owned;
+  document.getElementById('cybernetics-lab').innerHTML = player.cyberLab.owned;
+    // Energy
+  document.getElementById('battery-pack').innerHTML = player.battPack.owned;
+  document.getElementById('solar-panel').innerHTML = player.solPan.owned;
+  document.getElementById('solar-panel-farm').innerHTML = player.solPanFarm.owned;
+  document.getElementById('thermal-power-station').innerHTML = player.termPowStation.owned;
+  document.getElementById('nuclear-power-plant').innerHTML = player.nucPowPlant.owned;
+  document.getElementById('fusion-reactor').innerHTML = player.fusReactor.owned;
+  document.getElementById('uranium-reactor').innerHTML = player.uraReactor.owned;
+    // Uranium
+  document.getElementById('miner').innerHTML = player.miner.owned;
+  document.getElementById('uranium-smelter').innerHTML = player.uraSmelter.owned;
+  document.getElementById('uranium-refinery').innerHTML = player.uraRefinery.owned;
+  //Generating
+  //Credits
+  document.getElementsByClassName('Generating')[0].innerHTML = prettify((player.colonist.owned * player.colonist.generates));
+  document.getElementsByClassName('Generating')[1].innerHTML = prettify((player.engineer.owned * player.engineer.generates));
+  document.getElementsByClassName('Generating')[2].innerHTML = prettify((player.inventor.owned * player.inventor.generates));
+  document.getElementsByClassName('Generating')[3].innerHTML = prettify((player.scientist.owned * player.scientist.generates));
+  document.getElementsByClassName('Generating')[4].innerHTML = prettify((player.robot.owned * player.robot.generates));
+  document.getElementsByClassName('Generating')[5].innerHTML = prettify((player.android.owned * player.android.generates));
+  //Tech
+  document.getElementsByClassName('Generating')[6].innerHTML = prettify((player.workbench.owned * player.workbench.generates));
+  document.getElementsByClassName('Generating')[7].innerHTML = prettify((player.workshop.owned * player.workshop.generates));
+  document.getElementsByClassName('Generating')[8].innerHTML = prettify((player.resLab.owned * player.resLab.generates));
+  document.getElementsByClassName('Generating')[9].innerHTML = prettify((player.resFac.owned * player.resFac.generates));
+  document.getElementsByClassName('Generating')[10].innerHTML = prettify((player.roboticsFact.owned * player.roboticsFact.generates));
+  document.getElementsByClassName('Generating')[11].innerHTML = prettify((player.cyberLab.owned * player.cyberLab.generates));
+  //Energy
+  document.getElementsByClassName('Generating')[12].innerHTML = prettify((player.battPack.owned * player.battPack.generates));
+  document.getElementsByClassName('Generating')[13].innerHTML = prettify((player.solPan.owned * player.solPan.generates));
+  document.getElementsByClassName('Generating')[14].innerHTML = prettify((player.solPanFarm.owned * player.solPanFarm.generates));
+  document.getElementsByClassName('Generating')[15].innerHTML = prettify((player.termPowStation.owned * player.termPowStation.generates));
+  document.getElementsByClassName('Generating')[16].innerHTML = prettify((player.nucPowPlant.owned * player.nucPowPlant.generates));
+  document.getElementsByClassName('Generating')[17].innerHTML = prettify((player.fusReactor.owned * player.fusReactor.generates));
+  document.getElementsByClassName('Generating')[18].innerHTML = prettify((player.uraReactor.owned * player.uraReactor.generates));
+  //Uranium
+  document.getElementsByClassName('Generating')[19].innerHTML = prettify((player.uraSmelter.owned * player.uraSmelter.generates));
+  document.getElementsByClassName('Generating')[20].innerHTML = prettify((player.uraRefinery.owned * player.uraRefinery.generates));
+  document.getElementsByClassName('Generating')[21].innerHTML = prettify((player.miner.owned * player.miner.generates));
+  //Cost --------------------------------------------------------------------------------------------
+  //Credits
+  document.getElementsByClassName('Cost')[0].innerHTML = suffixy(player.colonist.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[1].innerHTML = suffixy(player.engineer.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[2].innerHTML = suffixy(player.inventor.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[3].innerHTML = suffixy(player.scientist.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[4].innerHTML = suffixy(player.robot.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[5].innerHTML = suffixy(player.android.requires.nextC, 2);
+  //Tech
+  document.getElementsByClassName('Cost')[6].innerHTML = suffixy(player.workbench.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[7].innerHTML = suffixy(player.workshop.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[8].innerHTML = suffixy(player.resLab.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[9].innerHTML = suffixy(player.resFac.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[10].innerHTML = suffixy(player.roboticsFact.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[11].innerHTML = suffixy(player.cyberLab.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[12].innerHTML = suffixy(player.battPack.requires.nextC, 2);
+  //Energy
+  document.getElementsByClassName('Cost')[13].innerHTML = suffixy(player.solPan.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[14].innerHTML = suffixy(player.solPanFarm.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[15].innerHTML = suffixy(player.termPowStation.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[16].innerHTML = suffixy(player.nucPowPlant.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[17].innerHTML = suffixy(player.fusReactor.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[18].innerHTML = suffixy(player.uraReactor.requires.nextC, 2);
+  //Uranium
+  document.getElementsByClassName('Cost')[19].innerHTML = suffixy(player.miner.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[20].innerHTML = suffixy(player.uraSmelter.requires.nextC, 2);
+  document.getElementsByClassName('Cost')[21].innerHTML = suffixy(player.uraRefinery.requires.nextC, 2);
 }
 
 function checkUpgrades() {
@@ -552,7 +776,7 @@ function checkUpgrades() {
   if (player.upgrades.battPck25Perc !== 0) {
     document.getElementById('battPck25Perc').className = "btn btn-success";
   }
-  //Power Generators Upgrades
+  /*Power Generators Upgrades
   if (player.upgrades.pwrGen5Perc !== 0) {
     document.getElementById('pwrGen5Perc').className = "btn btn-success";
   }
@@ -565,7 +789,7 @@ function checkUpgrades() {
   }
   if (player.upgrades.genRoom25Perc !== 0) {
     document.getElementById('genRoom25Perc').className = "btn btn-success";
-  }
+  }*/
   //Solar Panel Upgrades
   if (player.upgrades.solPan5Perc !== 0) {
     document.getElementById('solPan5Perc').className = "btn btn-success";
@@ -583,40 +807,52 @@ function checkUpgrades() {
 }
 window.setInterval(function() {
   gameSave();
-  //save_game();
+  //save_game(); //cookies
 }, 60000);
 
 window.setInterval(function() {
   updateTotals();
-  //save_game();
-  getResource(player, 'tech' , 1);
-  getResource(player, 'energy', 1);
-
-    document.getElementById('Tech').innerHTML = suffixy(player.tech, 1);
-    document.getElementById('Energy').innerHTML = suffixy(player.energy, 1);
-
-  // Tech
-  document.getElementById('Engineers').innerHTML = player.engineer.owned;
-  document.getElementById('Androids').innerHTML = player.android.owned;
-  document.getElementById('Robot').innerHTML = player.robot.owned;
-  document.getElementById('resLab').innerHTML = player.resLab.owned;
-  document.getElementById('resFac').innerHTML = player.resFac.owned;
-  document.getElementById('roboticsFact').innerHTML = player.roboticsFact.owned;
-  document.getElementById('cyberLab').innerHTML = player.cyberLab.owned;
-  // Energy
-  document.getElementById('battPack').innerHTML = player.battPack.owned;
-  document.getElementById('pwrGen').innerHTML = player.pwrGen.owned;
-  document.getElementById('genRoom').innerHTML = player.genRoom.owned;
-  document.getElementById('solPan').innerHTML = player.solPan.owned;
-  document.getElementById('solPanFarm').innerHTML = player.solPanFarm.owned;
 }, 1000 / player.speed);
 
 window.setInterval(function() {
-  //console.log("I'm working Too");
-
-  //Cash
 checkAchievements ();
-hideElements();
-//  checkUpgrades();
-createCharacter();
+//hideElements();
+//checkUpgrades();
+//createCharacter();
 }, 3000);
+
+
+
+// ================ COOKIE SAVE =====================//
+/*function set_cookie(cookie_name,value) {
+    expiry = new Date();
+    expiry.setTime(new Date().getTime() + (10*60*1000));
+    var c_value=escape(btoa(JSON.stringify(value))) +
+    "; expires="+expiry.toUTCString();
+    document.cookie=cookie_name + "=" + c_value;
+}
+
+function get_cookie(cookie_name) {
+    var c_value = document.cookie;
+    var c_start = c_value.indexOf(" " + cookie_name + "=");
+    if (c_start == -1) {
+        c_start = c_value.indexOf(cookie_name + "=");
+    }
+    if (c_start == -1) return false;
+    c_start = c_value.indexOf("=", c_start) + 1;
+    var c_end = c_value.indexOf(";", c_start);
+    if (c_end == -1) {
+        c_end = c_value.length;
+    }
+    c_value = atob(unescape(c_value.substring(c_start,c_end)));
+    return JSON.parse(c_value);
+}
+
+function save_game() {
+    set_cookie('clickclick_save', player);
+}
+function load_game() {
+    var save_data = getCookie('clickclick_save');
+       if (!save_data) return;
+    player = save_data;
+}*/
