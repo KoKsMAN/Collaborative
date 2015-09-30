@@ -14,38 +14,38 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/layout.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
     <!--
 		Include the following JavaScript file so older browsers can render the HTML5 elements properly
 		-->
     <script type="text/javascript" src="js/html5.js"></script>
     <script>
-// Twitter API
-!function (d, s, id)
-{
-var js, fjs = d.getElementsByTagName(s)[0]; //, p = /^http:/.test(d.location) ? 'http' : 'https';
-if (!d.getElementById(id))
-{
-js = d.createElement(s); js.id = id; // js.src = p + '://platform.twitter.com/widgets.js';
-js.src = "https://platform.twitter.com/widgets.js";
-fjs.parentNode.insertBefore(js, fjs);
-}
-} (document, 'script', 'twitter-wjs');
+        // Twitter API
+        ! function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0]; //, p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id; // js.src = p + '://platform.twitter.com/widgets.js';
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');
     </script>
 </head>
+
 <body>
     <div class="wrapper">
         <section>
             <header>
                 <div id="banner-top">
-                    <img id="logo-top" src="img/sc-logo.png">
+                    <img id="logo-top" src="../img/sc-logo.png">
                 </div>
                 <nav class="navbar navbar-inverse navbar-custom">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
-                           
+
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
@@ -58,25 +58,25 @@ fjs.parentNode.insertBefore(js, fjs);
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-                                <li><a href="news.html">News <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../news.html">News <span class="sr-only">(current)</span></a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Development <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="changelog.html">Changelog</a></li>
-                                        <li><a href="dev_map.html">Dev road map</a></li>
+                                        <li><a href="../changelog.html">Changelog</a></li>
+                                        <li><a href="../dev_map.html">Dev road map</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="game_about.html">About</a></li>           
-                                        <li><a href="game_story.html">Story</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="../game_about.html">About</a></li>
+                                        <li><a href="../game_story.html">Story</a></li>
+                                        <li><a href="../gallery.html">Gallery</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="https://github.com/KoKsMAN/SpaceColonists/wiki" target="_blank">Wiki</a></li>
-                                <li><a href="downloads.html">Downloads</a></li>
-                                <li><a href="about_us.html">About us</a></li>
+                                <li><a href="../downloads.html">Downloads</a></li>
+                                <li><a href="../about_us.html">About us</a></li>
                                 <li id="play-btn"><a href="http://spacecolonists.me">Play</a></li>
                             </ul>
                         </div>
@@ -93,12 +93,34 @@ fjs.parentNode.insertBefore(js, fjs);
                             <h3 class="panel-title">Space Colonists Hub</h3>
                         </div>
                         <div class="panel-body">
-                        <article>
-                            <p>UNDER CONSTRUCTION</p>
-                        </article>
+                            <article>
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                            </article>
                         </div>
                     </div>
-                
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Comments</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="disqus_thread"></div>
+                            <script type="text/javascript">
+                                /* * * CONFIGURATION VARIABLES * * */
+                                var disqus_shortname = 'spacecolonists';
+
+                                /* * * DON'T EDIT BELOW THIS LINE * * */
+                                (function () {
+                                    var dsq = document.createElement('script');
+                                    dsq.type = 'text/javascript';
+                                    dsq.async = true;
+                                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                                })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                        </div>
+                    </div>
+
                 </div>
                 <!-- /.col-9 -->
                 <div id="right-column" class="col-md-3">
@@ -109,22 +131,22 @@ fjs.parentNode.insertBefore(js, fjs);
                         <div class="panel-body twitter-panel">
                             <aside>
                                 <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/SpaceColonists" data-widget-id="647366717283430400">Tweets by @SpaceColonists</a>
-                                </aside>
-                        </div>                        
+                            </aside>
+                        </div>
                     </div>
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3 class="panel-title">Newsletter</h3>
                         </div>
-                        <div class="panel-body subscribe-panel">                           
-                               <p>Subscribe to our newsletter. No spam. We promise !</p>
-                                <form class="form-inline">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                                    </div>
-                                    <button type="submit" class="btn btn-default">Subscribe !</button>
-                                </form>                           
+                        <div class="panel-body subscribe-panel">
+                            <p>Subscribe to our newsletter. No spam. We promise !</p>
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                                </div>
+                                <button type="submit" class="btn btn-default">Subscribe !</button>
+                            </form>
                         </div>
                     </div>
                     <div class="panel panel-success">
@@ -133,10 +155,11 @@ fjs.parentNode.insertBefore(js, fjs);
                         </div>
                         <div class="panel-body gallery-panel">
                             <img src="img/SCAVATAR.jpg" alt="Random gallery image" class="img-thumbnail">
-                        <a href="gallery.html">View the gallery.</a>
-                        </div> 
+                            <a href="gallery.html">View the gallery.</a>
+                        </div>
                     </div>
-                </div><!-- /.col-3 -->
+                </div>
+                <!-- /.col-3 -->
             </div>
             <!-- /.row -->
         </div>
@@ -151,8 +174,8 @@ fjs.parentNode.insertBefore(js, fjs);
                 <h4>Create your own game</h4>
                 <ul>
                     <li><a href="http://dhmholley.co.uk/incrementals.html" target="_blank">dhmstark</a></li>
-                    <li><a href="http://blog.samgb.com/incrementals-from-zero-to-hero-1/"target="_blank">Sam's Blog</a></li>
-                    <li><a href="https://www.reddit.com/r/incremental_games"target="_blank">r/incremental_games</a></li>
+                    <li><a href="http://blog.samgb.com/incrementals-from-zero-to-hero-1/" target="_blank">Sam's Blog</a></li>
+                    <li><a href="https://www.reddit.com/r/incremental_games" target="_blank">r/incremental_games</a></li>
 
                 </ul>
             </div>

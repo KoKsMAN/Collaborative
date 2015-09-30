@@ -1,28 +1,38 @@
-body{background-color: black;}
-.wrapper {background-color: #03050A;}
-#banner-top {background-image: url('../img/stars_bg.png');}
+body{background-color: #010E14;}
+.wrapper {background-image: url('../img/back.png');}
+#banner-top {background-color: #010E14;}
 #logo-top {    display:block; margin:auto;}
 /* NAVBAR STYLING */
 .navbar, .dropdown-menu {border-radius: 0px; background-color: #182736;}
 .navbar li a {border-right: 1px solid black; color:#4A913C;}
 #play-btn {background-color: red;}
+.navbar-brand {  position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto; }
 /*#left-column, #right-column {background-clip:content-box; background-color: #0D121C}*/
 /* CONTENT STYLING */
-.panel-body {background:#0D121C; border-bottom: 2px solid #02997B;border-left: 2px solid #02997B;border-right: 2px solid #02997B; padding: 5px;}
+.panel {border: none;}
+.panel-body {background-image: url('../img/seethrough.png'); border-bottom: 2px solid #0a5172;border-left: 2px solid #0a5172;border-right: 2px solid #0a5172; padding: 5px;}
 .panel-body h3 {margin-top: 5px;}
 .twitter-panel {padding:0px;}
 .panel > .panel-heading {
-    background-image: none;
-    background-color: #02997B;
+    background-image: url('../img/pattern2.png');
+border: 1px solid #0a5172;
     color: white;
 }
-hr { border-top: 1px solid #02997B;}
+hr { border-top: 1px solid #4A913C;}
 .navbar .nav > li > a{
   background-repeat: no-repeat;color: #4A913C;}
 /* NEWS STYLING */
 .media-object {border: 1px solid #4A913C;}
 .media-heading {color: #058FFF;}
+.news-date {color:#A2A3A3;}
 article>p {color: white;}
+/* ABOUT US STYLING */
+.avatar {width: 100px;}
+.about-us{text-align:justify;}
 /* DEVELOPMENT STYLING */
 #version {text-align: center; text-decoration: underline;}
 #changelog-content {background-color: #F7F7F7;}
@@ -31,7 +41,7 @@ article>p {color: white;}
 .subscribe-panel p {color: white;}
 .img-thumbnail {margin: 0 auto; width: 100px;}
 /* FOOTER STYLING */
-footer{background-image: url('../img/bckg2.png')}
+footer{background-color: #010E14;}
 #footer-left{float:left; width: 200px;text-align: center;}
 #footer-right{float:right;width: 200px;text-align: center;}
 #footer-center{margin:0 auto;width: 150px;text-align: center;}
