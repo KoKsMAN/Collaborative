@@ -2,14 +2,12 @@
 <html>
 
 <head>
-    <title>Space Colonsits Portal</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Space Colonsits Hub</title>
 
-    <meta name="description" content="The original and simplest sticky footer CSS modified for HTML5.">
-
-    <!--
-		The second stylesheet is to make things look pretty.
-		The first one is only the important one.
-		-->
+    <meta name="description" content="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -21,19 +19,19 @@
 		-->
     <script type="text/javascript" src="js/html5.js"></script>
     <script>
-// Twitter API
-!function (d, s, id)
-{
-var js, fjs = d.getElementsByTagName(s)[0]; //, p = /^http:/.test(d.location) ? 'http' : 'https';
-if (!d.getElementById(id))
-{
-js = d.createElement(s); js.id = id; // js.src = p + '://platform.twitter.com/widgets.js';
-js.src = "https://platform.twitter.com/widgets.js";
-fjs.parentNode.insertBefore(js, fjs);
-}
-} (document, 'script', 'twitter-wjs');
+        // Twitter API
+        ! function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');
     </script>
 </head>
+
 <body>
     <div class="wrapper">
         <section>
@@ -45,7 +43,7 @@ fjs.parentNode.insertBefore(js, fjs);
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
-                           
+
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
@@ -69,7 +67,7 @@ fjs.parentNode.insertBefore(js, fjs);
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="game_about.html">About</a></li>           
+                                        <li><a href="game_about.html">About</a></li>
                                         <li><a href="game_story.html">Story</a></li>
                                         <li><a href="gallery.html">Gallery</a></li>
                                     </ul>
@@ -93,12 +91,12 @@ fjs.parentNode.insertBefore(js, fjs);
                             <h3 class="panel-title">Space Colonists Hub</h3>
                         </div>
                         <div class="panel-body">
-                        <article>
-                            <p>UNDER CONSTRUCTION</p>
-                        </article>
+                            <article>
+                                <p>UNDER CONSTRUCTION</p>
+                            </article>
                         </div>
                     </div>
-                
+
                 </div>
                 <!-- /.col-9 -->
                 <div id="right-column" class="col-md-3">
@@ -109,22 +107,22 @@ fjs.parentNode.insertBefore(js, fjs);
                         <div class="panel-body twitter-panel">
                             <aside>
                                 <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/SpaceColonists" data-widget-id="647366717283430400">Tweets by @SpaceColonists</a>
-                                </aside>
-                        </div>                        
+                            </aside>
+                        </div>
                     </div>
                     <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3 class="panel-title">Newsletter</h3>
                         </div>
-                        <div class="panel-body subscribe-panel">                           
-                               <p>Subscribe to our newsletter. No spam. We promise !</p>
-                                <form class="form-inline">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                                    </div>
-                                    <button type="submit" class="btn btn-default">Subscribe !</button>
-                                </form>                           
+                        <div class="panel-body subscribe-panel">
+                            <p>Subscribe to our newsletter. No spam. We promise !</p>
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                                </div>
+                                <button type="submit" class="btn btn-default">Subscribe !</button>
+                            </form>
                         </div>
                     </div>
                     <div class="panel panel-success">
@@ -133,10 +131,11 @@ fjs.parentNode.insertBefore(js, fjs);
                         </div>
                         <div class="panel-body gallery-panel">
                             <img src="img/SCAVATAR.jpg" alt="Random gallery image" class="img-thumbnail">
-                        <a href="gallery.html">View the gallery.</a>
-                        </div> 
+                            <a href="gallery.html">View the gallery.</a>
+                        </div>
                     </div>
-                </div><!-- /.col-3 -->
+                </div>
+                <!-- /.col-3 -->
             </div>
             <!-- /.row -->
         </div>
@@ -147,12 +146,45 @@ fjs.parentNode.insertBefore(js, fjs);
 
     <footer>
         <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-4">
+                    <h4>Create your own game</h4>
+                    <ul>
+                        <li><a href="http://dhmholley.co.uk/incrementals.html" target="_blank">dhmstark</a></li>
+                        <li><a href="http://blog.samgb.com/incrementals-from-zero-to-hero-1/" target="_blank">Sam's Blog</a></li>
+                        <li><a href="https://www.reddit.com/r/incremental_games" target="_blank">r/incremental_games</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <h4>Share &amp Follow us</h4>
+                    <ul>
+                        <li><a href="" target="_blank">Github</a></li>
+                        <li><a href="" target="_blank">Twitter</a></li>
+                        <li><a href="" target="_blank">Reddit</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <h4>Other Games</h4>
+                    <ul>
+                        <li><a href="" target="_blank">Trimps</a></li>
+                        <li><a href="" target="_blank">Swarm Simulator</a></li>
+                        <li><a href="" target="_blank">A dark room</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.contaier -->
+    </footer>
+    <!-- Social Media and Website Tracking Scripts -->
+    <!-- <div class="container">
             <div id="footer-left">
                 <h4>Create your own game</h4>
                 <ul>
                     <li><a href="http://dhmholley.co.uk/incrementals.html" target="_blank">dhmstark</a></li>
-                    <li><a href="http://blog.samgb.com/incrementals-from-zero-to-hero-1/"target="_blank">Sam's Blog</a></li>
-                    <li><a href="https://www.reddit.com/r/incremental_games"target="_blank">r/incremental_games</a></li>
+                    <li><a href="http://blog.samgb.com/incrementals-from-zero-to-hero-1/" target="_blank">Sam's Blog</a></li>
+                    <li><a href="https://www.reddit.com/r/incremental_games" target="_blank">r/incremental_games</a></li>
 
                 </ul>
             </div>
@@ -176,8 +208,6 @@ fjs.parentNode.insertBefore(js, fjs);
 
         </div>
         <!-- /.contaier -->
-    </footer>
-    <!-- Social Media and Website Tracking Scripts -->
 </body>
 
 </html>

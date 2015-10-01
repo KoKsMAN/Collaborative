@@ -1,4 +1,5 @@
 body{background-color: #010E14;}
+
 .wrapper {background-image: url('../img/back.png');}
 #banner-top {background-color: #010E14;}
 #logo-top {    display:block; margin:auto;}
@@ -42,9 +43,8 @@ article>p {color: white;}
 .img-thumbnail {margin: 0 auto; width: 100px;}
 /* FOOTER STYLING */
 footer{background-color: #010E14;}
-#footer-left{float:left; width: 200px;text-align: center;}
-#footer-right{float:right;width: 200px;text-align: center;}
-#footer-center{margin:0 auto;width: 150px;text-align: center;}
+footer .col-md-4{text-align: center;}
+
 footer ul {list-style-type: none;
     margin:0;
     padding:0;}
