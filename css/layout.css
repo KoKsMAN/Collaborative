@@ -2,7 +2,7 @@ body{background-color: #010E14;}
 
 .wrapper {background-image: url('../img/back.png');}
 #banner-top {background-color: #010E14;}
-#logo-top {    display:block; margin:auto;}
+#logo-top {display:block; margin:auto; width: 50%;}
 /* NAVBAR STYLING */
 .navbar, .dropdown-menu {border-radius: 0px; background-color: #182736;}
 .navbar li a {border-right: 1px solid black; color:#4A913C;}
