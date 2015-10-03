@@ -1,53 +1,169 @@
-body{background-color: #010E14;}
+							/* Responsive Breakpoints */
+    @media only screen and (min-width: 147px) and (max-width: 767px){
+#banner-top {display: none;}
+    }
+    @media only screen and (min-width: 768px) and (max-width: 2000px){
+     #navbar-logo {display: none!important;}
+    }
 
-.wrapper {background-image: url('../img/back.png');}
-#banner-top {background-color: #010E14;}
-#logo-top {display:block; margin:auto; width: 50%;}
+body
+{
+    background-color: #010e14;
+}
+
+.wrapper
+{
+    background-image: url('../img/back.png');
+}
+#banner-top
+{
+    background-color: #010e14;
+}
+#logo-top
+{
+    display: block;
+
+    width: 50%;
+    margin: auto;
+}
 /* NAVBAR STYLING */
-.navbar, .dropdown-menu {border-radius: 0px; background-color: #182736;}
-.navbar li a {border-right: 1px solid black; color:#4A913C;}
-#play-btn {background-color: red;}
-.navbar-brand {  position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin: auto; }
+.navbar,
+.dropdown-menu
+{
+    border-radius: 0;
+    background-color: #182736;
+}
+.navbar li a
+{
+    color: #4a913c;
+    border-right: 1px solid black;
+}
+#play-btn {
+    background-color: red;
+}
+
+#navbar-logo { display: block;
+
+    width: 50%;
+    margin: auto;}
 /*#left-column, #right-column {background-clip:content-box; background-color: #0D121C}*/
 /* CONTENT STYLING */
-.panel {border: none;}
-.panel-body {background-image: url('../img/seethrough.png'); border-bottom: 2px solid #0a5172;border-left: 2px solid #0a5172;border-right: 2px solid #0a5172; padding: 5px;}
-.panel-body h3 {margin-top: 5px;}
-.twitter-panel {padding:0px;}
-.panel > .panel-heading {
+.panel
+{
+    border: none;
+}
+.panel-body
+{
+    padding: 5px;
+
+    border-right: 2px solid #0a5172;
+    border-bottom: 2px solid #0a5172;
+    border-left: 2px solid #0a5172;
+    background-image: url('../img/seethrough.png');
+}
+.panel-body h3
+{
+    margin-top: 5px;
+}
+.twitter-panel
+{
+    padding: 0;
+	text-align: center;
+}
+.panel > .panel-heading
+{
+    color: white;
+    border: 1px solid #0a5172;
     background-image: url('../img/pattern2.png');
-border: 1px solid #0a5172;
+}
+hr
+{
+    border-top: 1px solid #4a913c;
+}
+.navbar .nav > li > a
+{
+    color: #4a913c;
+    background-repeat: no-repeat;
+}
+/* NEWS STYLING */
+.media-object
+{
+    border: 1px solid #4a913c;
+}
+.media-heading
+{
+    color: #058fff;
+}
+.news-text {text-align: justify;}
+.news-date
+{
+    color: #a2a3a3;
+}
+.read-more {float: right; display: block; color: #4a913c;}
+article > p
+{
     color: white;
 }
-hr { border-top: 1px solid #4A913C;}
-.navbar .nav > li > a{
-  background-repeat: no-repeat;color: #4A913C;}
-/* NEWS STYLING */
-.media-object {border: 1px solid #4A913C;}
-.media-heading {color: #058FFF;}
-.news-date {color:#A2A3A3;}
-article>p {color: white;}
 /* ABOUT US STYLING */
-.avatar {width: 100px;}
-.about-us{text-align:justify;}
+.avatar
+{
+    width: 100px;
+}
+.about-us
+{
+    text-align: justify;
+}
 /* DEVELOPMENT STYLING */
-#version {text-align: center; text-decoration: underline;}
-#changelog-content {background-color: #F7F7F7;}
-#changelog-content ul {list-style-type: none;}
+#version
+{
+    text-align: center;
+    text-decoration: underline;
+}
+#changelog-content
+{
+    background-color: #f7f7f7;
+}
+#changelog-content ul
+{
+    list-style-type: none;
+}
 /* SIDEBAR STYLING */
-.subscribe-panel p {color: white;}
-.img-thumbnail {margin: 0 auto; width: 100px;}
+.subscribe-panel p
+{
+    color: white;
+}
+.img-thumbnail
+{
+    width: 100px;
+    margin: 0 auto;
+}
+.view-gallery>a {color: #71B064; float: right;}
+/* NEWSLETTER */
+input#newsletter-mail.form-control {background-image: url("../img/seethrough.png");border:1px solid #4a913c;}
+input#newsletter-mail.form-control:focus {color: #058fff;}
+button.btn.btn-default{background-color: #4a913c;color:white;}
 /* FOOTER STYLING */
-footer{background-color: #010E14;}
-footer .col-md-4{text-align: center;}
+footer
+{
+    background-color: #010e14;
+}
+footer .col-md-4
+{
+    text-align: center;
+}
 
-footer ul {list-style-type: none;
-    margin:0;
-    padding:0;}
-footer a {color:  #4A913C;}
-footer h4 {color: #058FFF;}
+footer ul
+{
+    margin: 0;
+    padding: 0;
 
+    list-style-type: none;
+}
+footer a
+{
+    color: #4a913c;
+}
+footer h4
+{
+    color: #058fff;
+}
