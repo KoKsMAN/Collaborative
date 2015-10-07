@@ -144,54 +144,32 @@
                 <div class="col-sm-4 col-md-4">
                     <h4>Share &amp Follow us</h4>
                     <ul>
-                        <li><a href="" target="_blank">Github</a></li>
-                        <li><a href="" target="_blank">Twitter</a></li>
-                        <li><a href="" target="_blank">Reddit</a></li>
+                        <li><a href="https://github.com/KoKsMAN" target="_blank">Github</a></li>
+                        <li><a href="https://twitter.com/SpaceColonists" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.reddit.com/user/KoKsM4N" target="_blank">Reddit</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4 col-md-4">
                     <h4>Newsletter Sign-up</h4>
-                    <form class="form-inline">
+                    <form class="form-inline" method="post" name="myemailform" action="form-to-email.php">
                       <div class="form-group">
-                        <input type="email" class="form-control" id="newsletter-mail" placeholder="Email">
+                        <input type="email" name="email" class="form-control" id="newsletter-mail" placeholder="Email">
                       </div>
-                      <button type="submit" class="btn btn-default">Subscribe</button>
+                      <button type="submit" name='submit' class="btn btn-default">Subscribe</button>
+
+                      <script language="JavaScript">
+// Code for validating the form
+var frmvalidator  = new Validator("myemailform");
+
+frmvalidator.addValidation("email","req","Please provide your email"); 
+</script>
             </div>
             <!-- /.row -->
         </div>
         <!-- /.contaier -->
     </footer>
     <!-- Social Media and Website Tracking Scripts -->
-    <!-- <div class="container">
-            <div id="footer-left">
-                <h4>Create your own game</h4>
-                <ul>
-                    <li><a href="http://dhmholley.co.uk/incrementals.html" target="_blank">dhmstark</a></li>
-                    <li><a href="http://blog.samgb.com/incrementals-from-zero-to-hero-1/" target="_blank">Sam's Blog</a></li>
-                    <li><a href="https://www.reddit.com/r/incremental_games" target="_blank">r/incremental_games</a></li>
-
-                </ul>
-            </div>
-            <div id="footer-right">
-                <h4>Share &amp Follow us</h4>
-                <ul>
-
-                    <li><a href="" target="_blank">Github</a></li>
-                    <li><a href="" target="_blank">Twitter</a></li>
-                    <li><a href="" target="_blank">Reddit</a></li>
-                </ul>
-            </div>
-            <div id="footer-center">
-                <h4>Other Games</h4>
-                <ul>
-                    <li><a href="" target="_blank">Trimps</a></li>
-                    <li><a href="" target="_blank">Swarm Simulator</a></li>
-                    <li><a href="" target="_blank">A dark room</a></li>
-                </ul>
-            </div>
-
-        </div>
-        <!-- /.contaier -->
+    
 </body>
 
 </html>
