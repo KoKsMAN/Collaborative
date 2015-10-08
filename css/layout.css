@@ -1,10 +1,18 @@
 							/* Responsive Breakpoints */
-    @media only screen and (min-width: 147px) and (max-width: 767px){
-#banner-top {display: none;}
+@media only screen and (min-width: 147px) and (max-width: 767px)
+{
+    #banner-top
+    {
+        display: none;
     }
-    @media only screen and (min-width: 768px) and (max-width: 2000px){
-     #navbar-logo {display: none!important;}
+}
+@media only screen and (min-width: 768px) and (max-width: 2000px)
+{
+    #navbar-logo
+    {
+        display: none!important;
     }
+}
 
 body
 {
@@ -38,16 +46,24 @@ body
     color: #4a913c;
     border-right: 1px solid black;
 }
-#play-btn {
+#play-btn
+{
     background-color: red;
 }
 
-#navbar-logo { display: block;
+#navbar-logo
+{
+    display: block;
 
     width: 50%;
-    margin: auto;}
+    margin: auto;
+}
 /*#left-column, #right-column {background-clip:content-box; background-color: #0D121C}*/
 /* CONTENT STYLING */
+.main-content
+{
+    margin-bottom: 100px;
+}
 .panel
 {
     border: none;
@@ -68,7 +84,8 @@ body
 .twitter-panel
 {
     padding: 0;
-	text-align: center;
+
+    text-align: center;
 }
 .panel > .panel-heading
 {
@@ -90,16 +107,37 @@ hr
 {
     border: 1px solid #4a913c;
 }
-.media-heading
+.media-heading,
+.media-inside-heading
 {
     color: #058fff;
 }
-.news-text {text-align: justify;}
-.news-date
+.news-text
+{
+    text-align: justify;
+}
+.news-date,
+.news-inside-date
 {
     color: #a2a3a3;
 }
-.read-more {float: right; display: block; color: #4a913c;}
+.news-inside-date
+{
+    float: right;
+}
+.media-inside-heading
+{
+    float: left;
+
+    margin-top: 0!important;
+}
+.read-more
+{
+    display: block;
+    float: right;
+
+    color: #4a913c;
+}
 article > p
 {
     color: white;
@@ -137,11 +175,27 @@ article > p
     width: 100px;
     margin: 0 auto;
 }
-.view-gallery>a {color: #71B064; float: right;}
+.view-gallery > a
+{
+    float: right;
+
+    color: #71b064;
+}
 /* NEWSLETTER */
-input#newsletter-mail.form-control {background-image: url("../img/seethrough.png");border:1px solid #4a913c;}
-input#newsletter-mail.form-control:focus {color: #058fff;}
-button.btn.btn-default{background-color: #4a913c;color:white;}
+input#newsletter-mail.form-control
+{
+    border: 1px solid #4a913c;
+    background-image: url('../img/seethrough.png');
+}
+input#newsletter-mail.form-control:focus
+{
+    color: #058fff;
+}
+button.btn.btn-default
+{
+    color: white;
+    background-color: #4a913c;
+}
 /* FOOTER STYLING */
 footer
 {
@@ -167,4 +221,3 @@ footer h4
 {
     color: #058fff;
 }
-
