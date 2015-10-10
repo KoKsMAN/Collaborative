@@ -25,7 +25,15 @@ body
 }
 #banner-top
 {
-    background-color: #010e14;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#010e14+0,260122+47,023754+84 */
+background: #010e14; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #010e14 0%, #260122 47%, #023754 84%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#010e14), color-stop(47%,#260122), color-stop(84%,#023754)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #010e14 0%,#260122 47%,#023754 84%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #010e14 0%,#260122 47%,#023754 84%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #010e14 0%,#260122 47%,#023754 84%); /* IE10+ */
+background: linear-gradient(135deg,  #010e14 0%,#260122 47%,#023754 84%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#010e14', endColorstr='#023754',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 #logo-top
 {
