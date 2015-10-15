@@ -2,307 +2,735 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Space Colonsits Hub - Changelog</title>
-    <meta content="Space Colonists Hub - Changelog." property="og:title">
-     <meta content="Space Colonists Hub - read news about the game, track the development progress, join discussion and much more ! " name="description">
-     <meta content="space, colony, colonists, browser, news, development, game, javascript, hub, social, aliens, cosmos, universe, koksman, project " name="keywords">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/layout.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-    <!--
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Colonsits Hub - Changelog</title>
+  <meta content="Space Colonists Hub - Changelog." property="og:title">
+  <meta content="Space Colonists Hub - read news about the game, track the development progress, join discussion and much more ! " name="description">
+  <meta content="space, colony, colonists, browser, news, development, game, javascript, hub, social, aliens, cosmos, universe, koksman, project " name="keywords">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" media="screen" href="css/layout.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+   <link href='https://fonts.googleapis.com/css?family=PT+Serif:700' rel='stylesheet' type='text/css'>
+  <!-- 
         Include the following JavaScript file so older browsers can render the HTML5 elements properly
         -->
-    <script type="text/javascript" src="js/html5.js"></script>
-    <script>
+  <script type="text/javascript" src="js/html5.js"></script>
+  <script>
     // Twitter API
     ! function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }
     }(document, 'script', 'twitter-wjs');
-    </script>
+  </script>
 </head>
 
 <body>
-    <div class="wrapper">
-      <header>
-            <div id="banner-top">
-                <img id="logo-top" src="img/sc-logo.png">
-            </div>
-            <nav class="navbar navbar-inverse navbar-custom">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <img id="navbar-logo" src="img/sc-logo.png">
-                    </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="collapse-menu">
-                        <ul class="nav navbar-nav">
-                            <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Development <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="changelog.html">Changelog</a></li>
-                                    <li><a href="dev_map.html">Dev road map</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="game_about.html">About</a></li>
-                                    <li><a href="game_story.html">Story</a></li>
-                                    <li class="active"><a href="gallery.html">Gallery</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="https://github.com/KoKsMAN/SpaceColonists/wiki" target="_blank">Wiki</a></li>
-                            <li><a href="downloads.html">Downloads</a></li>
-                            <li><a href="about_us.html">About us</a></li>
-                            <li id="play-btn"><a href="http://spacecolonists.me">Play</a></li>
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-                </div>
-                <!-- /.container-fluid -->
-            </nav>
-        </header>
-        <div class="container main-content">
-            <div class="row">
-                <div id="left-column" class="col-md-9">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Changelog</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div id="changelog-content">
-                                <h3 id="version">Current version: v.0.4.3</h3>
-                                <div class="changelog-item">
-                                    <h3>*Version 0.4.1 * September 17th, 2015</h3>
-                                    <ul>
-                                        <li>- Game should run correctly when in background tab now.</li>
-                                        <li>- Added support for HTTPS Everywhere add-on.</li>
-                                        <li>- Fixed cost of Thermal Power Station.</li>
-                                        <li>- Fixed upgrade price of Robots and Androids.</li>
-                                    </ul>
-                                </div>
-                                <div class="changelog-item">
-                                    <h3>*Version 0.4.0a * September 16th, 2015</h3>
-                                    <ul>
-                                        <li>- Changed resources panel from vertical to horizontal.</li>
-                                        <li>- Reworked website background.</li>
-                                        <li>- Added element shadow.</li>
-                                        <li>- Changed footer's font.</li>
-                                        <li>- Disabled character creator / renaming, until better solution is applied.</li>
-                                    </ul>
-                                </div>
-                                <div class="changelog-item">
-                                    <h3>*Version 0.4.0 - "Are we there yet ?!" * September 15th, 2015</h3>
-                                    <ul>
-                                        <li>- Added loading screen!</li>
-                                        <li>- Added new resources (Credits and Uranium).</li>
-                                        <li>- Added new resource icons.</li>
-                                        <li>- Added resource type information to the unit cost.</li>
-                                        <li>- Added new tabs (Staff and Uranium).</li>
-                                        <li>- Merged settings tab into one drop down tab.</li>
-                                        <li>- Merged "Achievements" and "News" tabs into drop down tab.</li>
-                                        <li>- Added new achievements.</li>
-                                        <li>- Added additional text to some of the achievements.</li>
-                                        <li>- Added animated achievement progress bar.</li>
-                                        <li>- Added new upgrades.</li>
-                                        <li>- Added new units and buildings.</li>
-                                        <li>- Added Power Requirement and Power Generation.</li>
-                                        <li>- Added new functionality : Power Balance.</li>
-                                        <li>- Added footer.</li>
-                                        <li>- Moved links from the top of the page to the footer.</li>
-                                        <li>- Changed social buttons and moved them down to the footer.</li>
-                                        <li>- Fixed issue with body width being bigger than content on mobile.</li>
-                                    </ul>
-                                </div>
-                                <div class="changelog-item">
-                                    <h3>*Version 0.3.9* September 8th, 2015</h3>
-                                    <ul>
-                                        <li>- Fixed bug where player could buy the same upgrade twice.</li>
-                                        <li>- Adjusted Energy buildings cost.</li>
-                                        <li>- Added simple character creator. (First part of planned commander module.)</li>
-                                        <li>- Introduced number generation accelerator (Still needs correct implementation.
-                                            <br /> Locked at 2nd gear atm.)</li>
-                                        <li>- Repleaced social buttons with new ones.</li>
-                                        <li>- Removed twitter and facebook buttons (no official accounts yet.)</li>
-                                        <li>- Changes to the settings tab.</li>
-                                        <li>- Added user statistics. (Only mouse clicks as of now.)</li>
-                                        <li>- Added contact tab.</li>
-                                    </ul>
-                                </div>
-                                <div class="changelog-item">
-                                    <h3>*Version 0.3.8* September 5th, 2015</h3>
-                                    <ul>
-                                        <li>- Added option to import / export save data via key.</li>
-                                        <li>- Fixed horizontal scroll bar bug.</li>
-                                        <li>- Auto save reminder should scale with window width now.</li>
-                                        <li>- Small visual changes and tweaks.</li>
-                                    </ul>
-                                </div>
-                                <div class="changelog-item">
-                                    <h3>*Version 0.3.7* September 4th, 2015</h3>
-                                    <ul>
-                                        <li>- Buy all button has been fixed.</li>
-                                        <li>- Upgrades appear together with units they belong to.</li>
-                                        <li>- Fixed Robot buttons not displaying correctly.</li>
-                                        <li>- Deleting Save data shouldn't change the layout size anymore.</li>
-                                        <li>- Added reminder about auto save.</li>
-                                    </ul>
-                                </div>
-                                <div class="changelog-item">
-                                    <h3>*Version 0.3.6* September 3rd, 2015</h3>
-                                    <ul>
-                                        <li>- Added manual save button and changed the interval of auto save (every 1 minute).
-                                            <br /> User is notified via message when save takes place.</li>
-                                        <li>- Added new tab "News" to easier keep track of changelog / known bugs and development status.</li>
-                                        <li>- Fixed error in some of the achievements. Now all unlocked achievements should increase achievement score.</li>
-                                    </ul>
-                                </div>
-                                <div class="changelog-item">
-                                    <h3>*Version 0.3.5a* September 1st, 2015</h3>
-                                    <ul>
-                                        <li>- Adjusted cost of energy buildings.</li>
-                                        <li>- Adjusted cost of upgrades.</li>
-                                        <li>- Owned upgrades are visually more appealing.</li>
-                                    </ul>
-                                </div>
-                                <div class="changelog-item">
-                                    <h3>*Version 0.3.5* September 1st, 2015</h3>
-                                    <ul>
-                                        <li>- Fixed buy 5 button.**</li>
-                                        <li>- Changed background.</li>
-                                        <li>- Fixes to the code.</li>
-                                        <li>**Thanks to <a href="https://www.reddit.com/user/Brownprobe">Brownprobe</a> for his help with the formula.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col-9 -->
-                <div id="right-column" class="col-md-3">
-                    <div class="panel panel-success twitter-panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">SC on Twitter</h3>
-                        </div>
-                        <div class="panel-body twitter-panel">
-                            <aside>
-                                <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/SpaceColonists" data-widget-id="647366717283430400" data-chrome="noscrollbar transparent">Tweets by @SpaceColonists</a>
-                            </aside>
-                        </div>
-                    </div>
-                    <div class="panel panel-success">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Gallery <span class="view-gallery"><a href="gallery.html">View full gallery></a></span></h3>
-                        </div>
-                        <div class="panel-body gallery-panel">
-                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                    <!-- Indicators -->
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                                    </ol>
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner" role="listbox">
-                                        <div class="item active">
-                                            <img src="https://i.imgur.com/Ujfhh91.jpg" alt="...">
-                                            <div class="carousel-caption">
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <img src="https://i.imgur.com/Q3x0qk5.jpg" alt="...">
-                                            <div class="carousel-caption">
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <img src="https://i.imgur.com/Icw9ZX1.jpg" alt="...">
-                                            <div class="carousel-caption">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Controls -->
-                                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col-3 -->
-            </div>
-            <!-- /.row -->
+  <div class="wrapper">
+    <header>
+      <div id="banner-top">
+        <img id="logo-top" src="img/sc-logo.png">
+      </div>
+      <nav class="navbar navbar-inverse navbar-custom">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <img id="navbar-logo" src="img/sc-logo.png">
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="collapse-menu">
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Development <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="changelog.html">Changelog</a></li>
+                  <li><a href="dev_map.html">Dev road map</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="game_about.html">About</a></li>
+                  <li><a href="game_story.html">Story</a></li>
+                  <li class="active"><a href="gallery.html">Gallery</a></li>
+                </ul>
+              </li>
+              <li><a href="https://github.com/KoKsMAN/SpaceColonists/wiki" target="_blank">Wiki</a></li>
+              <li><a href="downloads.html">Downloads</a></li>
+              <li><a href="about_us.html">About us</a></li>
+              <li id="play-btn"><a href="http://spacecolonists.me">Play</a></li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
-        <div class="push"></div>
-    </div>
-    <!-- /.wrapper -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-md-4">
-                    <h4>Create your own game</h4>
-                    <ul>
-                        <li><a href="http://dhmholley.co.uk/incrementals.html" target="_blank">dhmstark</a></li>
-                        <li><a href="http://blog.samgb.com/incrementals-from-zero-to-hero-1/" target="_blank">Sam's Blog</a></li>
-                        <li><a href="https://www.reddit.com/r/incremental_games" target="_blank">r/incremental_games</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 col-md-4">
-                    <h4>Share &amp; Follow us</h4>
-                    <ul>
-                        <li><a href="https://github.com/KoKsMAN" target="_blank">Github</a></li>
-                        <li><a href="https://twitter.com/SpaceColonists" target="_blank">Twitter</a></li>
-                        <li><a href="https://www.reddit.com/user/KoKsM4N" target="_blank">Reddit</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-4 col-md-4">
-                    <h4>Other cool games</h4>
-                    <ul>
-                        <li><a href="https://trimps.github.io/" target="_blank">Trimps</a></li>
-                        <li><a href="https://swarmsim.github.io/" target="_blank">Swarm Simulator</a></li>
-                        <li><a href="http://civclicker.sourceforge.net/civclicker/civclicker.html" target="_blank">CivCLicker</a></li>
-                    </ul>
-                </div>
-                <!-- /.row -->
+        <!-- /.container-fluid -->
+      </nav>
+    </header>
+    <div class="container main-content">
+      <div class="row">
+        <div id="left-column" class="col-md-9">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Changelog</h3>
             </div>
-            <!-- /.contaier -->
-    </footer>
-    <!-- Social Media and Website Tracking Scripts -->
-    <!-- Google Analytics -->
-    <script>
+            <div class="panel-body">
+              <div id="changelog-content">
+                <ul class="timeline">
+                  <li>
+                    <h3 id="version">Current version: v.0.4.2</h3>
+                  </li>
+                  <ul class="timeline">
+                    <li>
+                      <div class="tldate">September 2015</div>
+                    </li>
 
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-67022382-2','auto');ga('send','pageview');
-    </script>
-    <!-- Google Analytics -->
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.4.2</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>19/09/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Added chat feature.</li>
+                            <li>- Added background music.</li>
+                            <li>- Small changes for the SEO.</li>
+                            <li>- Fixed upgrade price of Robots and Androids.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="timeline-inverted">
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.4.1</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>17/09/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Game should run correctly when in background tab now.</li>
+                            <li>- Added support for HTTPS Everywhere add-on.</li>
+                            <li>- Fixed cost of Thermal Power Station.</li>
+                            <li>- Fixed upgrade price of Robots and Androids.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.4.0a</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>16/09/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Changed resources panel from vertical to horizontal.</li>
+                            <li>- Reworked website background.</li>
+                            <li>- Added element shadow.</li>
+                            <li>- Changed footer's font.</li>
+                            <li>- Disabled character creator / renaming, until better solution is applied.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.4.0 - "Are we there yet ?!</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i> 15/09/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Added loading screen!</li>
+                            <li>- Added new resources (Credits and Uranium).</li>
+                            <li>- Added new resource icons.</li>
+                            <li>- Added resource type information to the unit cost.</li>
+                            <li>- Added new tabs (Staff and Uranium).</li>
+                            <li>- Merged settings tab into one drop down tab.</li>
+                            <li>- Merged "Achievements" and "News" tabs into drop down tab.</li>
+                            <li>- Added new achievements.</li>
+                            <li>- Added additional text to some of the achievements.</li>
+                            <li>- Added animated achievement progress bar.</li>
+                            <li>- Added new upgrades.</li>
+                            <li>- Added new units and buildings.</li>
+                            <li>- Added Power Requirement and Power Generation.</li>
+                            <li>- Added new functionality : Power Balance.</li>
+                            <li>- Added footer.</li>
+                            <li>- Moved links from the top of the page to the footer.</li>
+                            <li>- Changed social buttons and moved them down to the footer.</li>
+                            <li>- Fixed issue with body width being bigger than content on mobile.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.3.9</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>08/09/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Fixed bug where player could buy the same upgrade twice.</li>
+                            <li>- Adjusted Energy buildings cost.</li>
+                            <li>- Added simple character creator. (First part of planned commander module.)</li>
+                            <li>- Introduced number generation accelerator (Still needs correct implementation.
+                              <br /> Locked at 2nd gear atm.)</li>
+                            <li>- Replaced social buttons with new ones.</li>
+                            <li>- Removed twitter and facebook buttons (no official accounts yet.)</li>
+                            <li>- Changes to the settings tab.</li>
+                            <li>- Added user statistics. (Only mouse clicks as of now.)</li>
+                            <li>- Added contact tab.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="timeline-inverted">
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.3.8</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>05/09/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Added option to import / export save data via key.</li>
+                            <li>- Fixed horizontal scroll bar bug.</li>
+                            <li>- Auto save reminder should scale with window width now.</li>
+                            <li>- Small visual changes and tweaks.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.3.7</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>04/09/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Buy all button has been fixed.</li>
+                            <li>- Upgrades appear together with units they belong to.</li>
+                            <li>- Fixed Robot buttons not displaying correctly.</li>
+                            <li>- Deleting Save data shouldn't change the layout size anymore.</li>
+                            <li>- Added reminder about auto save.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.3.6</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>03/09/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Added manual save button and changed the interval of auto save (every 1 minute).
+                              <br /> User is notified via message when save takes place.</li>
+                            <li>- Added new tab "News" to easier keep track of changelog / known bugs and development status.</li>
+                            <li>- Fixed error in some of the achievements. Now all unlocked achievements should increase achievement score.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.3.5a</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>01/09/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Adjusted cost of energy buildings.</li>
+                            <li>- Adjusted cost of upgrades.</li>
+                            <li>- Owned upgrades are visually more appealing.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.3.5</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>01/09/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Fixed buy 5 button.**</li>
+                            <li>- Changed background.</li>
+                            <li>- Fixes to the code.</li>
+                            <li>**Thanks to <a href="https://www.reddit.com/user/Brownprobe">Brownprobe</a> for his help with the formula.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tldate">August 2015</div>
+                    </li>
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.3.1</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>28/08/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Fixed unit cost not updating properly.</li>
+                            <li>- Fixed unit resource generation.</li>
+                            <li>- Some visual tweaking.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.3.0</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i> 27/08/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Fixes to the code.</li>
+                            <li>- Few new layout elements.</li>
+                            <li>- Moved achievements into separate file.</li>
+                            <li>- Updated game's logo.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.2.9</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>12/08/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Introduced upgrades (still needs correct values for pricing and minor fixes).</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li class="timeline-inverted">
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.2.7a</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>08/08/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Changes to the code in preparation for cookie saves functionality.</li>
+                            <li>- Code optimization.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.2.7</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>06/08/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Added elements hiding function (not activated for now, still needs testing).</li>
+                            <li>- Code optimization.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.2.6</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>05/08/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- COMPLETE achievement system.</li>
+                            <li>- Added interactive progress bar to visualize accumulated achievement points.</li>
+                            <li>- Minor fixes to the code.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.2.5</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>04/08/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Shortened big numbers to be more user-friendly.</li>
+                            <li>- Minor fixes to the code.</li>
+                            <li>- Started working on a way to hide elements and make them appear with game's progress.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.2.2</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>03/08/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Added upgrades function.</li>
+                            <li>- Added upgrades dynamic tabs.</li>
+                            <li>- Minor fixes to the code.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.2.1</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>01/08/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Added more achievements.</li>
+                            <li>- Started working on upgrades.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tldate">July 2015</div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.2.0</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i> 31/07/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Started working on "Buy All" function.</li>
+                            <li>- Created achievements system (still needs update).</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="tl-circ"></div>
+                      <div class="timeline-panel">
+                        <div class="tl-heading">
+                          <h4>Version 0.1.9</h4>
+                          <p>
+                            <small class="text-muted"><i class="glyphicon glyphicon-time"></i>30/07/15</small>
+                          </p>
+                        </div>
+                        <div class="tl-body">
+                          <ul>
+                            <li>- Added units and buildings cost increase formula.
+                              <li>- Minor fixes to the code.</li>
+                              <li>- Added achievements tab.</li>
+                          </ul>
+                        </div>
+                      </div>
+                      </li>
+
+                      <li class="timeline-inverted">
+                        <div class="tl-circ"></div>
+                        <div class="timeline-panel">
+                          <div class="tl-heading">
+                            <h4>Version 0.1.5</h4>
+                            <p>
+                              <small class="text-muted"><i class="glyphicon glyphicon-time"></i>29/07/15</small>
+                            </p>
+                          </div>
+                          <div class="tl-body">
+                            <ul>
+                              <li>- Added more GUI elements.</li>
+                              <li>- Changed font.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="tl-circ"></div>
+                        <div class="timeline-panel">
+                          <div class="tl-heading">
+                            <h4>Version 0.1.0</h4>
+                            <p>
+                              <small class="text-muted"><i class="glyphicon glyphicon-time"></i>28/07/15</small>
+                            </p>
+                          </div>
+                          <div class="tl-body">
+                            <ul>
+                              <li>- Created few GUI elements.</li>
+                              <li>- Created game's logo.</li>
+                              <li>- Added website background.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-inverted">
+                        <div class="tl-circ"></div>
+                        <div class="timeline-panel">
+                          <div class="tl-heading">
+                            <h4>Version 0.0.6</h4>
+                            <p>
+                              <small class="text-muted"><i class="glyphicon glyphicon-time"></i>27/07/15</small>
+                            </p>
+                          </div>
+                          <div class="tl-body">
+                            <ul>
+                              <li>- Optimized the code.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="tl-circ"></div>
+                        <div class="timeline-panel">
+                          <div class="tl-heading">
+                            <h4>Version 0.0.5</h4>
+                            <p>
+                              <small class="text-muted"><i class="glyphicon glyphicon-time"></i>26/07/15</small>
+                            </p>
+                          </div>
+                          <div class="tl-body">
+                            <ul>
+                              <li>- Added temporary website background.</li>
+                              <li>- Added "Buy 1, Buy 5, Buy All" buttons.</li>
+                              <li>- Minor fixes to the code.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="timeline-inverted">
+                        <div class="tl-circ"></div>
+                        <div class="timeline-panel">
+                          <div class="tl-heading">
+                            <h4>Version 0.0.1</h4>
+                            <p>
+                              <small class="text-muted"><i class="glyphicon glyphicon-time"></i>25/07/15</small>
+                            </p>
+                          </div>
+                          <div class="tl-body">
+                            <ul>
+                              <li>- Started the project.</li>
+                              <li>- Added initial code.</li>
+                              <li>- Created save / load functionality.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                  </ul>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-9 -->
+        <div id="right-column" class="col-md-3">
+          <div class="panel panel-success twitter-panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">SC on Twitter</h3>
+            </div>
+            <div class="panel-body twitter-panel">
+              <aside>
+                <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/SpaceColonists" data-widget-id="647366717283430400" data-chrome="noscrollbar transparent">Tweets by @SpaceColonists</a>
+              </aside>
+            </div>
+          </div>
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Gallery
+                <span class="view-gallery"><a href="gallery.html">View full gallery></a></span>
+              </h3>
+            </div>
+            <div class="panel-body gallery-panel">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img class="carousel-img" src="https://i.imgur.com/Ujfhh91.jpg" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img class="carousel-img" src="https://i.imgur.com/Q3x0qk5.jpg" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img class="carousel-img" src="https://i.imgur.com/Icw9ZX1.jpg" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                  </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-success rate-panel">
+            <div class="panel-heading">
+              <h3 class="panel-title">Vote &amp; Rate</h3>
+            </div>
+            <div class="panel-body rate-panel">
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span><a href="http://www.almostidle.com/game/space-colonists"> Rate the game !</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-3 -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <div class="push"></div>
+  </div>
+  <!-- /.wrapper -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          <h4>Create your own game</h4>
+          <ul>
+            <li><a href="http://dhmholley.co.uk/incrementals.html" target="_blank">dhmstark</a></li>
+            <li><a href="http://blog.samgb.com/incrementals-from-zero-to-hero-1/" target="_blank">Sam's Blog</a></li>
+            <li><a href="https://www.reddit.com/r/incremental_games" target="_blank">r/incremental_games</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-md-4">
+          <h4>Share &amp; Follow us</h4>
+          <ul>
+            <li><a href="https://github.com/KoKsMAN" target="_blank">Github</a></li>
+            <li><a href="https://twitter.com/SpaceColonists" target="_blank">Twitter</a></li>
+            <li><a href="https://www.reddit.com/user/KoKsM4N" target="_blank">Reddit</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4 col-md-4">
+          <h4>Other cool games</h4>
+          <ul>
+            <li><a href="https://trimps.github.io/" target="_blank">Trimps</a></li>
+            <li><a href="https://swarmsim.github.io/" target="_blank">Swarm Simulator</a></li>
+            <li><a href="http://civclicker.sourceforge.net/civclicker/civclicker.html" target="_blank">CivCLicker</a></li>
+          </ul>
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.contaier -->
+  </footer>
+  <!-- Social Media and Website Tracking Scripts -->
+  <!-- Google Analytics -->
+  <script>
+    (function(b, o, i, l, e, r) {
+      b.GoogleAnalyticsObject = l;
+      b[l] || (b[l] =
+        function() {
+          (b[l].q = b[l].q || []).push(arguments)
+        });
+      b[l].l = +new Date;
+      e = o.createElement(i);
+      r = o.getElementsByTagName(i)[0];
+      e.src = 'https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create', 'UA-67022382-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- Google Analytics -->
 </body>
 
 </html>
